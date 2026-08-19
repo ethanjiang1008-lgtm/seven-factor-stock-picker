@@ -1007,7 +1007,7 @@ def main():
     # 构建 sector_data 查找映射
     sw_sector_map = {sd["name"]: sd for sd in sector_data_list}
     
-    for sd in sector_data_list[:15]:
+    for sd in sector_data_list:  # v1.4: 全行业覆盖（原仅前15行业）
         for s in sd["stocks"]:
             code = s["code"]
             if code in seen:
@@ -1032,7 +1032,7 @@ def main():
             s["concept_data"] = best_concept if best_concept else None
             candidates.append(s)
     
-    for s in gainers[:100]:
+    for s in gainers[:300]:  # v1.4: 涨幅榜入口从前100扩到前300
         code = s["code"]
         if code in seen:
             continue
@@ -1061,8 +1061,8 @@ def main():
             seen.add(code)
     
     candidates.sort(key=lambda x: x["change_pct"], reverse=True)
-    if len(candidates) > 120:
-        candidates = candidates[:120]
+    if len(candidates) > 2000:  # v1.4: 候选上限从120扩到2000
+        candidates = candidates[:2000]
     
     # v1.3: 统计分类情况
     unclassified = sum(1 for c in candidates if c.get("sector_name") == "未分类")
@@ -1070,7 +1070,24 @@ def main():
     print(f"  总候选: {len(candidates)} 只 | 未分类: {unclassified} | 有概念: {has_concept}")
     
     # === Phase 5: K线分析 + 七因子评分 ===
-    print(f"\n[5/7] K线分析 + 七因子评分 v1.3（{len(candidates)}只）...")
+    print(f"\n[5/7] K线分析 + 七因子评分 v1.4（{len(candidates)}只）...")
+
+    # v1.4: 并发拉取K线（串行+sleep 在2000只规模下会成为瓶颈）
+    klines_map = {}
+
+    def _fetch_kline_worker(code):
+        try:
+            return code, fetch_kline_sina(code, datalen=120)
+        except Exception:
+            return code, None
+
+    fetch_start = time.time()
+    with ThreadPoolExecutor(max_workers=10) as executor:
+        for code, kl in executor.map(_fetch_kline_worker, [c["code"] for c in candidates]):
+            klines_map[code] = kl
+    ok_cnt = sum(1 for v in klines_map.values() if v and len(v) >= 20)
+    print(f"  K线并发拉取完成: {ok_cnt}/{len(candidates)} 有效, 耗时 {time.time()-fetch_start:.0f}秒")
+
     results = []
     failed = []
     
@@ -1084,10 +1101,9 @@ def main():
         print(f"\r  [{pct:5.1f}%] ({i+1}/{len(candidates)}) {code} {name}      ", end="", flush=True)
         
         try:
-            klines = fetch_kline_sina(code, datalen=120)
-            time.sleep(0.12)
-            if len(klines) < 20:
-                raise ValueError(f"K线不足: {len(klines)}")
+            klines = klines_map.get(code)
+            if not klines or len(klines) < 20:
+                raise ValueError(f"K线不足: {len(klines) if klines else 0}")
             
             # v1.3: 优先用概念板块数据评分，回退申万行业
             concept = stock.get("concept_data")
@@ -1177,7 +1193,7 @@ def main():
         except Exception as e:
             failed.append({"code": code, "name": name, "error": str(e)})
         
-        if time.time() - start > 480:
+        if time.time() - start > 700:
             print(f"\n  ⚠ 已运行{time.time()-start:.0f}秒，保存进度退出")
             break
     
@@ -1195,8 +1211,8 @@ def main():
     output = {
         "scan_date": now.strftime("%Y-%m-%d"),
         "scan_time": now.strftime("%Y-%m-%d %H:%M:%S"),
-        "system_version": "v1.3",
-        "model": "连板潜力七因子模型 v1.3（概念板块分类 + 行业映射补全）",
+        "system_version": "v1.4",
+        "model": "连板潜力七因子模型 v1.4（全行业候选池 + 并发K线 + 完整涨跌停统计）",
         "weight_config": {
             "个股辨识度": 25, "资金预热": 20, "K线筹码": 15,
             "题材催化": 10, "板块强度": 10, "市值流动性": 15, "情绪环境": 5,
