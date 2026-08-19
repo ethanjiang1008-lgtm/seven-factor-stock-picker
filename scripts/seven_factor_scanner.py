@@ -160,26 +160,32 @@ def fetch_sina_ranking(node="hs_a", sort="changepercent", asc=0, page=1, num=100
         })
     return stocks
 
-def fetch_all_gainers(num_pages=8):
-    """获取涨幅前N页股票（每页100只）"""
+def fetch_all_gainers(max_pages=25):
+    """涨幅榜：自适应翻页，直到页尾涨幅 < 7%（确保完整覆盖涨停与强势股统计）。
+    修复：固定 8 页在强市时会被 20cm 涨停股/新股挤占，导致主板涨停被漏计。"""
     all_stocks = []
-    for page in range(1, num_pages + 1):
+    for page in range(1, max_pages + 1):
         stocks = fetch_sina_ranking(node="hs_a", sort="changepercent", asc=0, page=page, num=100)
         if not stocks:
             break
         all_stocks.extend(stocks)
         time.sleep(0.15)
+        if stocks[-1]["change_pct"] < 7.0:
+            break
     return all_stocks
 
-def fetch_all_losers(num_pages=2):
-    """获取跌幅前N页股票"""
+def fetch_all_losers(max_pages=25):
+    """跌幅榜：自适应翻页，直到页尾跌幅 > -9.8%（确保完整覆盖主板跌停股）。
+    修复：固定 2 页在弱市时前两页全是 20cm 大跌股，主板 -10% 跌停股排在后面被漏计为 0。"""
     all_stocks = []
-    for page in range(1, num_pages + 1):
+    for page in range(1, max_pages + 1):
         stocks = fetch_sina_ranking(node="hs_a", sort="changepercent", asc=1, page=page, num=100)
         if not stocks:
             break
         all_stocks.extend(stocks)
         time.sleep(0.15)
+        if stocks[-1]["change_pct"] > -9.8:
+            break
     return all_stocks
 
 def fetch_sector_stocks(sector_node, num=50):
@@ -934,8 +940,8 @@ def main():
     
     # === Phase 1: 全市场行情 ===
     print("\n[1/6] 获取全市场行情...")
-    gainers = fetch_all_gainers(num_pages=8)
-    losers = fetch_all_losers(num_pages=2)
+    gainers = fetch_all_gainers()
+    losers = fetch_all_losers()
     print(f"  涨幅榜: {len(gainers)} 只 | 跌幅榜: {len(losers)} 只")
     
     # === Phase 2: 市场情绪 ===
