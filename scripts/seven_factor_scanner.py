@@ -30,7 +30,7 @@ import time
 import urllib.request
 import ssl
 import os
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 SSL_CTX = ssl.create_default_context()
@@ -926,7 +926,7 @@ def next_day_watch(ks, cs, stock, hist, recency=None):
 
 def main():
     start = time.time()
-    now = datetime.now()
+    now = datetime.now(timezone(timedelta(hours=8)))  # 固定北京时间（GitHub runner 是 UTC）
     print(f"{'='*70}")
     print(f"  连板潜力七因子选股系统 v1.2")
     print(f"  扫描时间：{now.strftime('%Y-%m-%d %H:%M:%S')}")
