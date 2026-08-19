@@ -1,6 +1,6 @@
 {
   "scan_date": "2026-08-19",
-  "scan_time": "2026-08-19 07:05:08",
+  "scan_time": "2026-08-19 15:19:20",
   "system_version": "v1.3",
   "model": "连板潜力七因子模型 v1.3（概念板块分类 + 行业映射补全）",
   "weight_config": {
@@ -327,14 +327,6 @@
     },
     {
       "rank": 4,
-      "name": "DeepSeek概念",
-      "avg_change": 0.06,
-      "limit_up_count": 0,
-      "strong_count": 0,
-      "total_count": 78
-    },
-    {
-      "rank": 5,
       "name": "甲醇概念",
       "avg_change": -0.45,
       "limit_up_count": 4,
@@ -342,7 +334,7 @@
       "total_count": 54
     },
     {
-      "rank": 6,
+      "rank": 5,
       "name": "养老金概念",
       "avg_change": -0.45,
       "limit_up_count": 1,
@@ -350,7 +342,7 @@
       "total_count": 84
     },
     {
-      "rank": 7,
+      "rank": 6,
       "name": "并购重组",
       "avg_change": -0.67,
       "limit_up_count": 1,
@@ -358,7 +350,7 @@
       "total_count": 80
     },
     {
-      "rank": 8,
+      "rank": 7,
       "name": "肝炎治疗",
       "avg_change": -0.77,
       "limit_up_count": 2,
@@ -366,7 +358,7 @@
       "total_count": 54
     },
     {
-      "rank": 9,
+      "rank": 8,
       "name": "绿色电力",
       "avg_change": -1.06,
       "limit_up_count": 0,
@@ -374,7 +366,7 @@
       "total_count": 89
     },
     {
-      "rank": 10,
+      "rank": 9,
       "name": "统一大市场",
       "avg_change": -1.38,
       "limit_up_count": 1,
@@ -382,12 +374,20 @@
       "total_count": 87
     },
     {
-      "rank": 11,
+      "rank": 10,
       "name": "陆股通活跃",
       "avg_change": -1.42,
       "limit_up_count": 0,
       "strong_count": 0,
       "total_count": 46
+    },
+    {
+      "rank": 11,
+      "name": "零售药店",
+      "avg_change": -1.65,
+      "limit_up_count": 0,
+      "strong_count": 0,
+      "total_count": 12
     },
     {
       "rank": 12,
@@ -439,14 +439,6 @@
     },
     {
       "rank": 18,
-      "name": "AMC（化债概念）",
-      "avg_change": -2.27,
-      "limit_up_count": 0,
-      "strong_count": 0,
-      "total_count": 18
-    },
-    {
-      "rank": 19,
       "name": "陕西国资",
       "avg_change": -2.29,
       "limit_up_count": 0,
@@ -454,7 +446,7 @@
       "total_count": 14
     },
     {
-      "rank": 20,
+      "rank": 19,
       "name": "C2M概念",
       "avg_change": -2.36,
       "limit_up_count": 1,
@@ -462,15 +454,7 @@
       "total_count": 37
     },
     {
-      "rank": 21,
-      "name": "AI应用（智能体）",
-      "avg_change": -2.5,
-      "limit_up_count": 0,
-      "strong_count": 0,
-      "total_count": 60
-    },
-    {
-      "rank": 22,
+      "rank": 20,
       "name": "电解液",
       "avg_change": -2.58,
       "limit_up_count": 0,
@@ -478,7 +462,7 @@
       "total_count": 26
     },
     {
-      "rank": 23,
+      "rank": 21,
       "name": "啤酒",
       "avg_change": -2.64,
       "limit_up_count": 1,
@@ -486,7 +470,7 @@
       "total_count": 27
     },
     {
-      "rank": 24,
+      "rank": 22,
       "name": "东北振兴",
       "avg_change": -2.69,
       "limit_up_count": 1,
@@ -494,7 +478,7 @@
       "total_count": 44
     },
     {
-      "rank": 25,
+      "rank": 23,
       "name": "钒电池",
       "avg_change": -2.8,
       "limit_up_count": 0,
@@ -502,7 +486,7 @@
       "total_count": 31
     },
     {
-      "rank": 26,
+      "rank": 24,
       "name": "水电概念",
       "avg_change": -2.81,
       "limit_up_count": 0,
@@ -510,7 +494,7 @@
       "total_count": 58
     },
     {
-      "rank": 27,
+      "rank": 25,
       "name": "猴痘概念",
       "avg_change": -2.82,
       "limit_up_count": 0,
@@ -518,7 +502,7 @@
       "total_count": 26
     },
     {
-      "rank": 28,
+      "rank": 26,
       "name": "靶材",
       "avg_change": -2.86,
       "limit_up_count": 0,
@@ -526,7 +510,7 @@
       "total_count": 3
     },
     {
-      "rank": 29,
+      "rank": 27,
       "name": "抗菌面料",
       "avg_change": -2.87,
       "limit_up_count": 0,
@@ -534,7 +518,7 @@
       "total_count": 18
     },
     {
-      "rank": 30,
+      "rank": 28,
       "name": "土地流转",
       "avg_change": -2.87,
       "limit_up_count": 0,
@@ -542,7 +526,7 @@
       "total_count": 45
     },
     {
-      "rank": 31,
+      "rank": 29,
       "name": "价值成长",
       "avg_change": -2.97,
       "limit_up_count": 0,
@@ -550,7 +534,7 @@
       "total_count": 62
     },
     {
-      "rank": 32,
+      "rank": 30,
       "name": "六氟磷酸锂",
       "avg_change": -2.98,
       "limit_up_count": 0,
@@ -558,7 +542,7 @@
       "total_count": 10
     },
     {
-      "rank": 33,
+      "rank": 31,
       "name": "中俄贸易概念",
       "avg_change": -3.1,
       "limit_up_count": 0,
@@ -566,7 +550,7 @@
       "total_count": 67
     },
     {
-      "rank": 34,
+      "rank": 32,
       "name": "有色铜",
       "avg_change": -3.12,
       "limit_up_count": 0,
@@ -574,7 +558,7 @@
       "total_count": 79
     },
     {
-      "rank": 35,
+      "rank": 33,
       "name": "植物蛋白",
       "avg_change": -3.17,
       "limit_up_count": 0,
@@ -582,7 +566,7 @@
       "total_count": 12
     },
     {
-      "rank": 36,
+      "rank": 34,
       "name": "福建国资",
       "avg_change": -3.21,
       "limit_up_count": 0,
@@ -590,7 +574,7 @@
       "total_count": 31
     },
     {
-      "rank": 37,
+      "rank": 35,
       "name": "NFT概念",
       "avg_change": -3.25,
       "limit_up_count": 0,
@@ -598,7 +582,7 @@
       "total_count": 58
     },
     {
-      "rank": 38,
+      "rank": 36,
       "name": "铝塑膜",
       "avg_change": -3.27,
       "limit_up_count": 0,
@@ -606,15 +590,7 @@
       "total_count": 10
     },
     {
-      "rank": 39,
-      "name": "财税信息化",
-      "avg_change": -3.28,
-      "limit_up_count": 0,
-      "strong_count": 0,
-      "total_count": 14
-    },
-    {
-      "rank": 40,
+      "rank": 37,
       "name": "首发经济",
       "avg_change": -3.29,
       "limit_up_count": 0,
@@ -622,7 +598,7 @@
       "total_count": 38
     },
     {
-      "rank": 41,
+      "rank": 38,
       "name": "烟标",
       "avg_change": -3.31,
       "limit_up_count": 0,
@@ -630,7 +606,7 @@
       "total_count": 6
     },
     {
-      "rank": 42,
+      "rank": 39,
       "name": "海洋经济",
       "avg_change": -3.36,
       "limit_up_count": 0,
@@ -638,7 +614,7 @@
       "total_count": 53
     },
     {
-      "rank": 43,
+      "rank": 40,
       "name": "历史新高",
       "avg_change": -3.4,
       "limit_up_count": 0,
@@ -646,7 +622,7 @@
       "total_count": 10
     },
     {
-      "rank": 44,
+      "rank": 41,
       "name": "盾构机",
       "avg_change": -3.49,
       "limit_up_count": 1,
@@ -654,7 +630,7 @@
       "total_count": 30
     },
     {
-      "rank": 45,
+      "rank": 42,
       "name": "尾气处理",
       "avg_change": -3.56,
       "limit_up_count": 0,
@@ -662,15 +638,7 @@
       "total_count": 11
     },
     {
-      "rank": 46,
-      "name": "AI语料库",
-      "avg_change": -3.57,
-      "limit_up_count": 0,
-      "strong_count": 0,
-      "total_count": 30
-    },
-    {
-      "rank": 47,
+      "rank": 43,
       "name": "湖北国资",
       "avg_change": -3.6,
       "limit_up_count": 0,
@@ -678,7 +646,7 @@
       "total_count": 20
     },
     {
-      "rank": 48,
+      "rank": 44,
       "name": "网红经济",
       "avg_change": -3.63,
       "limit_up_count": 1,
@@ -686,7 +654,7 @@
       "total_count": 53
     },
     {
-      "rank": 49,
+      "rank": 45,
       "name": "广电系",
       "avg_change": -3.63,
       "limit_up_count": 0,
@@ -694,12 +662,44 @@
       "total_count": 18
     },
     {
-      "rank": 50,
+      "rank": 46,
       "name": "AI漫剧",
       "avg_change": -3.71,
       "limit_up_count": 0,
       "strong_count": 0,
       "total_count": 9
+    },
+    {
+      "rank": 47,
+      "name": "彩票",
+      "avg_change": -3.74,
+      "limit_up_count": 0,
+      "strong_count": 0,
+      "total_count": 27
+    },
+    {
+      "rank": 48,
+      "name": "AI应用（游戏传媒）",
+      "avg_change": -3.76,
+      "limit_up_count": 0,
+      "strong_count": 0,
+      "total_count": 19
+    },
+    {
+      "rank": 49,
+      "name": "横琴新区",
+      "avg_change": -3.77,
+      "limit_up_count": 0,
+      "strong_count": 0,
+      "total_count": 27
+    },
+    {
+      "rank": 50,
+      "name": "半导体材料",
+      "avg_change": -3.8,
+      "limit_up_count": 0,
+      "strong_count": 1,
+      "total_count": 57
     }
   ],
   "candidates": [
@@ -709,11 +709,12 @@
       "sector": "甲醇概念",
       "sw_industry": "煤炭",
       "concept": "甲醇概念",
-      "concept_rank": 5,
+      "concept_rank": 4,
       "all_concepts": [
-        "甲醇概念"
+        "甲醇概念",
+        "智能眼镜"
       ],
-      "sector_rank": 5,
+      "sector_rank": 4,
       "price": 3.04,
       "change_pct": 10.145,
       "turnover_rate": 3.8,
@@ -958,6 +959,136 @@
         "站上MA20",
         "均线多头排列",
         "近20日上涨",
+        "放量异动",
+        "连续上涨"
+      ]
+    },
+    {
+      "code": "600583",
+      "name": "海油工程",
+      "sector": "养老金概念",
+      "sw_industry": "石油石化",
+      "concept": "养老金概念",
+      "concept_rank": 5,
+      "all_concepts": [
+        "养老金概念",
+        "海洋经济"
+      ],
+      "sector_rank": 5,
+      "price": 6.14,
+      "change_pct": 1.993,
+      "turnover_rate": 3.14,
+      "circ_mcap_yi": 271.5,
+      "amount_yi": 8.6,
+      "scores": {
+        "theme_catalyst": 4,
+        "sector_strength": 4,
+        "stock_recognition": 13,
+        "capital_preheat": 19,
+        "kline_chip": 13.0,
+        "market_cap_liquidity": 12,
+        "sentiment": 5,
+        "total": 70.0
+      },
+      "adjusted_total": 75.0,
+      "recency": {
+        "tier": 1,
+        "tier_label": "P1",
+        "tag": "首板前候选",
+        "description": "有涨停基因(近115日无涨停)，首板前候选优先",
+        "score_adjust": 5
+      },
+      "score_details": {
+        "题材催化(/10)": {
+          "热点排名": 3,
+          "涨幅强度": 0,
+          "涨停梯队": 1
+        },
+        "板块强度(/10)": {
+          "排名": 3,
+          "涨幅": 0,
+          "涨停数": 1
+        },
+        "个股辨识度(/25)": {
+          "涨停次数分": 4,
+          "连板高度分": 3,
+          "涨幅排名": 2,
+          "成交活跃": 4,
+          "lu_count_120d": 2,
+          "max_consec": 2
+        },
+        "资金预热(/20)": {
+          "量放大(6)": 6,
+          "净流入(4)": 3,
+          "涨放量(4)": 4,
+          "跌缩量(3)": 3,
+          "大单(3)": 3
+        },
+        "K线筹码(/15)": {
+          "均线(5)": 5.0,
+          "多头排列(4)": 2,
+          "趋势动能(4)": 4,
+          "位置(2)": 2
+        },
+        "市值流动性(/15)": {
+          "换手率(10)": 7,
+          "市值辅助(5)": 5,
+          "circ_yi": 271.5,
+          "turnover": 3.14
+        },
+        "情绪环境(/5)": {
+          "状态": "常态(不参与排序)",
+          "得分": 5
+        },
+        "近期涨停调整": 5
+      },
+      "scoring_source": "concept",
+      "pool": "重点观察",
+      "grade": "B",
+      "lianban_probability": 17.1,
+      "kline_signals": {
+        "price": 6.02,
+        "ma5": 5.6,
+        "ma10": 5.58,
+        "ma20": 5.59,
+        "above_ma5": true,
+        "above_ma10": true,
+        "above_ma20": true,
+        "multi_align": false,
+        "gain_20d": 12.7,
+        "dist_to_high": 2.3
+      },
+      "capital_signals": {
+        "vol_ratio_5d_20d": 1.23,
+        "vol_ratio_today": 4.33,
+        "up_days_recent3": 2
+      },
+      "history": {
+        "has_history": true,
+        "limit_up_count": 2,
+        "max_consecutive": 2,
+        "has_2lianban": true,
+        "days_since_last_lu": 115,
+        "lu_count_recent_3d": 0,
+        "lu_count_recent_5d": 0,
+        "lu_count_recent_10d": 0,
+        "current_streak": 0
+      },
+      "resonance": {
+        "all_three": true,
+        "count": 3,
+        "r_history": true,
+        "r_trend": true,
+        "r_volume": true
+      },
+      "next_day_watch": [
+        "★首板前候选(首板前候选)",
+        "历史股性活跃",
+        "曾2连板",
+        "距上次涨停115日",
+        "站上MA20",
+        "近20日上涨",
+        "近期量能放大",
         "放量异动",
         "连续上涨"
       ]
@@ -1344,77 +1475,76 @@
       ]
     },
     {
-      "code": "600583",
-      "name": "海油工程",
+      "code": "603556",
+      "name": "海兴电力",
       "sector": "养老金概念",
-      "sw_industry": "石油石化",
+      "sw_industry": "电力设备",
       "concept": "养老金概念",
-      "concept_rank": 6,
+      "concept_rank": 5,
       "all_concepts": [
-        "养老金概念",
-        "海洋经济"
+        "养老金概念"
       ],
-      "sector_rank": 6,
-      "price": 6.14,
-      "change_pct": 1.993,
-      "turnover_rate": 3.14,
-      "circ_mcap_yi": 271.5,
-      "amount_yi": 8.6,
+      "sector_rank": 5,
+      "price": 27.9,
+      "change_pct": 4.887,
+      "turnover_rate": 5.89,
+      "circ_mcap_yi": 135.7,
+      "amount_yi": 7.97,
       "scores": {
-        "theme_catalyst": 3,
-        "sector_strength": 3,
-        "stock_recognition": 13,
-        "capital_preheat": 19,
-        "kline_chip": 13.0,
-        "market_cap_liquidity": 12,
+        "theme_catalyst": 4,
+        "sector_strength": 4,
+        "stock_recognition": 18,
+        "capital_preheat": 8,
+        "kline_chip": 14.5,
+        "market_cap_liquidity": 15,
         "sentiment": 5,
-        "total": 68.0
+        "total": 68.5
       },
-      "adjusted_total": 73.0,
+      "adjusted_total": 73.5,
       "recency": {
         "tier": 1,
         "tier_label": "P1",
         "tag": "首板前候选",
-        "description": "有涨停基因(近115日无涨停)，首板前候选优先",
+        "description": "有涨停基因(近13日无涨停)，首板前候选优先",
         "score_adjust": 5
       },
       "score_details": {
         "题材催化(/10)": {
-          "热点排名": 2,
+          "热点排名": 3,
           "涨幅强度": 0,
           "涨停梯队": 1
         },
         "板块强度(/10)": {
-          "排名": 2,
+          "排名": 3,
           "涨幅": 0,
           "涨停数": 1
         },
         "个股辨识度(/25)": {
-          "涨停次数分": 4,
+          "涨停次数分": 6,
           "连板高度分": 3,
-          "涨幅排名": 2,
+          "涨幅排名": 5,
           "成交活跃": 4,
-          "lu_count_120d": 2,
+          "lu_count_120d": 3,
           "max_consec": 2
         },
         "资金预热(/20)": {
-          "量放大(6)": 6,
-          "净流入(4)": 3,
+          "量放大(6)": 0,
+          "净流入(4)": 1,
           "涨放量(4)": 4,
-          "跌缩量(3)": 3,
-          "大单(3)": 3
+          "跌缩量(3)": 2,
+          "大单(3)": 1
         },
         "K线筹码(/15)": {
           "均线(5)": 5.0,
-          "多头排列(4)": 2,
+          "多头排列(4)": 4,
           "趋势动能(4)": 4,
-          "位置(2)": 2
+          "位置(2)": 1.5
         },
         "市值流动性(/15)": {
-          "换手率(10)": 7,
+          "换手率(10)": 10,
           "市值辅助(5)": 5,
-          "circ_yi": 271.5,
-          "turnover": 3.14
+          "circ_yi": 135.7,
+          "turnover": 5.89
         },
         "情绪环境(/5)": {
           "状态": "常态(不参与排序)",
@@ -1423,54 +1553,52 @@
         "近期涨停调整": 5
       },
       "scoring_source": "concept",
-      "pool": "重点观察",
+      "pool": "预备池",
       "grade": "B",
-      "lianban_probability": 12.8,
+      "lianban_probability": 11.1,
       "kline_signals": {
-        "price": 6.02,
-        "ma5": 5.6,
-        "ma10": 5.58,
-        "ma20": 5.59,
+        "price": 26.6,
+        "ma5": 25.84,
+        "ma10": 25.83,
+        "ma20": 25.19,
         "above_ma5": true,
         "above_ma10": true,
         "above_ma20": true,
-        "multi_align": false,
-        "gain_20d": 12.7,
-        "dist_to_high": 2.3
+        "multi_align": true,
+        "gain_20d": 14.9,
+        "dist_to_high": 6.6
       },
       "capital_signals": {
-        "vol_ratio_5d_20d": 1.23,
-        "vol_ratio_today": 4.33,
-        "up_days_recent3": 2
+        "vol_ratio_5d_20d": 0.99,
+        "vol_ratio_today": 1.47,
+        "up_days_recent3": 1
       },
       "history": {
         "has_history": true,
-        "limit_up_count": 2,
+        "limit_up_count": 3,
         "max_consecutive": 2,
         "has_2lianban": true,
-        "days_since_last_lu": 115,
+        "days_since_last_lu": 13,
         "lu_count_recent_3d": 0,
         "lu_count_recent_5d": 0,
         "lu_count_recent_10d": 0,
         "current_streak": 0
       },
       "resonance": {
-        "all_three": true,
-        "count": 3,
+        "all_three": false,
+        "count": 2,
         "r_history": true,
         "r_trend": true,
-        "r_volume": true
+        "r_volume": false
       },
       "next_day_watch": [
         "★首板前候选(首板前候选)",
         "历史股性活跃",
         "曾2连板",
-        "距上次涨停115日",
+        "距上次涨停13日",
         "站上MA20",
-        "近20日上涨",
-        "近期量能放大",
-        "放量异动",
-        "连续上涨"
+        "均线多头排列",
+        "近20日上涨"
       ]
     },
     {
@@ -1851,144 +1979,16 @@
       ]
     },
     {
-      "code": "603556",
-      "name": "海兴电力",
-      "sector": "DeepSeek概念",
-      "sw_industry": "电力设备",
-      "concept": "DeepSeek概念",
-      "concept_rank": 4,
-      "all_concepts": [
-        "DeepSeek概念",
-        "养老金概念"
-      ],
-      "sector_rank": 4,
-      "price": 27.9,
-      "change_pct": 4.887,
-      "turnover_rate": 5.89,
-      "circ_mcap_yi": 135.7,
-      "amount_yi": 7.97,
-      "scores": {
-        "theme_catalyst": 3,
-        "sector_strength": 3,
-        "stock_recognition": 18,
-        "capital_preheat": 8,
-        "kline_chip": 14.5,
-        "market_cap_liquidity": 15,
-        "sentiment": 5,
-        "total": 66.5
-      },
-      "adjusted_total": 71.5,
-      "recency": {
-        "tier": 1,
-        "tier_label": "P1",
-        "tag": "首板前候选",
-        "description": "有涨停基因(近13日无涨停)，首板前候选优先",
-        "score_adjust": 5
-      },
-      "score_details": {
-        "题材催化(/10)": {
-          "热点排名": 3,
-          "涨幅强度": 0,
-          "涨停梯队": 0
-        },
-        "板块强度(/10)": {
-          "排名": 3,
-          "涨幅": 0,
-          "涨停数": 0
-        },
-        "个股辨识度(/25)": {
-          "涨停次数分": 6,
-          "连板高度分": 3,
-          "涨幅排名": 5,
-          "成交活跃": 4,
-          "lu_count_120d": 3,
-          "max_consec": 2
-        },
-        "资金预热(/20)": {
-          "量放大(6)": 0,
-          "净流入(4)": 1,
-          "涨放量(4)": 4,
-          "跌缩量(3)": 2,
-          "大单(3)": 1
-        },
-        "K线筹码(/15)": {
-          "均线(5)": 5.0,
-          "多头排列(4)": 4,
-          "趋势动能(4)": 4,
-          "位置(2)": 1.5
-        },
-        "市值流动性(/15)": {
-          "换手率(10)": 10,
-          "市值辅助(5)": 5,
-          "circ_yi": 135.7,
-          "turnover": 5.89
-        },
-        "情绪环境(/5)": {
-          "状态": "常态(不参与排序)",
-          "得分": 5
-        },
-        "近期涨停调整": 5
-      },
-      "scoring_source": "concept",
-      "pool": "预备池",
-      "grade": "B",
-      "lianban_probability": 8.4,
-      "kline_signals": {
-        "price": 26.6,
-        "ma5": 25.84,
-        "ma10": 25.83,
-        "ma20": 25.19,
-        "above_ma5": true,
-        "above_ma10": true,
-        "above_ma20": true,
-        "multi_align": true,
-        "gain_20d": 14.9,
-        "dist_to_high": 6.6
-      },
-      "capital_signals": {
-        "vol_ratio_5d_20d": 0.99,
-        "vol_ratio_today": 1.47,
-        "up_days_recent3": 1
-      },
-      "history": {
-        "has_history": true,
-        "limit_up_count": 3,
-        "max_consecutive": 2,
-        "has_2lianban": true,
-        "days_since_last_lu": 13,
-        "lu_count_recent_3d": 0,
-        "lu_count_recent_5d": 0,
-        "lu_count_recent_10d": 0,
-        "current_streak": 0
-      },
-      "resonance": {
-        "all_three": false,
-        "count": 2,
-        "r_history": true,
-        "r_trend": true,
-        "r_volume": false
-      },
-      "next_day_watch": [
-        "★首板前候选(首板前候选)",
-        "历史股性活跃",
-        "曾2连板",
-        "距上次涨停13日",
-        "站上MA20",
-        "均线多头排列",
-        "近20日上涨"
-      ]
-    },
-    {
       "code": "002040",
       "name": "南 京 港",
       "sector": "统一大市场",
       "sw_industry": "交通运输",
       "concept": "统一大市场",
-      "concept_rank": 10,
+      "concept_rank": 9,
       "all_concepts": [
         "统一大市场"
       ],
-      "sector_rank": 10,
+      "sector_rank": 9,
       "price": 9.06,
       "change_pct": 9.951,
       "turnover_rate": 6.49,
@@ -2102,6 +2102,132 @@
         "距上次涨停45日",
         "站上MA20",
         "均线多头排列",
+        "近20日上涨",
+        "连续上涨"
+      ]
+    },
+    {
+      "code": "001301",
+      "name": "尚太科技",
+      "sector": "养老金概念",
+      "sw_industry": "电力设备",
+      "concept": "养老金概念",
+      "concept_rank": 5,
+      "all_concepts": [
+        "养老金概念"
+      ],
+      "sector_rank": 5,
+      "price": 62.33,
+      "change_pct": 10.007,
+      "turnover_rate": 6.24,
+      "circ_mcap_yi": 162.1,
+      "amount_yi": 10.07,
+      "scores": {
+        "theme_catalyst": 4,
+        "sector_strength": 4,
+        "stock_recognition": 16,
+        "capital_preheat": 8,
+        "kline_chip": 10.0,
+        "market_cap_liquidity": 15,
+        "sentiment": 5,
+        "total": 62.0
+      },
+      "adjusted_total": 67.0,
+      "recency": {
+        "tier": 1,
+        "tier_label": "P1",
+        "tag": "首板前候选",
+        "description": "有涨停基因(近36日无涨停)，首板前候选优先",
+        "score_adjust": 5
+      },
+      "score_details": {
+        "题材催化(/10)": {
+          "热点排名": 3,
+          "涨幅强度": 0,
+          "涨停梯队": 1
+        },
+        "板块强度(/10)": {
+          "排名": 3,
+          "涨幅": 0,
+          "涨停数": 1
+        },
+        "个股辨识度(/25)": {
+          "涨停次数分": 4,
+          "连板高度分": 2,
+          "涨幅排名": 5,
+          "成交活跃": 5,
+          "lu_count_120d": 1,
+          "max_consec": 1
+        },
+        "资金预热(/20)": {
+          "量放大(6)": 0,
+          "净流入(4)": 4,
+          "涨放量(4)": 2,
+          "跌缩量(3)": 2,
+          "大单(3)": 0
+        },
+        "K线筹码(/15)": {
+          "均线(5)": 5.0,
+          "多头排列(4)": 2,
+          "趋势动能(4)": 3,
+          "位置(2)": 0
+        },
+        "市值流动性(/15)": {
+          "换手率(10)": 10,
+          "市值辅助(5)": 5,
+          "circ_yi": 162.1,
+          "turnover": 6.24
+        },
+        "情绪环境(/5)": {
+          "状态": "常态(不参与排序)",
+          "得分": 5
+        },
+        "近期涨停调整": 5
+      },
+      "scoring_source": "concept",
+      "pool": "预备池",
+      "grade": "B",
+      "lianban_probability": 6.8,
+      "kline_signals": {
+        "price": 56.66,
+        "ma5": 54.99,
+        "ma10": 54.11,
+        "ma20": 54.26,
+        "above_ma5": true,
+        "above_ma10": true,
+        "above_ma20": true,
+        "multi_align": false,
+        "gain_20d": 8.1,
+        "dist_to_high": 42.4
+      },
+      "capital_signals": {
+        "vol_ratio_5d_20d": 0.96,
+        "vol_ratio_today": 0.95,
+        "up_days_recent3": 3
+      },
+      "history": {
+        "has_history": true,
+        "limit_up_count": 1,
+        "max_consecutive": 1,
+        "has_2lianban": false,
+        "days_since_last_lu": 36,
+        "lu_count_recent_3d": 0,
+        "lu_count_recent_5d": 0,
+        "lu_count_recent_10d": 0,
+        "current_streak": 0
+      },
+      "resonance": {
+        "all_three": false,
+        "count": 2,
+        "r_history": true,
+        "r_trend": true,
+        "r_volume": false
+      },
+      "next_day_watch": [
+        "★首板前候选(首板前候选)",
+        "历史股性活跃",
+        "距上次涨停36日",
+        "站上MA20",
         "近20日上涨",
         "连续上涨"
       ]
@@ -2238,12 +2364,12 @@
       "sector": "并购重组",
       "sw_industry": "医药生物",
       "concept": "并购重组",
-      "concept_rank": 7,
+      "concept_rank": 6,
       "all_concepts": [
         "并购重组",
         "大健康"
       ],
-      "sector_rank": 7,
+      "sector_rank": 6,
       "price": 6.9,
       "change_pct": 1.471,
       "turnover_rate": 6.31,
@@ -2368,11 +2494,11 @@
       "sector": "并购重组",
       "sw_industry": "公用事业",
       "concept": "并购重组",
-      "concept_rank": 7,
+      "concept_rank": 6,
       "all_concepts": [
         "并购重组"
       ],
-      "sector_rank": 7,
+      "sector_rank": 6,
       "price": 4.23,
       "change_pct": 2.174,
       "turnover_rate": 6.28,
@@ -2865,132 +2991,6 @@
       ]
     },
     {
-      "code": "001301",
-      "name": "尚太科技",
-      "sector": "养老金概念",
-      "sw_industry": "电力设备",
-      "concept": "养老金概念",
-      "concept_rank": 6,
-      "all_concepts": [
-        "养老金概念"
-      ],
-      "sector_rank": 6,
-      "price": 62.33,
-      "change_pct": 10.007,
-      "turnover_rate": 6.24,
-      "circ_mcap_yi": 162.1,
-      "amount_yi": 10.07,
-      "scores": {
-        "theme_catalyst": 3,
-        "sector_strength": 3,
-        "stock_recognition": 16,
-        "capital_preheat": 8,
-        "kline_chip": 10.0,
-        "market_cap_liquidity": 15,
-        "sentiment": 5,
-        "total": 60.0
-      },
-      "adjusted_total": 65.0,
-      "recency": {
-        "tier": 1,
-        "tier_label": "P1",
-        "tag": "首板前候选",
-        "description": "有涨停基因(近36日无涨停)，首板前候选优先",
-        "score_adjust": 5
-      },
-      "score_details": {
-        "题材催化(/10)": {
-          "热点排名": 2,
-          "涨幅强度": 0,
-          "涨停梯队": 1
-        },
-        "板块强度(/10)": {
-          "排名": 2,
-          "涨幅": 0,
-          "涨停数": 1
-        },
-        "个股辨识度(/25)": {
-          "涨停次数分": 4,
-          "连板高度分": 2,
-          "涨幅排名": 5,
-          "成交活跃": 5,
-          "lu_count_120d": 1,
-          "max_consec": 1
-        },
-        "资金预热(/20)": {
-          "量放大(6)": 0,
-          "净流入(4)": 4,
-          "涨放量(4)": 2,
-          "跌缩量(3)": 2,
-          "大单(3)": 0
-        },
-        "K线筹码(/15)": {
-          "均线(5)": 5.0,
-          "多头排列(4)": 2,
-          "趋势动能(4)": 3,
-          "位置(2)": 0
-        },
-        "市值流动性(/15)": {
-          "换手率(10)": 10,
-          "市值辅助(5)": 5,
-          "circ_yi": 162.1,
-          "turnover": 6.24
-        },
-        "情绪环境(/5)": {
-          "状态": "常态(不参与排序)",
-          "得分": 5
-        },
-        "近期涨停调整": 5
-      },
-      "scoring_source": "concept",
-      "pool": "预备池",
-      "grade": "B",
-      "lianban_probability": 5.1,
-      "kline_signals": {
-        "price": 56.66,
-        "ma5": 54.99,
-        "ma10": 54.11,
-        "ma20": 54.26,
-        "above_ma5": true,
-        "above_ma10": true,
-        "above_ma20": true,
-        "multi_align": false,
-        "gain_20d": 8.1,
-        "dist_to_high": 42.4
-      },
-      "capital_signals": {
-        "vol_ratio_5d_20d": 0.96,
-        "vol_ratio_today": 0.95,
-        "up_days_recent3": 3
-      },
-      "history": {
-        "has_history": true,
-        "limit_up_count": 1,
-        "max_consecutive": 1,
-        "has_2lianban": false,
-        "days_since_last_lu": 36,
-        "lu_count_recent_3d": 0,
-        "lu_count_recent_5d": 0,
-        "lu_count_recent_10d": 0,
-        "current_streak": 0
-      },
-      "resonance": {
-        "all_three": false,
-        "count": 2,
-        "r_history": true,
-        "r_trend": true,
-        "r_volume": false
-      },
-      "next_day_watch": [
-        "★首板前候选(首板前候选)",
-        "历史股性活跃",
-        "距上次涨停36日",
-        "站上MA20",
-        "近20日上涨",
-        "连续上涨"
-      ]
-    },
-    {
       "code": "600783",
       "name": "鲁信创投",
       "sector": "债转股",
@@ -3247,11 +3247,11 @@
       "sector": "甲醇概念",
       "sw_industry": "煤炭",
       "concept": "甲醇概念",
-      "concept_rank": 5,
+      "concept_rank": 4,
       "all_concepts": [
         "甲醇概念"
       ],
-      "sector_rank": 5,
+      "sector_rank": 4,
       "price": 3.71,
       "change_pct": 10.089,
       "turnover_rate": 7.68,
@@ -3498,14 +3498,15 @@
     {
       "code": "603290",
       "name": "斯达半导",
-      "sector": "功率半导体",
+      "sector": "汽车芯片",
       "sw_industry": "电子",
-      "concept": "功率半导体",
-      "concept_rank": 77,
+      "concept": "汽车芯片",
+      "concept_rank": 68,
       "all_concepts": [
+        "汽车芯片",
         "功率半导体"
       ],
-      "sector_rank": 77,
+      "sector_rank": 68,
       "price": 100.31,
       "change_pct": 10.001,
       "turnover_rate": 8.76,
@@ -3754,12 +3755,12 @@
       "sector": "统一大市场",
       "sw_industry": "交通运输",
       "concept": "统一大市场",
-      "concept_rank": 10,
+      "concept_rank": 9,
       "all_concepts": [
         "统一大市场",
         "中俄贸易概念"
       ],
-      "sector_rank": 10,
+      "sector_rank": 9,
       "price": 3.36,
       "change_pct": 2.128,
       "turnover_rate": 4.2,
@@ -3882,11 +3883,11 @@
       "sector": "C2M概念",
       "sw_industry": "轻工制造",
       "concept": "C2M概念",
-      "concept_rank": 20,
+      "concept_rank": 19,
       "all_concepts": [
         "C2M概念"
       ],
-      "sector_rank": 20,
+      "sector_rank": 19,
       "price": 20.05,
       "change_pct": 5.638,
       "turnover_rate": 2.04,
@@ -4010,11 +4011,11 @@
       "sector": "快手概念",
       "sw_industry": "家用电器",
       "concept": "快手概念",
-      "concept_rank": 55,
+      "concept_rank": 51,
       "all_concepts": [
         "快手概念"
       ],
-      "sector_rank": 55,
+      "sector_rank": 51,
       "price": 7.63,
       "change_pct": 9.942,
       "turnover_rate": 4.94,
@@ -4260,11 +4261,11 @@
       "sector": "统一大市场",
       "sw_industry": "交通运输",
       "concept": "统一大市场",
-      "concept_rank": 10,
+      "concept_rank": 9,
       "all_concepts": [
         "统一大市场"
       ],
-      "sector_rank": 10,
+      "sector_rank": 9,
       "price": 11.48,
       "change_pct": 1.235,
       "turnover_rate": 5.81,
@@ -4386,11 +4387,11 @@
       "sector": "甲醇概念",
       "sw_industry": "煤炭",
       "concept": "甲醇概念",
-      "concept_rank": 5,
+      "concept_rank": 4,
       "all_concepts": [
         "甲醇概念"
       ],
-      "sector_rank": 5,
+      "sector_rank": 4,
       "price": 3.76,
       "change_pct": 3.014,
       "turnover_rate": 6.01,
@@ -4637,12 +4638,12 @@
       "sector": "绿色电力",
       "sw_industry": "煤炭",
       "concept": "绿色电力",
-      "concept_rank": 9,
+      "concept_rank": 8,
       "all_concepts": [
         "绿色电力",
         "算电协同"
       ],
-      "sector_rank": 9,
+      "sector_rank": 8,
       "price": 5.23,
       "change_pct": 0.965,
       "turnover_rate": 1.82,
@@ -4765,11 +4766,11 @@
       "sector": "肝炎治疗",
       "sw_industry": "医药生物",
       "concept": "肝炎治疗",
-      "concept_rank": 8,
+      "concept_rank": 7,
       "all_concepts": [
         "肝炎治疗"
       ],
-      "sector_rank": 8,
+      "sector_rank": 7,
       "price": 14.09,
       "change_pct": 0.787,
       "turnover_rate": 4.68,
@@ -5015,12 +5016,12 @@
       "sector": "统一大市场",
       "sw_industry": "交通运输",
       "concept": "统一大市场",
-      "concept_rank": 10,
+      "concept_rank": 9,
       "all_concepts": [
         "统一大市场",
         "中俄贸易概念"
       ],
-      "sector_rank": 10,
+      "sector_rank": 9,
       "price": 4.33,
       "change_pct": 0.932,
       "turnover_rate": 1.06,
@@ -5266,11 +5267,11 @@
       "sector": "中俄贸易概念",
       "sw_industry": "建筑装饰",
       "concept": "中俄贸易概念",
-      "concept_rank": 33,
+      "concept_rank": 31,
       "all_concepts": [
         "中俄贸易概念"
       ],
-      "sector_rank": 33,
+      "sector_rank": 31,
       "price": 14.73,
       "change_pct": 1.376,
       "turnover_rate": 2.07,
@@ -5393,11 +5394,11 @@
       "sector": "C2M概念",
       "sw_industry": "轻工制造",
       "concept": "C2M概念",
-      "concept_rank": 20,
+      "concept_rank": 19,
       "all_concepts": [
         "C2M概念"
       ],
-      "sector_rank": 20,
+      "sector_rank": 19,
       "price": 32.58,
       "change_pct": 1.781,
       "turnover_rate": 1.22,
@@ -5520,7 +5521,6 @@
       "concept_rank": 3,
       "all_concepts": [
         "预盈预增",
-        "DeepSeek概念",
         "绿色电力",
         "SOFC概念"
       ],
@@ -5644,12 +5644,12 @@
       "sector": "统一大市场",
       "sw_industry": "交通运输",
       "concept": "统一大市场",
-      "concept_rank": 10,
+      "concept_rank": 9,
       "all_concepts": [
         "统一大市场",
         "中俄贸易概念"
       ],
-      "sector_rank": 10,
+      "sector_rank": 9,
       "price": 12.29,
       "change_pct": 1.069,
       "turnover_rate": 1.03,
@@ -5888,31 +5888,30 @@
     {
       "code": "600166",
       "name": "福田汽车",
-      "sector": "DeepSeek概念",
+      "sector": "养老金概念",
       "sw_industry": "汽车",
-      "concept": "DeepSeek概念",
-      "concept_rank": 4,
+      "concept": "养老金概念",
+      "concept_rank": 5,
       "all_concepts": [
-        "DeepSeek概念",
         "养老金概念"
       ],
-      "sector_rank": 4,
+      "sector_rank": 5,
       "price": 2.91,
       "change_pct": 0.692,
       "turnover_rate": 1.57,
       "circ_mcap_yi": 230.4,
       "amount_yi": 3.59,
       "scores": {
-        "theme_catalyst": 3,
-        "sector_strength": 3,
+        "theme_catalyst": 4,
+        "sector_strength": 4,
         "stock_recognition": 11,
         "capital_preheat": 2,
         "kline_chip": 1,
         "market_cap_liquidity": 9,
         "sentiment": 5,
-        "total": 34
+        "total": 36
       },
-      "adjusted_total": 39,
+      "adjusted_total": 41,
       "recency": {
         "tier": 1,
         "tier_label": "P1",
@@ -5924,12 +5923,12 @@
         "题材催化(/10)": {
           "热点排名": 3,
           "涨幅强度": 0,
-          "涨停梯队": 0
+          "涨停梯队": 1
         },
         "板块强度(/10)": {
           "排名": 3,
           "涨幅": 0,
-          "涨停数": 0
+          "涨停数": 1
         },
         "个股辨识度(/25)": {
           "涨停次数分": 4,
@@ -6514,11 +6513,11 @@
       "sector": "统一大市场",
       "sw_industry": "交通运输",
       "concept": "统一大市场",
-      "concept_rank": 10,
+      "concept_rank": 9,
       "all_concepts": [
         "统一大市场"
       ],
-      "sector_rank": 10,
+      "sector_rank": 9,
       "price": 11.48,
       "change_pct": 5.806,
       "turnover_rate": 1.91,
@@ -6639,11 +6638,11 @@
       "sector": "啤酒",
       "sw_industry": "农林牧渔",
       "concept": "啤酒",
-      "concept_rank": 23,
+      "concept_rank": 21,
       "all_concepts": [
         "啤酒"
       ],
-      "sector_rank": 23,
+      "sector_rank": 21,
       "price": 9.63,
       "change_pct": 10.057,
       "turnover_rate": 6.05,
@@ -7007,11 +7006,11 @@
       "sector": "并购重组",
       "sw_industry": "基础化工",
       "concept": "并购重组",
-      "concept_rank": 7,
+      "concept_rank": 6,
       "all_concepts": [
         "并购重组"
       ],
-      "sector_rank": 7,
+      "sector_rank": 6,
       "price": 12.75,
       "change_pct": 1.03,
       "turnover_rate": 1.1,
@@ -7134,8 +7133,7 @@
       "concept": "垃圾分类",
       "concept_rank": 13,
       "all_concepts": [
-        "垃圾分类",
-        "具身智能"
+        "垃圾分类"
       ],
       "sector_rank": 13,
       "price": 11.88,
@@ -7873,12 +7871,12 @@
       "sector": "统一大市场",
       "sw_industry": "交通运输",
       "concept": "统一大市场",
-      "concept_rank": 10,
+      "concept_rank": 9,
       "all_concepts": [
         "统一大市场",
         "中俄贸易概念"
       ],
-      "sector_rank": 10,
+      "sector_rank": 9,
       "price": 4.57,
       "change_pct": 3.864,
       "turnover_rate": 3.75,
@@ -7997,11 +7995,11 @@
       "sector": "C2M概念",
       "sw_industry": "轻工制造",
       "concept": "C2M概念",
-      "concept_rank": 20,
+      "concept_rank": 19,
       "all_concepts": [
         "C2M概念"
       ],
-      "sector_rank": 20,
+      "sector_rank": 19,
       "price": 14.66,
       "change_pct": 9.977,
       "turnover_rate": 2.22,
@@ -8487,127 +8485,6 @@
       ]
     },
     {
-      "code": "603766",
-      "name": "隆鑫通用",
-      "sector": "DeepSeek概念",
-      "sw_industry": "汽车",
-      "concept": "DeepSeek概念",
-      "concept_rank": 4,
-      "all_concepts": [
-        "DeepSeek概念"
-      ],
-      "sector_rank": 4,
-      "price": 13.97,
-      "change_pct": 2.721,
-      "turnover_rate": 1.07,
-      "circ_mcap_yi": 286.9,
-      "amount_yi": 3.05,
-      "scores": {
-        "theme_catalyst": 3,
-        "sector_strength": 3,
-        "stock_recognition": 7,
-        "capital_preheat": 7,
-        "kline_chip": 5.0,
-        "market_cap_liquidity": 9,
-        "sentiment": 5,
-        "total": 39.0
-      },
-      "adjusted_total": 39.0,
-      "recency": {
-        "tier": 2,
-        "tier_label": "P2",
-        "tag": "无涨停史",
-        "description": "120日内无涨停记录",
-        "score_adjust": 0
-      },
-      "score_details": {
-        "题材催化(/10)": {
-          "热点排名": 3,
-          "涨幅强度": 0,
-          "涨停梯队": 0
-        },
-        "板块强度(/10)": {
-          "排名": 3,
-          "涨幅": 0,
-          "涨停数": 0
-        },
-        "个股辨识度(/25)": {
-          "涨停次数分": 0,
-          "连板高度分": 0,
-          "涨幅排名": 4,
-          "成交活跃": 3,
-          "lu_count_120d": 0,
-          "max_consec": 0
-        },
-        "资金预热(/20)": {
-          "量放大(6)": 0,
-          "净流入(4)": 1,
-          "涨放量(4)": 4,
-          "跌缩量(3)": 2,
-          "大单(3)": 0
-        },
-        "K线筹码(/15)": {
-          "均线(5)": 1.5,
-          "多头排列(4)": 0,
-          "趋势动能(4)": 2,
-          "位置(2)": 1.5
-        },
-        "市值流动性(/15)": {
-          "换手率(10)": 4,
-          "市值辅助(5)": 5,
-          "circ_yi": 286.9,
-          "turnover": 1.07
-        },
-        "情绪环境(/5)": {
-          "状态": "常态(不参与排序)",
-          "得分": 5
-        },
-        "近期涨停调整": 0
-      },
-      "scoring_source": "concept",
-      "pool": "淘汰",
-      "grade": "D",
-      "lianban_probability": 1.0,
-      "kline_signals": {
-        "price": 13.6,
-        "ma5": 13.45,
-        "ma10": 13.7,
-        "ma20": 13.96,
-        "above_ma5": true,
-        "above_ma10": false,
-        "above_ma20": false,
-        "multi_align": false,
-        "gain_20d": 1.5,
-        "dist_to_high": 9.9
-      },
-      "capital_signals": {
-        "vol_ratio_5d_20d": 0.92,
-        "vol_ratio_today": 0.81,
-        "up_days_recent3": 1
-      },
-      "history": {
-        "has_history": false,
-        "limit_up_count": 0,
-        "max_consecutive": 0,
-        "has_2lianban": false,
-        "days_since_last_lu": null,
-        "lu_count_recent_3d": 0,
-        "lu_count_recent_5d": 0,
-        "lu_count_recent_10d": 0,
-        "current_streak": 0
-      },
-      "resonance": {
-        "all_three": false,
-        "count": 0,
-        "r_history": false,
-        "r_trend": false,
-        "r_volume": false
-      },
-      "next_day_watch": [
-        "近20日上涨"
-      ]
-    },
-    {
       "code": "600323",
       "name": "瀚蓝环境",
       "sector": "预盈预增",
@@ -8986,9 +8863,9 @@
       "all_concepts": [
         "低市盈率",
         "长期破净",
-        "DeepSeek概念",
         "养老金概念",
-        "有色铜"
+        "有色铜",
+        "福建国资"
       ],
       "sector_rank": 1,
       "price": 8.84,
@@ -9466,6 +9343,125 @@
       },
       "next_day_watch": [
         "等待信号确认"
+      ]
+    },
+    {
+      "code": "603766",
+      "name": "隆鑫通用",
+      "sector": "汽车",
+      "sw_industry": "汽车",
+      "concept": null,
+      "concept_rank": 999,
+      "all_concepts": [],
+      "sector_rank": 11,
+      "price": 13.97,
+      "change_pct": 2.721,
+      "turnover_rate": 1.07,
+      "circ_mcap_yi": 286.9,
+      "amount_yi": 3.05,
+      "scores": {
+        "theme_catalyst": 1,
+        "sector_strength": 1,
+        "stock_recognition": 7,
+        "capital_preheat": 7,
+        "kline_chip": 5.0,
+        "market_cap_liquidity": 9,
+        "sentiment": 5,
+        "total": 35.0
+      },
+      "adjusted_total": 35.0,
+      "recency": {
+        "tier": 2,
+        "tier_label": "P2",
+        "tag": "无涨停史",
+        "description": "120日内无涨停记录",
+        "score_adjust": 0
+      },
+      "score_details": {
+        "题材催化(/10)": {
+          "热点排名": 1,
+          "涨幅强度": 0,
+          "涨停梯队": 0
+        },
+        "板块强度(/10)": {
+          "排名": 1,
+          "涨幅": 0,
+          "涨停数": 0
+        },
+        "个股辨识度(/25)": {
+          "涨停次数分": 0,
+          "连板高度分": 0,
+          "涨幅排名": 4,
+          "成交活跃": 3,
+          "lu_count_120d": 0,
+          "max_consec": 0
+        },
+        "资金预热(/20)": {
+          "量放大(6)": 0,
+          "净流入(4)": 1,
+          "涨放量(4)": 4,
+          "跌缩量(3)": 2,
+          "大单(3)": 0
+        },
+        "K线筹码(/15)": {
+          "均线(5)": 1.5,
+          "多头排列(4)": 0,
+          "趋势动能(4)": 2,
+          "位置(2)": 1.5
+        },
+        "市值流动性(/15)": {
+          "换手率(10)": 4,
+          "市值辅助(5)": 5,
+          "circ_yi": 286.9,
+          "turnover": 1.07
+        },
+        "情绪环境(/5)": {
+          "状态": "常态(不参与排序)",
+          "得分": 5
+        },
+        "近期涨停调整": 0
+      },
+      "scoring_source": "sw_industry",
+      "pool": "淘汰",
+      "grade": "D",
+      "lianban_probability": 0.3,
+      "kline_signals": {
+        "price": 13.6,
+        "ma5": 13.45,
+        "ma10": 13.7,
+        "ma20": 13.96,
+        "above_ma5": true,
+        "above_ma10": false,
+        "above_ma20": false,
+        "multi_align": false,
+        "gain_20d": 1.5,
+        "dist_to_high": 9.9
+      },
+      "capital_signals": {
+        "vol_ratio_5d_20d": 0.92,
+        "vol_ratio_today": 0.81,
+        "up_days_recent3": 1
+      },
+      "history": {
+        "has_history": false,
+        "limit_up_count": 0,
+        "max_consecutive": 0,
+        "has_2lianban": false,
+        "days_since_last_lu": null,
+        "lu_count_recent_3d": 0,
+        "lu_count_recent_5d": 0,
+        "lu_count_recent_10d": 0,
+        "current_streak": 0
+      },
+      "resonance": {
+        "all_three": false,
+        "count": 0,
+        "r_history": false,
+        "r_trend": false,
+        "r_volume": false
+      },
+      "next_day_watch": [
+        "近20日上涨"
       ]
     },
     {
@@ -10197,16 +10193,14 @@
     {
       "code": "603209",
       "name": "兴通股份",
-      "sector": "DeepSeek概念",
+      "sector": "统一大市场",
       "sw_industry": "交通运输",
-      "concept": "DeepSeek概念",
-      "concept_rank": 4,
+      "concept": "统一大市场",
+      "concept_rank": 9,
       "all_concepts": [
-        "DeepSeek概念",
-        "统一大市场",
-        "AI应用（智能体）"
+        "统一大市场"
       ],
-      "sector_rank": 4,
+      "sector_rank": 9,
       "price": 13.7,
       "change_pct": 1.632,
       "turnover_rate": 2.83,
@@ -10232,14 +10226,14 @@
       },
       "score_details": {
         "题材催化(/10)": {
-          "热点排名": 3,
+          "热点排名": 2,
           "涨幅强度": 0,
-          "涨停梯队": 0
+          "涨停梯队": 1
         },
         "板块强度(/10)": {
-          "排名": 3,
+          "排名": 2,
           "涨幅": 0,
-          "涨停数": 0
+          "涨停数": 1
         },
         "个股辨识度(/25)": {
           "涨停次数分": 0,
@@ -10448,8 +10442,7 @@
       "concept_rank": 1,
       "all_concepts": [
         "低市盈率",
-        "长期破净",
-        "DeepSeek概念"
+        "长期破净"
       ],
       "sector_rank": 1,
       "price": 2.95,
@@ -11054,11 +11047,11 @@
       "sector": "价值成长",
       "sw_industry": "医药生物",
       "concept": "价值成长",
-      "concept_rank": 31,
+      "concept_rank": 29,
       "all_concepts": [
         "价值成长"
       ],
-      "sector_rank": 31,
+      "sector_rank": 29,
       "price": 19.97,
       "change_pct": 1.216,
       "turnover_rate": 3.26,
@@ -11295,12 +11288,12 @@
       "sector": "肝炎治疗",
       "sw_industry": "医药生物",
       "concept": "肝炎治疗",
-      "concept_rank": 8,
+      "concept_rank": 7,
       "all_concepts": [
         "肝炎治疗",
         "家庭医生概念"
       ],
-      "sector_rank": 8,
+      "sector_rank": 7,
       "price": 24.84,
       "change_pct": 3.457,
       "turnover_rate": 1.25,
@@ -11419,8 +11412,7 @@
       "concept": "低市盈率",
       "concept_rank": 1,
       "all_concepts": [
-        "低市盈率",
-        "DeepSeek概念"
+        "低市盈率"
       ],
       "sector_rank": 1,
       "price": 5.57,
@@ -11661,27 +11653,27 @@
       "sector": "养老金概念",
       "sw_industry": "医药生物",
       "concept": "养老金概念",
-      "concept_rank": 6,
+      "concept_rank": 5,
       "all_concepts": [
         "养老金概念"
       ],
-      "sector_rank": 6,
+      "sector_rank": 5,
       "price": 23.18,
       "change_pct": 1.09,
       "turnover_rate": 1.17,
       "circ_mcap_yi": 99.7,
       "amount_yi": 1.17,
       "scores": {
-        "theme_catalyst": 3,
-        "sector_strength": 3,
+        "theme_catalyst": 4,
+        "sector_strength": 4,
         "stock_recognition": 3,
         "capital_preheat": 3,
         "kline_chip": 1.5,
         "market_cap_liquidity": 9,
         "sentiment": 5,
-        "total": 27.5
+        "total": 29.5
       },
-      "adjusted_total": 27.5,
+      "adjusted_total": 29.5,
       "recency": {
         "tier": 2,
         "tier_label": "P2",
@@ -11691,12 +11683,12 @@
       },
       "score_details": {
         "题材催化(/10)": {
-          "热点排名": 2,
+          "热点排名": 3,
           "涨幅强度": 0,
           "涨停梯队": 1
         },
         "板块强度(/10)": {
-          "排名": 2,
+          "排名": 3,
           "涨幅": 0,
           "涨停数": 1
         },
@@ -11898,30 +11890,28 @@
     {
       "code": "000598",
       "name": "兴蓉环境",
-      "sector": "智慧水务",
+      "sector": "环保",
       "sw_industry": "环保",
-      "concept": "智慧水务",
-      "concept_rank": 59,
-      "all_concepts": [
-        "智慧水务"
-      ],
-      "sector_rank": 59,
+      "concept": null,
+      "concept_rank": 999,
+      "all_concepts": [],
+      "sector_rank": 12,
       "price": 7.18,
       "change_pct": 0.701,
       "turnover_rate": 0.48,
       "circ_mcap_yi": 214.2,
       "amount_yi": 1.02,
       "scores": {
-        "theme_catalyst": 0,
-        "sector_strength": 0,
+        "theme_catalyst": 1,
+        "sector_strength": 1,
         "stock_recognition": 6,
         "capital_preheat": 6,
         "kline_chip": 2,
         "market_cap_liquidity": 5,
         "sentiment": 5,
-        "total": 24
+        "total": 26
       },
-      "adjusted_total": 24,
+      "adjusted_total": 26,
       "recency": {
         "tier": 2,
         "tier_label": "P2",
@@ -11931,12 +11921,12 @@
       },
       "score_details": {
         "题材催化(/10)": {
-          "热点排名": 0,
+          "热点排名": 1,
           "涨幅强度": 0,
           "涨停梯队": 0
         },
         "板块强度(/10)": {
-          "排名": 0,
+          "排名": 1,
           "涨幅": 0,
           "涨停数": 0
         },
@@ -11973,10 +11963,10 @@
         },
         "近期涨停调整": 0
       },
-      "scoring_source": "concept",
+      "scoring_source": "sw_industry",
       "pool": "淘汰",
       "grade": "D",
-      "lianban_probability": 0.0,
+      "lianban_probability": 0.1,
       "kline_signals": {
         "price": 7.13,
         "ma5": 7.13,
@@ -12277,12 +12267,12 @@
       "sector": "肝炎治疗",
       "sw_industry": "医药生物",
       "concept": "肝炎治疗",
-      "concept_rank": 8,
+      "concept_rank": 7,
       "all_concepts": [
         "肝炎治疗",
         "大健康"
       ],
-      "sector_rank": 8,
+      "sector_rank": 7,
       "price": 15.63,
       "change_pct": 9.993,
       "turnover_rate": 12.88,
@@ -12404,12 +12394,12 @@
       "sector": "并购重组",
       "sw_industry": "煤炭",
       "concept": "并购重组",
-      "concept_rank": 7,
+      "concept_rank": 6,
       "all_concepts": [
         "并购重组",
         "债转股"
       ],
-      "sector_rank": 7,
+      "sector_rank": 6,
       "price": 6.82,
       "change_pct": 10.0,
       "turnover_rate": 5.2,
@@ -12652,12 +12642,12 @@
       "sector": "并购重组",
       "sw_industry": "煤炭",
       "concept": "并购重组",
-      "concept_rank": 7,
+      "concept_rank": 6,
       "all_concepts": [
         "并购重组",
         "债转股"
       ],
-      "sector_rank": 7,
+      "sector_rank": 6,
       "price": 9.42,
       "change_pct": 1.399,
       "turnover_rate": 2.59,
@@ -12778,13 +12768,13 @@
       "sector": "绿色电力",
       "sw_industry": "公用事业",
       "concept": "绿色电力",
-      "concept_rank": 9,
+      "concept_rank": 8,
       "all_concepts": [
         "绿色电力",
         "土地流转",
         "算电协同"
       ],
-      "sector_rank": 9,
+      "sector_rank": 8,
       "price": 8.01,
       "change_pct": 2.824,
       "turnover_rate": 2.01,
@@ -12906,12 +12896,12 @@
       "sector": "肝炎治疗",
       "sw_industry": "医药生物",
       "concept": "肝炎治疗",
-      "concept_rank": 8,
+      "concept_rank": 7,
       "all_concepts": [
         "肝炎治疗",
         "生物制造"
       ],
-      "sector_rank": 8,
+      "sector_rank": 7,
       "price": 13.93,
       "change_pct": 1.235,
       "turnover_rate": 7.67,
@@ -13035,11 +13025,11 @@
       "sector": "肝炎治疗",
       "sw_industry": "医药生物",
       "concept": "肝炎治疗",
-      "concept_rank": 8,
+      "concept_rank": 7,
       "all_concepts": [
         "肝炎治疗"
       ],
-      "sector_rank": 8,
+      "sector_rank": 7,
       "price": 13.72,
       "change_pct": 1.63,
       "turnover_rate": 31.89,
@@ -13163,11 +13153,11 @@
       "sector": "绿色电力",
       "sw_industry": "电力设备",
       "concept": "绿色电力",
-      "concept_rank": 9,
+      "concept_rank": 8,
       "all_concepts": [
         "绿色电力"
       ],
-      "sector_rank": 9,
+      "sector_rank": 8,
       "price": 14.35,
       "change_pct": 2.647,
       "turnover_rate": 8.46,
@@ -13290,27 +13280,27 @@
       "sector": "养老金概念",
       "sw_industry": "机械设备",
       "concept": "养老金概念",
-      "concept_rank": 6,
+      "concept_rank": 5,
       "all_concepts": [
         "养老金概念"
       ],
-      "sector_rank": 6,
+      "sector_rank": 5,
       "price": 12.08,
       "change_pct": 4.408,
       "turnover_rate": 1.75,
       "circ_mcap_yi": 73.7,
       "amount_yi": 1.26,
       "scores": {
-        "theme_catalyst": 3,
-        "sector_strength": 3,
+        "theme_catalyst": 4,
+        "sector_strength": 4,
         "stock_recognition": 12,
         "capital_preheat": 9,
         "kline_chip": 13.0,
         "market_cap_liquidity": 9,
         "sentiment": 5,
-        "total": 54.0
+        "total": 56.0
       },
-      "adjusted_total": 44.0,
+      "adjusted_total": 46.0,
       "recency": {
         "tier": 4,
         "tier_label": "P4",
@@ -13320,12 +13310,12 @@
       },
       "score_details": {
         "题材催化(/10)": {
-          "热点排名": 2,
+          "热点排名": 3,
           "涨幅强度": 0,
           "涨停梯队": 1
         },
         "板块强度(/10)": {
-          "排名": 2,
+          "排名": 3,
           "涨幅": 0,
           "涨停数": 1
         },
@@ -13365,7 +13355,7 @@
       "scoring_source": "concept",
       "pool": "淘汰",
       "grade": "D",
-      "lianban_probability": 5.6,
+      "lianban_probability": 7.5,
       "kline_signals": {
         "price": 11.57,
         "ma5": 11.76,
@@ -13794,11 +13784,11 @@
       "sector": "有色铜",
       "sw_industry": "有色金属",
       "concept": "有色铜",
-      "concept_rank": 34,
+      "concept_rank": 32,
       "all_concepts": [
         "有色铜"
       ],
-      "sector_rank": 34,
+      "sector_rank": 32,
       "price": 12.95,
       "change_pct": 8.368,
       "turnover_rate": 11.8,
@@ -14050,11 +14040,11 @@
       "sector": "网红经济",
       "sw_industry": "农林牧渔",
       "concept": "网红经济",
-      "concept_rank": 48,
+      "concept_rank": 44,
       "all_concepts": [
         "网红经济"
       ],
-      "sector_rank": 48,
+      "sector_rank": 44,
       "price": 7.47,
       "change_pct": 10.015,
       "turnover_rate": 10.74,
@@ -14434,12 +14424,12 @@
       "sector": "肝炎治疗",
       "sw_industry": "医药生物",
       "concept": "肝炎治疗",
-      "concept_rank": 8,
+      "concept_rank": 7,
       "all_concepts": [
         "肝炎治疗",
         "猴痘概念"
       ],
-      "sector_rank": 8,
+      "sector_rank": 7,
       "price": 16.15,
       "change_pct": 2.086,
       "turnover_rate": 11.45,
@@ -14565,11 +14555,11 @@
       "sector": "龙虎榜热门",
       "sw_industry": "农林牧渔",
       "concept": "龙虎榜热门",
-      "concept_rank": 98,
+      "concept_rank": 90,
       "all_concepts": [
         "龙虎榜热门"
       ],
-      "sector_rank": 98,
+      "sector_rank": 90,
       "price": 7.82,
       "change_pct": 9.986,
       "turnover_rate": 4.56,
@@ -14695,12 +14685,12 @@
       "sector": "土地流转",
       "sw_industry": "农林牧渔",
       "concept": "土地流转",
-      "concept_rank": 30,
+      "concept_rank": 28,
       "all_concepts": [
         "土地流转",
         "龙虎榜热门"
       ],
-      "sector_rank": 30,
+      "sector_rank": 28,
       "price": 7.13,
       "change_pct": 5.162,
       "turnover_rate": 21.11,
@@ -14826,11 +14816,11 @@
       "sector": "历史新高",
       "sw_industry": "基础化工",
       "concept": "历史新高",
-      "concept_rank": 43,
+      "concept_rank": 40,
       "all_concepts": [
         "历史新高"
       ],
-      "sector_rank": 43,
+      "sector_rank": 40,
       "price": 67.99,
       "change_pct": 6.201,
       "turnover_rate": 14.4,
@@ -15080,11 +15070,11 @@
       "sector": "东北振兴",
       "sw_industry": "农林牧渔",
       "concept": "东北振兴",
-      "concept_rank": 24,
+      "concept_rank": 22,
       "all_concepts": [
         "东北振兴"
       ],
-      "sector_rank": 24,
+      "sector_rank": 22,
       "price": 8.95,
       "change_pct": 9.951,
       "turnover_rate": 18.17,
@@ -15453,145 +15443,16 @@
       ]
     },
     {
-      "code": "002658",
-      "name": "雪迪龙",
-      "sector": "DeepSeek概念",
-      "sw_industry": "环保",
-      "concept": "DeepSeek概念",
-      "concept_rank": 4,
-      "all_concepts": [
-        "DeepSeek概念",
-        "环境监测",
-        "半导体设备"
-      ],
-      "sector_rank": 4,
-      "price": 7.93,
-      "change_pct": 1.407,
-      "turnover_rate": 5.61,
-      "circ_mcap_yi": 28.4,
-      "amount_yi": 1.58,
-      "scores": {
-        "theme_catalyst": 3,
-        "sector_strength": 3,
-        "stock_recognition": 13,
-        "capital_preheat": 7,
-        "kline_chip": 14.5,
-        "market_cap_liquidity": 13,
-        "sentiment": 5,
-        "total": 58.5
-      },
-      "adjusted_total": 40.5,
-      "recency": {
-        "tier": 5,
-        "tier_label": "P5",
-        "tag": "近期已涨停",
-        "description": "近3日有1次涨停/当前连板0，降优先级",
-        "score_adjust": -18
-      },
-      "score_details": {
-        "题材催化(/10)": {
-          "热点排名": 3,
-          "涨幅强度": 0,
-          "涨停梯队": 0
-        },
-        "板块强度(/10)": {
-          "排名": 3,
-          "涨幅": 0,
-          "涨停数": 0
-        },
-        "个股辨识度(/25)": {
-          "涨停次数分": 4,
-          "连板高度分": 2,
-          "涨幅排名": 5,
-          "成交活跃": 2,
-          "lu_count_120d": 2,
-          "max_consec": 1
-        },
-        "资金预热(/20)": {
-          "量放大(6)": 6,
-          "净流入(4)": 1,
-          "涨放量(4)": 0,
-          "跌缩量(3)": 0,
-          "大单(3)": 0
-        },
-        "K线筹码(/15)": {
-          "均线(5)": 5.0,
-          "多头排列(4)": 4,
-          "趋势动能(4)": 4,
-          "位置(2)": 1.5
-        },
-        "市值流动性(/15)": {
-          "换手率(10)": 10,
-          "市值辅助(5)": 3,
-          "circ_yi": 28.4,
-          "turnover": 5.61
-        },
-        "情绪环境(/5)": {
-          "状态": "常态(不参与排序)",
-          "得分": 5
-        },
-        "近期涨停调整": -18
-      },
-      "scoring_source": "concept",
-      "pool": "淘汰",
-      "grade": "D",
-      "lianban_probability": 5.3,
-      "kline_signals": {
-        "price": 7.82,
-        "ma5": 7.79,
-        "ma10": 7.56,
-        "ma20": 7.37,
-        "above_ma5": true,
-        "above_ma10": true,
-        "above_ma20": true,
-        "multi_align": true,
-        "gain_20d": 11.2,
-        "dist_to_high": 9.1
-      },
-      "capital_signals": {
-        "vol_ratio_5d_20d": 2.01,
-        "vol_ratio_today": 0.98,
-        "up_days_recent3": 1
-      },
-      "history": {
-        "has_history": true,
-        "limit_up_count": 2,
-        "max_consecutive": 1,
-        "has_2lianban": false,
-        "days_since_last_lu": 2,
-        "lu_count_recent_3d": 1,
-        "lu_count_recent_5d": 1,
-        "lu_count_recent_10d": 1,
-        "current_streak": 0
-      },
-      "resonance": {
-        "all_three": true,
-        "count": 3,
-        "r_history": true,
-        "r_trend": true,
-        "r_volume": true
-      },
-      "next_day_watch": [
-        "⚠近期已涨停",
-        "历史股性活跃",
-        "距上次涨停2日",
-        "站上MA20",
-        "均线多头排列",
-        "近20日上涨",
-        "近期量能放大"
-      ]
-    },
-    {
       "code": "002165",
       "name": "红 宝 丽",
       "sector": "半导体材料",
       "sw_industry": "基础化工",
       "concept": "半导体材料",
-      "concept_rank": 54,
+      "concept_rank": 50,
       "all_concepts": [
         "半导体材料"
       ],
-      "sector_rank": 54,
+      "sector_rank": 50,
       "price": 7.41,
       "change_pct": 5.857,
       "turnover_rate": 22.73,
@@ -15708,6 +15569,133 @@
         "近20日上涨",
         "放量异动"
       ]
+    },
+    {
+      "code": "002658",
+      "name": "雪迪龙",
+      "sector": "环境监测",
+      "sw_industry": "环保",
+      "concept": "环境监测",
+      "concept_rank": 74,
+      "all_concepts": [
+        "环境监测"
+      ],
+      "sector_rank": 74,
+      "price": 7.93,
+      "change_pct": 1.407,
+      "turnover_rate": 5.61,
+      "circ_mcap_yi": 28.4,
+      "amount_yi": 1.58,
+      "scores": {
+        "theme_catalyst": 0,
+        "sector_strength": 0,
+        "stock_recognition": 13,
+        "capital_preheat": 7,
+        "kline_chip": 14.5,
+        "market_cap_liquidity": 13,
+        "sentiment": 5,
+        "total": 52.5
+      },
+      "adjusted_total": 34.5,
+      "recency": {
+        "tier": 5,
+        "tier_label": "P5",
+        "tag": "近期已涨停",
+        "description": "近3日有1次涨停/当前连板0，降优先级",
+        "score_adjust": -18
+      },
+      "score_details": {
+        "题材催化(/10)": {
+          "热点排名": 0,
+          "涨幅强度": 0,
+          "涨停梯队": 0
+        },
+        "板块强度(/10)": {
+          "排名": 0,
+          "涨幅": 0,
+          "涨停数": 0
+        },
+        "个股辨识度(/25)": {
+          "涨停次数分": 4,
+          "连板高度分": 2,
+          "涨幅排名": 5,
+          "成交活跃": 2,
+          "lu_count_120d": 2,
+          "max_consec": 1
+        },
+        "资金预热(/20)": {
+          "量放大(6)": 6,
+          "净流入(4)": 1,
+          "涨放量(4)": 0,
+          "跌缩量(3)": 0,
+          "大单(3)": 0
+        },
+        "K线筹码(/15)": {
+          "均线(5)": 5.0,
+          "多头排列(4)": 4,
+          "趋势动能(4)": 4,
+          "位置(2)": 1.5
+        },
+        "市值流动性(/15)": {
+          "换手率(10)": 10,
+          "市值辅助(5)": 3,
+          "circ_yi": 28.4,
+          "turnover": 5.61
+        },
+        "情绪环境(/5)": {
+          "状态": "常态(不参与排序)",
+          "得分": 5
+        },
+        "近期涨停调整": -18
+      },
+      "scoring_source": "concept",
+      "pool": "淘汰",
+      "grade": "D",
+      "lianban_probability": 0.0,
+      "kline_signals": {
+        "price": 7.82,
+        "ma5": 7.79,
+        "ma10": 7.56,
+        "ma20": 7.37,
+        "above_ma5": true,
+        "above_ma10": true,
+        "above_ma20": true,
+        "multi_align": true,
+        "gain_20d": 11.2,
+        "dist_to_high": 9.1
+      },
+      "capital_signals": {
+        "vol_ratio_5d_20d": 2.01,
+        "vol_ratio_today": 0.98,
+        "up_days_recent3": 1
+      },
+      "history": {
+        "has_history": true,
+        "limit_up_count": 2,
+        "max_consecutive": 1,
+        "has_2lianban": false,
+        "days_since_last_lu": 2,
+        "lu_count_recent_3d": 1,
+        "lu_count_recent_5d": 1,
+        "lu_count_recent_10d": 1,
+        "current_streak": 0
+      },
+      "resonance": {
+        "all_three": true,
+        "count": 3,
+        "r_history": true,
+        "r_trend": true,
+        "r_volume": true
+      },
+      "next_day_watch": [
+        "⚠近期已涨停",
+        "历史股性活跃",
+        "距上次涨停2日",
+        "站上MA20",
+        "均线多头排列",
+        "近20日上涨",
+        "近期量能放大"
+      ]
     }
   ],
   "summary": {
@@ -15726,9 +15714,9 @@
       "D": 62
     },
     "unclassified_count": 0,
-    "concept_covered": 83,
-    "concept_scoring_count": 83
+    "concept_covered": 81,
+    "concept_scoring_count": 81
   },
   "failed": [],
-  "elapsed_seconds": 357.2
+  "elapsed_seconds": 309.1
 }
