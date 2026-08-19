@@ -6,9 +6,9 @@ on:
     - cron: '35 7 * * 1-5'
   workflow_dispatch:  # 支持手动触发
 
-# 权限：仅需要读代码 + 写 Actions artifacts
+# 权限：读代码 + 写 Actions artifacts + 回写扫描数据提交
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   scan-and-deploy:
