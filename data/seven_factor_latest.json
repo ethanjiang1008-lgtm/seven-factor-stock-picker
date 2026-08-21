@@ -1,6 +1,6 @@
 {
   "scan_date": "2026-08-21",
-  "scan_time": "2026-08-21 15:52:31",
+  "scan_time": "2026-08-21 17:20:33",
   "system_version": "v1.4",
   "model": "连板潜力七因子模型 v1.4（全行业候选池 + 并发K线 + 完整涨跌停统计）",
   "weight_config": {
@@ -79083,7 +79083,7 @@
       "sector": "华为汽车",
       "sw_industry": "汽车",
       "concept": "华为汽车",
-      "concept_rank": 405,
+      "concept_rank": 406,
       "all_concepts": [
         "华为汽车",
         "小米汽车概念",
@@ -79091,7 +79091,7 @@
         "长安汽车概念",
         "奇瑞汽车概念"
       ],
-      "sector_rank": 405,
+      "sector_rank": 406,
       "price": 10.19,
       "change_pct": 1.091,
       "turnover_rate": 0.86,
@@ -84425,7 +84425,7 @@
       "sector": "环球影城",
       "sw_industry": "建筑材料",
       "concept": "环球影城",
-      "concept_rank": 407,
+      "concept_rank": 408,
       "all_concepts": [
         "环球影城",
         "土壤修复",
@@ -84433,7 +84433,7 @@
         "固废处理",
         "雄安新区"
       ],
-      "sector_rank": 407,
+      "sector_rank": 408,
       "price": 1.38,
       "change_pct": -0.719,
       "turnover_rate": 0.18,
@@ -114433,7 +114433,7 @@
       "sector": "环球影城",
       "sw_industry": "社会服务",
       "concept": "环球影城",
-      "concept_rank": 407,
+      "concept_rank": 408,
       "all_concepts": [
         "环球影城",
         "职业教育",
@@ -114441,7 +114441,7 @@
         "NFT概念",
         "北京国资"
       ],
-      "sector_rank": 407,
+      "sector_rank": 408,
       "price": 9.36,
       "change_pct": -1.162,
       "turnover_rate": 1.2,
@@ -124376,7 +124376,7 @@
       "sector": "环球影城",
       "sw_industry": "社会服务",
       "concept": "环球影城",
-      "concept_rank": 407,
+      "concept_rank": 408,
       "all_concepts": [
         "环球影城",
         "博彩概念",
@@ -124384,7 +124384,7 @@
         "在线旅游",
         "网络游戏"
       ],
-      "sector_rank": 407,
+      "sector_rank": 408,
       "price": 6.96,
       "change_pct": -1.277,
       "turnover_rate": 0.89,
@@ -158928,5 +158928,5 @@
     "concept_scoring_count": 1217
   },
   "failed": [],
-  "elapsed_seconds": 311.0
+  "elapsed_seconds": 298.4
 }
