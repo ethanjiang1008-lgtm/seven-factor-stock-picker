@@ -1288,13 +1288,13 @@ def main():
     print(f"\n  结果: {output_path}")
     print(f"{'='*70}")
 
-    # === 同步部署到 Netlify ===
+    # === 生成 GitHub Pages 网页 ===
     try:
         sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-        from netlify_deploy import run as netlify_run
-        netlify_run()
+        from generate_page import run as page_run
+        page_run()
     except Exception as e:
-        print(f"[Netlify] 部署失败（不影响本地数据）: {e}")
+        print(f"[Pages] 网页生成失败（不影响本地数据）: {e}")
 
     return output
 

@@ -1,4 +1,4 @@
-name: 七因子选股系统 - 每工作日自动扫描与部署
+name: 七因子选股系统 - 每工作日自动扫描与发布
 
 on:
   schedule:
@@ -6,12 +6,12 @@ on:
     - cron: '35 7 * * 1-5'
   workflow_dispatch:  # 支持手动触发
 
-# 权限：读代码 + 写 Actions artifacts + 回写扫描数据提交
+# contents: write —— 允许提交数据与 docs/index.html 回 main 分支触发 Pages 发布
 permissions:
   contents: write
 
 jobs:
-  scan-and-deploy:
+  scan-and-publish:
     runs-on: ubuntu-latest
     timeout-minutes: 25
 
@@ -24,10 +24,7 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: 运行七因子扫描器（含自动 Netlify 部署）
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+      - name: 运行七因子扫描器（自动生成 docs/index.html）
         run: python3 scripts/seven_factor_scanner.py
 
       - name: 归档扫描结果 JSON
@@ -38,13 +35,11 @@ jobs:
             data/seven_factor_*.json
           retention-days: 30
 
-      - name: 提交数据到仓库（保留历史归档）
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: 提交数据与网页到仓库（触发 GitHub Pages 自动发布）
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/seven_factor_*.json data/concept_nodes_cache.json
+          git add data/seven_factor_*.json data/concept_nodes_cache.json docs/index.html
           # 只在有变更时提交
-          git diff --cached --quiet || git commit -m "auto: 扫描数据 $(date +%Y-%m-%d)"
+          git diff --cached --quiet || git commit -m "auto: 扫描数据与网页 $(date +%Y-%m-%d)"
           git push

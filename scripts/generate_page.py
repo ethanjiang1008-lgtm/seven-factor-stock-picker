@@ -1,47 +1,24 @@
 #!/usr/bin/env python3
 """
-Netlify 自动部署模块 — 连板潜力七因子选股系统
-读取 seven_factor_latest.json → 生成自包含 HTML → 部署到 Netlify
+GitHub Pages 网页生成模块 — 连板潜力七因子选股系统
+读取 data/seven_factor_latest.json → 生成自包含 HTML → 写入 docs/index.html
 被 seven_factor_scanner.py 主流程末尾调用，也可独立运行。
 
-环境变量（必须）：
-  NETLIFY_AUTH_TOKEN  — Netlify Personal Access Token
-  NETLIFY_SITE_ID     — Netlify 站点 ID
+GitHub Actions 工作流会把 docs/index.html 提交回 main 分支，
+GitHub Pages（Source: main /docs）检测到提交后自动发布更新。
+无需任何密钥或第三方服务。
 """
 
 import json
 import os
-import zipfile
-import io
-import urllib.request
-import ssl
-import time
 from datetime import datetime
 
 # === 路径 ===
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_DIR = os.path.join(BASE_DIR, "data")
+DOCS_DIR = os.path.join(BASE_DIR, "docs")
 LATEST_JSON = os.path.join(DATA_DIR, "seven_factor_latest.json")
-
-SSL_CTX = ssl.create_default_context()
-SSL_CTX.check_hostname = False
-SSL_CTX.verify_mode = ssl.CERT_NONE
-
-
-def load_config():
-    """从环境变量读取 Netlify 配置（不再依赖本地 config 文件）"""
-    token = os.environ.get("NETLIFY_AUTH_TOKEN", "")
-    site_id = os.environ.get("NETLIFY_SITE_ID", "")
-    if not token:
-        raise ValueError("环境变量 NETLIFY_AUTH_TOKEN 未设置")
-    if not site_id:
-        raise ValueError("环境变量 NETLIFY_SITE_ID 未设置")
-    return {
-        "site_id": site_id,
-        "auth_token": token,
-        "api_base": "https://api.netlify.com/api/v1",
-        "url": "https://seven-factor-stock-picker.netlify.app",
-    }
+OUTPUT_HTML = os.path.join(DOCS_DIR, "index.html")
 
 
 def load_data():
@@ -287,7 +264,7 @@ def generate_html(data):
   </div>
 
   <div class="footer">
-    连板潜力七因子选股系统 {version} · 每工作日 15:35 自动更新 · 数据仅供研究参考，不构成投资建议
+    连板潜力七因子选股系统 {version} · 每工作日 15:35 自动更新 · 由 GitHub Actions + Pages 驱动 · 数据仅供研究参考，不构成投资建议
   </div>
 </body>
 </html>"""
@@ -295,84 +272,24 @@ def generate_html(data):
 
 
 # ============================================================
-# Netlify 部署
+# GitHub Pages：写入 docs/index.html
 # ============================================================
 
-def deploy_to_netlify(html_content, config):
-    """通过 Netlify API 部署单个 index.html（zip 方式）"""
-    site_id = config["site_id"]
-    token = config["auth_token"]
-    api_base = config.get("api_base", "https://api.netlify.com/api/v1")
-
-    # 构建 zip（含 index.html + _headers）
-    # _headers 强制 Content-Type: text/html，避免 Netlify 把 index.html 当 text/plain 返回
-    headers_content = "/*\n  Content-Type: text/html; charset=UTF-8\n"
-    zip_buffer = io.BytesIO()
-    with zipfile.ZipFile(zip_buffer, "w", zipfile.ZIP_DEFLATED) as zf:
-        zf.writestr("index.html", html_content)
-        zf.writestr("_headers", headers_content)
-    zip_bytes = zip_buffer.getvalue()
-
-    url = f"{api_base}/sites/{site_id}/deploys"
-    req = urllib.request.Request(
-        url,
-        data=zip_bytes,
-        headers={
-            "Authorization": f"Bearer {token}",
-            "Content-Type": "application/zip",
-        },
-        method="POST",
-    )
-
-    resp = urllib.request.urlopen(req, context=SSL_CTX, timeout=60)
-    result = json.loads(resp.read().decode("utf-8"))
-    return result
+def write_page(html):
+    """把 HTML 写入 docs/index.html，供 GitHub Pages 发布"""
+    os.makedirs(DOCS_DIR, exist_ok=True)
+    with open(OUTPUT_HTML, "w", encoding="utf-8") as f:
+        f.write(html)
 
 
 def run():
-    """主入口：读数据 → 生成 HTML → 部署"""
-    print("\n[Netlify] 开始同步部署...")
-    config = load_config()
+    """主入口：读数据 → 生成 HTML → 写入 docs/index.html"""
+    print("\n[Pages] 开始生成网页...")
     data = load_data()
-
     html = generate_html(data)
-
-    # 本地保存一份 HTML 用于调试
-    html_path = os.path.join(DATA_DIR, "netlify_index.html")
-    with open(html_path, "w", encoding="utf-8") as f:
-        f.write(html)
-
-    result = deploy_to_netlify(html, config)
-    deploy_url = result.get("ssl_url") or result.get("url") or config.get("url", "")
-    deploy_id = result.get("id", "")
-    state = result.get("state", "")
-
-    # 轮询部署状态（最多 45 秒）
-    if state in ("uploading", "processing", "uploaded", "queued"):
-        token = config["auth_token"]
-        api_base = config.get("api_base", "https://api.netlify.com/api/v1")
-        for _ in range(10):
-            time.sleep(3)
-            try:
-                sreq = urllib.request.Request(
-                    f"{api_base}/deploys/{deploy_id}",
-                    headers={"Authorization": f"Bearer {token}"},
-                    method="GET",
-                )
-                sresp = urllib.request.urlopen(sreq, context=SSL_CTX, timeout=15)
-                sresult = json.loads(sresp.read().decode("utf-8"))
-                state = sresult.get("state", state)
-                if state in ("ready", "error"):
-                    break
-            except Exception:
-                break
-
-    if state == "ready":
-        print(f"[Netlify] 部署成功！URL: {deploy_url}")
-    else:
-        print(f"[Netlify] 部署已提交，状态: {state} (URL: {deploy_url})")
-
-    return {"state": state, "url": deploy_url, "deploy_id": deploy_id}
+    write_page(html)
+    print(f"[Pages] 网页已生成：{OUTPUT_HTML}（{len(html)} 字节）")
+    return {"output": OUTPUT_HTML, "size": len(html)}
 
 
 if __name__ == "__main__":

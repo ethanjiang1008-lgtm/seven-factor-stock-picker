@@ -6,9 +6,6 @@ __pycache__/
 # 本地累积文件（复盘验证数据，仅本地使用）
 data/seven_factor_review.json
 
-# 生成的 HTML（部署用，不入库）
-data/netlify_index.html
-
 # IDE / 编辑器
 .vscode/
 .idea/
