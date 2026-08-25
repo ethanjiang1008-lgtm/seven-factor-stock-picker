@@ -461,7 +461,7 @@ function apply() {{
     return parseInt(a.dataset.tier || 99) - parseInt(b.dataset.tier || 99);
   }});
   cards.forEach(card => container.appendChild(card));
-  count.textContent = `显示 ${cards.filter(card => card.style.display !== 'none').length} / ${cards.length}`;
+  count.textContent = `显示 ${{cards.filter(card => card.style.display !== 'none').length}} / ${{cards.length}}`;
 }}
 apply();
 </script>
