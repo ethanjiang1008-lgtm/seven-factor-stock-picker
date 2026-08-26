@@ -1,3 +1,2 @@
 #!/usr/bin/env python3
-# UI-only dashboard generator. The repository tree itself is unchanged;
-# this comment exists only to trigger a fresh GitHub Pages deployment.
+# Placeholder restore reference; actual content is restored by Git tree.
