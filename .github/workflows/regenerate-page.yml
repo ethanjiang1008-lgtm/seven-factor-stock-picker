@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'scripts/generate_dashboard_v3.py'
+      - 'scripts/generate_dashboard_v3_fixed.py'
       - 'data/seven_factor_latest.json'
       - 'data/evening_latest.json'
       - 'data/morning_latest.json'
@@ -38,7 +39,7 @@ jobs:
               raise SystemExit('latest candidate pool is empty; abort page regeneration')
           PY
       - name: Generate dashboard
-        run: python3 scripts/generate_dashboard_v3.py
+        run: python3 scripts/generate_dashboard_v3_fixed.py
       - name: Commit generated page only
         run: |
           git config user.name "github-actions[bot]"
@@ -46,4 +47,3 @@ jobs:
           git add docs/index.html
           git diff --cached --quiet || git commit -m "auto: regenerate decision dashboard"
           git push
-      # trigger page-only rebuild after dashboard updates
