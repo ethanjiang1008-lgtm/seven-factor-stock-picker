@@ -46,3 +46,4 @@ jobs:
           git add docs/index.html
           git diff --cached --quiet || git commit -m "auto: regenerate decision dashboard"
           git push
+      # trigger page-only rebuild after dashboard updates
