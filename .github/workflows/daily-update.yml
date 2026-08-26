@@ -24,8 +24,47 @@ jobs:
         with:
           python-version: '3.11'
 
+      - name: 备份上一份有效候选池
+        run: |
+          if [ -s data/seven_factor_latest.json ]; then
+            cp data/seven_factor_latest.json /tmp/seven_factor_latest_backup.json
+            echo "已备份上一份 latest 数据"
+          else
+            rm -f /tmp/seven_factor_latest_backup.json
+            echo "没有可用的历史 latest 数据"
+          fi
+
       - name: 运行七因子扫描器（自动生成 docs/index.html）
         run: python3 scripts/seven_factor_scanner.py
+
+      - name: 防止空扫描覆盖有效候选池
+        run: |
+          python3 - <<'PY'
+          import json
+          import os
+          import shutil
+
+          latest = 'data/seven_factor_latest.json'
+          backup = '/tmp/seven_factor_latest_backup.json'
+
+          with open(latest, 'r', encoding='utf-8') as f:
+              data = json.load(f)
+
+          total_scanned = int((data.get('summary') or {}).get('total_scanned', 0) or 0)
+          candidates = data.get('candidates') or []
+
+          if total_scanned <= 0:
+              if not os.path.exists(backup):
+                  raise SystemExit('扫描结果为 0，且没有可恢复的历史数据；为避免空数据发布，停止本次更新。')
+
+              shutil.copyfile(backup, latest)
+              print('检测到空扫描，已恢复上一份有效 latest 数据。')
+          else:
+              print(f'扫描有效：total_scanned={total_scanned}, candidates={len(candidates)}')
+          PY
+
+      - name: 空扫描回滚后重新生成网页
+        run: python3 scripts/generate_page.py
 
       - name: 归档扫描结果 JSON
         uses: actions/upload-artifact@v4
