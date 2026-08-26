@@ -23,7 +23,7 @@ jobs:
       - name: 运行七因子扫描器
         run: python3 scripts/seven_factor_scanner.py
       - name: 生成第三阶段决策页面
-        run: python3 scripts/generate_dashboard_v3.py
+        run: python3 scripts/generate_dashboard_v3_fixed.py
       - name: 归档扫描结果 JSON
         uses: actions/upload-artifact@v4
         with:
