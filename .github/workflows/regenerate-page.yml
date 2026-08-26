@@ -45,6 +45,17 @@ jobs:
         run: python3 scripts/generate_dashboard_full.py
       - name: Force static full candidate section
         run: python3 scripts/force_full_candidate_section.py
+      - name: Verify full candidate section is static
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('docs/index.html').read_text(encoding='utf-8')
+          required=['④ 完整候选池','完整展示全部','<table class="table">']
+          for x in required:
+              assert x in p, f'missing expected marker: {x}'
+          assert 'onclick="toggleFull()"' not in p, 'lazy toggle still present'
+          print('full candidate section verified: static and expanded')
+          PY
       - name: Commit generated page only
         run: |
           git config user.name "github-actions[bot]"
@@ -52,3 +63,5 @@ jobs:
           git add docs/index.html
           git diff --cached --quiet || git commit -m "auto: regenerate full candidate dashboard"
           git push
+
+# Force a new validation run after the static full-pool change.
