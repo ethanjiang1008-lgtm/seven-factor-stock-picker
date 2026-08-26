@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Replace the dashboard candidate section with a permanently expanded, information-rich table."""
+"""Replace the dashboard candidate section with the 8e4302d-style dense table."""
+import html
 import json
 import os
-import html
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, "data", "seven_factor_latest.json")
@@ -13,49 +13,37 @@ def esc(v):
     return html.escape(str(v if v is not None else "-"))
 
 
-def num(v, d=0.0):
+def pct(v):
     try:
-        return float(v)
+        return f"{float(v):+.1f}%"
     except Exception:
-        return d
+        return esc(v)
 
 
-def text_list(v):
-    if isinstance(v, list):
-        return [str(x) for x in v if x not in (None, "")]
-    if v in (None, ""):
-        return []
-    return [str(v)]
+def pct_cls(v):
+    try:
+        return "up" if float(v) >= 0 else "down"
+    except Exception:
+        return ""
 
 
-def factor_summary(r):
-    """Show available factor-level details when present, while remaining schema-tolerant."""
-    candidates = [r.get("factor_scores"), r.get("factors"), r.get("factor_detail"), r.get("factor_details")]
-    obj = next((x for x in candidates if isinstance(x, dict)), None)
-    if not obj:
-        return '<span class="muted">七因子汇总见调整分</span>'
+def pool_badge(pool):
+    colors = {"重点观察":"#e74c3c", "预备池":"#e67e22", "观察池":"#3498db", "淘汰":"#95a5a6"}
+    return f'<span class="candidate-badge" style="background:{colors.get(pool, "#95a5a6")}">{esc(pool)}</span>'
 
-    aliases = {
-        "个股辨识度": ["个股辨识度", "recognition", "identity"],
-        "资金预热": ["资金预热", "funds", "capital"],
-        "K线筹码": ["K线筹码", "kline", "chip"],
-        "题材催化": ["题材催化", "catalyst", "theme"],
-        "板块强度": ["板块强度", "sector"],
-        "市值流动性": ["市值流动性", "liquidity", "market_cap"],
-        "情绪环境": ["情绪环境", "sentiment"],
-    }
-    bits = []
-    for label, keys in aliases.items():
-        found = None
-        for k in keys:
-            if k in obj:
-                found = obj[k]
-                break
-        if isinstance(found, dict):
-            found = found.get("score", found.get("value"))
-        if found is not None:
-            bits.append(f'<span class="factor-badge">{esc(label)} {esc(found)}</span>')
-    return ''.join(bits) or '<span class="muted">七因子汇总见调整分</span>'
+
+def tier_badge(label, tag):
+    colors = {"P1":"#27ae60", "P2":"#2980b9", "P3":"#f39c12", "P4":"#e67e22", "P5":"#e74c3c"}
+    color = colors.get(label, "#7f8c8d")
+    return f'<span class="candidate-tier" style="border-color:{color};color:{color}">{esc(label)} {esc(tag)}</span>'
+
+
+def resonance(count):
+    try:
+        count = max(0, min(3, int(count or 0)))
+    except Exception:
+        count = 0
+    return f'<span class="candidate-resonance">{"●"*count}{"○"*(3-count)}</span> {count}/3'
 
 
 def main():
@@ -65,86 +53,72 @@ def main():
     if not candidates:
         raise SystemExit("candidate pool empty; refusing to alter dashboard")
 
+    order = {"重点观察":0, "预备池":1, "观察池":2, "淘汰":3}
+    ranked = sorted(candidates, key=lambda r: (order.get(r.get("pool"), 9), -float(r.get("adjusted_total", 0) or 0)))
     rows = []
-    for i, r in enumerate(candidates, 1):
+    for r in ranked:
+        hist = r.get("history") or {}
         rec = r.get("recency") or {}
         res = r.get("resonance") or {}
-        hist = r.get("history") or {}
-        change = num(r.get("change_pct"))
-        cls = "up" if change >= 0 else "down"
-        watch = text_list(r.get("next_day_watch"))
-        watch_html = " / ".join(esc(x) for x in watch[:2]) or "-"
-        sector = r.get("sector") or r.get("sw_industry") or "-"
-        probability = r.get("lianban_probability")
-        probability_html = f"{esc(probability)}%" if probability not in (None, "") else "-"
-        turnover = r.get("turnover_rate")
-        turnover_html = f"{esc(turnover)}%" if turnover not in (None, "") else "-"
-        lu_count = hist.get("limit_up_count", r.get("limit_up_count"))
-        days_since = hist.get("days_since_last_lu", r.get("days_since_last_lu"))
-        factors = factor_summary(r)
+        score = float(r.get("adjusted_total", 0) or 0)
+        bar_color = "#e74c3c" if score >= 65 else "#e67e22" if score >= 60 else "#3498db" if score >= 50 else "#95a5a6"
+        tags = "".join(f'<span class="candidate-watch-tag">{esc(t)}</span>' for t in (r.get("next_day_watch") or []))
         rows.append(
-            f'<tr>'
-            f'<td>{i}</td>'
-            f'<td class="stock"><b>{esc(r.get("name"))}</b><br><small>{esc(r.get("code"))} · {esc(sector)}</small></td>'
-            f'<td>{esc(r.get("pool"))}</td>'
-            f'<td>P{esc(rec.get("tier"))}</td>'
-            f'<td><b>{num(r.get("adjusted_total")):.1f}</b><div class="factor-mini">{factors}</div></td>'
-            f'<td class="{cls}">{change:+.1f}%</td>'
-            f'<td>{turnover_html}</td>'
-            f'<td>{probability_html}</td>'
-            f'<td>{esc(lu_count) if lu_count not in (None, "") else "-"}</td>'
-            f'<td>{esc(days_since) + "日" if days_since not in (None, "") else "-"}</td>'
-            f'<td>{esc(res.get("count", 0))}/3</td>'
-            f'<td class="watch-cell">{watch_html}</td>'
-            f'</tr>'
+            '<tr>'
+            f'<td class="candidate-code">{esc(r.get("code"))}</td>'
+            f'<td class="candidate-name">{esc(r.get("name"))}</td>'
+            f'<td>{esc(r.get("sector") or "-")}</td>'
+            f'<td>{esc(r.get("price"))}</td>'
+            f'<td class="{pct_cls(r.get("change_pct"))}">{pct(r.get("change_pct"))}</td>'
+            f'<td>{esc(r.get("turnover_rate"))}%</td>'
+            f'<td>{esc(r.get("circ_mcap_yi"))}</td>'
+            f'<td class="candidate-score"><b>{esc(r.get("adjusted_total"))}</b><span class="candidate-score-bar"><i style="width:{max(0,min(100,score)):.0f}%;background:{bar_color}"></i></span><small>原{esc((r.get("scores") or {}).get("total"))}</small></td>'
+            f'<td>{tier_badge(rec.get("tier_label", ""), rec.get("tag", ""))}</td>'
+            f'<td>{pool_badge(r.get("pool", "-"))}</td>'
+            f'<td class="grade-{esc(r.get("grade", "")).lower()}">{esc(r.get("grade"))}</td>'
+            f'<td>{resonance(res.get("count"))}</td>'
+            f'<td>{esc(r.get("lianban_probability"))}%</td>'
+            f'<td>{esc(hist.get("limit_up_count"))}次/{esc(hist.get("max_consecutive"))}连</td>'
+            f'<td>{esc(hist.get("days_since_last_lu"))}日</td>'
+            f'<td class="candidate-watch">{tags}</td>'
+            '</tr>'
         )
 
     section = (
         '<section class="section full-candidate-section">'
-        '<div style="display:flex;justify-content:space-between;align-items:end;gap:12px;flex-wrap:wrap">'
-        '<div><h2>④ 完整候选池</h2>'
-        f'<p class="muted">完整展示全部 {len(candidates)} 只候选股，不折叠。每只股票恢复关键交易与历史信息。</p></div>'
-        '<div class="toolbar-static"><span class="mini">全部展开</span><span class="mini">可搜索/筛选</span></div>'
+        '<div class="candidate-head">'
+        '<div><div class="candidate-title">完整候选池</div>'
+        f'<div class="muted">{len(ranked)} 只 · 恢复 8e4302d 的高信息密度横向表格</div></div>'
         '</div>'
-        '<div class="toolbar-static">'
-        '<input id="richQ" placeholder="搜索股票 / 代码 / 行业 / 关注点" oninput="richFilter()">'
-        '<select id="richPool" onchange="richFilter()"><option>全部</option><option>重点观察</option><option>预备池</option><option>观察池</option><option>淘汰</option></select>'
-        '</div>'
-        '<div style="overflow:auto;max-height:72vh;border:1px solid #222c38;border-radius:10px">'
-        '<table class="table rich-table"><thead><tr>'
-        '<th>#</th><th>股票 / 行业</th><th>池</th><th>P</th><th>调整分 / 因子</th><th>涨幅</th><th>换手</th><th>连板概率</th><th>历史涨停</th><th>距上次</th><th>三共振</th><th>次日关注</th>'
-        '</tr></thead><tbody id="richBody">' + ''.join(rows) + '</tbody></table></div></section>'
+        '<div class="candidate-table-wrap"><table class="candidate-table"><thead><tr>'
+        '<th>代码</th><th>名称</th><th>行业</th><th>价格</th><th>涨跌幅</th><th>换手率</th><th>流通市值</th><th>调整分 / 原始分</th><th>P级</th><th>候选池</th><th>评级</th><th>三共振</th><th>连板概率</th><th>历史涨停</th><th>距上次</th><th>次日重点</th>'
+        '</tr></thead><tbody>' + ''.join(rows) + '</tbody></table></div>'
+        '</section>'
     )
 
     with open(OUT, encoding="utf-8") as f:
         page = f.read()
 
-    start = page.find('<section class="section"><div class="toggle"')
+    start = page.find('<section class="section full-candidate-section">')
     if start < 0:
-        start = page.find('<section class="section full-candidate-section">')
+        start = page.find('<section class="section"><div class="toggle"')
     if start < 0:
         raise SystemExit("could not locate candidate section")
     end = page.find('</section>', start)
     if end < 0:
         raise SystemExit("could not locate end of candidate section")
     end += len('</section>')
-
     page = page[:start] + section + page[end:]
 
-    extra_css = '''<style>
-.toolbar-static{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.toolbar-static input,.toolbar-static select{background:#0f141b;border:1px solid #273140;color:#e8eef7;padding:8px;border-radius:8px}.rich-table{min-width:1380px}.rich-table th,.rich-table td{vertical-align:top}.stock b{font-size:11px}.factor-mini{display:flex;flex-wrap:wrap;gap:3px;margin-top:5px}.factor-badge{display:inline-block;background:#101820;border:1px solid #26313e;border-radius:5px;padding:2px 4px;font-size:8px;color:#aeb9c8}.watch-cell{min-width:190px;line-height:1.55}
+    css = '''<style>
+.candidate-head{display:flex;justify-content:space-between;align-items:end;gap:12px;flex-wrap:wrap}.candidate-title{font-size:16px;font-weight:800;color:#fff}.candidate-table-wrap{overflow:auto;max-height:75vh;margin-top:12px;border:1px solid #293140;border-radius:10px}.candidate-table{width:100%;min-width:1450px;border-collapse:collapse;font-size:12px}.candidate-table th{position:sticky;top:0;z-index:2;background:#1a202b;color:#8590a3;padding:8px 6px;text-align:center;white-space:nowrap}.candidate-table td{padding:7px 6px;border-bottom:1px solid #222b36;text-align:center;white-space:nowrap;vertical-align:middle}.candidate-table td:first-child{text-align:left}.candidate-table tr:hover{background:#181e27}.candidate-code{font-family:monospace;color:#7fb1ff}.candidate-name{font-weight:700;color:#fff}.candidate-score{text-align:left!important;min-width:150px}.candidate-score>b{font-size:14px}.candidate-score-bar{width:60px;height:5px;background:#333;border-radius:3px;display:inline-block;margin:0 6px;vertical-align:middle}.candidate-score-bar i{display:block;height:100%;border-radius:3px}.candidate-score small{color:#697586;font-size:10px}.candidate-badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:10px;color:#fff}.candidate-tier{display:inline-block;padding:1px 6px;border-radius:3px;font-size:10px;border:1px solid;white-space:nowrap}.grade-a{color:#ff6575;font-weight:700}.grade-b{color:#ffb15f;font-weight:700}.grade-c{color:#7fb1ff;font-weight:700}.grade-d{color:#8792a4}.candidate-resonance{color:#f6c453;letter-spacing:1px}.candidate-watch{white-space:normal!important;text-align:left!important;max-width:240px}.candidate-watch-tag{display:inline-block;background:#1d2430;border:1px solid #2a3443;border-radius:4px;padding:1px 6px;font-size:10px;margin:1px;color:#b7c5d8}
 </style>'''
-    page = page.replace('</head>', extra_css + '</head>', 1)
-
-    filter_js = '''<script>
-function richFilter(){const q=(document.getElementById('richQ').value||'').toLowerCase(),p=document.getElementById('richPool').value;for(const tr of document.getElementById('richBody').rows){const t=tr.innerText.toLowerCase();tr.style.display=(p==='全部'||t.includes(p))&&(!q||t.includes(q))?'':'none'}}
-</script>'''
-    page = page.replace('</body>', filter_js + '</body>', 1)
+    if 'candidate-table-wrap' not in page:
+        page = page.replace('</head>', css + '</head>', 1)
 
     with open(OUT, 'w', encoding="utf-8") as f:
         f.write(page)
-    print(f"[force_full_candidate_section] wrote rich table for {len(candidates)} candidates into docs/index.html")
+    print(f"[force_full_candidate_section] restored 8e4302d-style candidate table for {len(ranked)} candidates")
 
 
-if __name__ == '__main__':
-    main()
+if __name__ == '__main__': main()
