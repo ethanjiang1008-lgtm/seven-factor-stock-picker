@@ -26,15 +26,13 @@ jobs:
               d=json.load(f)
           n=len(d.get('candidates', []))
           print(f'candidate pool: {n}')
-          if not n:
+          if n == 0:
               raise SystemExit('candidate pool empty; abort evening analysis')
           PY
       - name: Run evening analysis
         run: python3 scripts/evening_analysis.py
-      - name: Refresh dashboard
-        run: python3 scripts/generate_dashboard_v3_fixed.py
-      - name: Normalize dashboard data path
-        run: python3 scripts/patch_dashboard_paths.py
+      - name: Refresh dashboard with full candidate pool
+        run: python3 scripts/generate_dashboard_full.py
       - name: Commit evening data and dashboard
         run: |
           git config user.name 'github-actions[bot]'
