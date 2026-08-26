@@ -7,6 +7,7 @@ on:
       - 'scripts/generate_dashboard_v3.py'
       - 'scripts/generate_dashboard_v3_fixed.py'
       - 'scripts/generate_dashboard_full.py'
+      - 'scripts/generate_dashboard_live.py'
       - 'scripts/patch_dashboard_paths.py'
       - 'scripts/force_full_candidate_section.py'
       - 'data/seven_factor_latest.json'
@@ -41,27 +42,26 @@ jobs:
           if not n:
               raise SystemExit('latest candidate pool is empty; abort page regeneration')
           PY
-      - name: Generate dashboard
-        run: python3 scripts/generate_dashboard_full.py
-      - name: Force static full candidate section
-        run: python3 scripts/force_full_candidate_section.py
-      - name: Verify full candidate section is static
+      - name: Generate always-visible dashboard
+        run: python3 scripts/generate_dashboard_live.py
+      - name: Verify no fold / no lazy candidate pool
         run: |
           python3 - <<'PY'
           from pathlib import Path
           p=Path('docs/index.html').read_text(encoding='utf-8')
-          required=['④ 完整候选池','完整展示全部','<table class="table">']
-          for x in required:
+          for x in ['④ 完整候选池','完整候选池自动读取']:
               assert x in p, f'missing expected marker: {x}'
-          assert 'onclick="toggleFull()"' not in p, 'lazy toggle still present'
-          print('full candidate section verified: static and expanded')
+          assert 'toggleFull' not in p, 'lazy toggle must not exist'
+          assert 'lazy' not in p, 'lazy class must not exist'
+          assert 'onclick' not in p, 'candidate pool must not require clicking'
+          print('dashboard verified: full candidate pool is always visible')
           PY
       - name: Commit generated page only
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add docs/index.html
-          git diff --cached --quiet || git commit -m "auto: regenerate full candidate dashboard"
+          git diff --cached --quiet || git commit -m "auto: publish always-visible candidate dashboard"
           git push
 
-# Force a new validation run after the static full-pool change.
+# Updated to publish a no-fold dashboard after the user requested the full pool remain visible.
