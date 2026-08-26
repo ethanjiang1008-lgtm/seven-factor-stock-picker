@@ -24,6 +24,8 @@ jobs:
         run: python3 scripts/seven_factor_scanner.py
       - name: 生成第三阶段决策页面（完整候选池）
         run: python3 scripts/generate_dashboard_full.py
+      - name: 强制保持完整候选池展开
+        run: python3 scripts/force_full_candidate_section.py
       - name: 归档扫描结果 JSON
         uses: actions/upload-artifact@v4
         with:
