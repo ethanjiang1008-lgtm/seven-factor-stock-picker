@@ -32,7 +32,7 @@ jobs:
       - name: Run morning update
         run: python3 scripts/morning_update.py
       - name: Refresh dashboard
-        run: python3 scripts/generate_dashboard_v3.py
+        run: python3 scripts/generate_dashboard_v3_fixed.py
       - name: Commit morning data and dashboard
         run: |
           git config user.name 'github-actions[bot]'
