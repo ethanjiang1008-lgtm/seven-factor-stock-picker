@@ -4,9 +4,8 @@ on:
   schedule:
     # 北京时间 15:35 = UTC 07:35，周一至周五
     - cron: '35 7 * * 1-5'
-  workflow_dispatch:  # 支持手动触发
+  workflow_dispatch:
 
-# contents: write —— 允许提交数据与 docs/index.html 回 main 分支触发 Pages 发布
 permissions:
   contents: write
 
@@ -24,47 +23,45 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: 备份上一份有效候选池
+      - name: 记录当前有效版本
         run: |
-          if [ -s data/seven_factor_latest.json ]; then
-            cp data/seven_factor_latest.json /tmp/seven_factor_latest_backup.json
-            echo "已备份上一份 latest 数据"
-          else
-            rm -f /tmp/seven_factor_latest_backup.json
-            echo "没有可用的历史 latest 数据"
-          fi
+          git rev-parse HEAD > /tmp/before_scan_sha
 
       - name: 运行七因子扫描器（自动生成 docs/index.html）
         run: python3 scripts/seven_factor_scanner.py
 
-      - name: 防止空扫描覆盖有效候选池
+      - name: 校验扫描结果
         run: |
           python3 - <<'PY'
           import json
-          import os
-          import shutil
+          from pathlib import Path
 
-          latest = 'data/seven_factor_latest.json'
-          backup = '/tmp/seven_factor_latest_backup.json'
+          latest = Path('data/seven_factor_latest.json')
+          valid = False
+          total = 0
+          count = 0
 
-          with open(latest, 'r', encoding='utf-8') as f:
-              data = json.load(f)
+          try:
+              data = json.loads(latest.read_text(encoding='utf-8'))
+              total = int((data.get('summary') or {}).get('total_scanned', 0) or 0)
+              count = len(data.get('candidates') or [])
+              valid = total > 0 and count > 0
+          except Exception as exc:
+              print(f'无法解析扫描结果: {exc}')
 
-          total_scanned = int((data.get('summary') or {}).get('total_scanned', 0) or 0)
-          candidates = data.get('candidates') or []
-
-          if total_scanned <= 0:
-              if not os.path.exists(backup):
-                  raise SystemExit('扫描结果为 0，且没有可恢复的历史数据；为避免空数据发布，停止本次更新。')
-
-              shutil.copyfile(backup, latest)
-              print('检测到空扫描，已恢复上一份有效 latest 数据。')
-          else:
-              print(f'扫描有效：total_scanned={total_scanned}, candidates={len(candidates)}')
+          Path('/tmp/scan_valid').write_text('1' if valid else '0', encoding='utf-8')
+          print(f'total_scanned={total}, candidates={count}, valid={valid}')
           PY
 
-      - name: 空扫描回滚后重新生成网页
-        run: python3 scripts/generate_page.py
+      - name: 无效扫描则恢复本次运行前的完整仓库状态
+        if: ${{ hashFiles('/tmp/scan_valid') != '' }}
+        run: |
+          if [ "$(cat /tmp/scan_valid)" = "0" ]; then
+            BEFORE_SHA=$(cat /tmp/before_scan_sha)
+            echo "扫描无有效结果，恢复到 $BEFORE_SHA，不提交本次扫描。"
+            git restore --source="$BEFORE_SHA" --worktree --staged -- data docs
+            rm -f "data/seven_factor_$(date -u +%F).json"
+          fi
 
       - name: 归档扫描结果 JSON
         uses: actions/upload-artifact@v4
@@ -74,11 +71,15 @@ jobs:
             data/seven_factor_*.json
           retention-days: 30
 
-      - name: 提交数据与网页到仓库（触发 GitHub Pages 自动发布）
+      - name: 提交有效数据与网页到仓库
         run: |
+          if [ "$(cat /tmp/scan_valid)" != "1" ]; then
+            echo "空/无效扫描：保持原版本，不提交。"
+            exit 0
+          fi
+
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/seven_factor_*.json data/concept_nodes_cache.json docs/index.html
-          # 只在有变更时提交
-          git diff --cached --quiet || git commit -m "auto: 扫描数据与网页 $(date +%Y-%m-%d)"
+          git diff --cached --quiet || git commit -m "auto: 扫描数据与网页 $(date -u +%Y-%m-%d)"
           git push
