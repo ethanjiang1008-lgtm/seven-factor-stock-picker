@@ -5,8 +5,10 @@ on:
     branches: [main]
     paths:
       - 'scripts/generate_decision_dashboard_v2.py'
+      - 'scripts/generate_decision_dashboard_v3.py'
       - 'data/seven_factor_latest.json'
-      - 'data/seven_factor_*.json'
+      - 'data/evening_latest.json'
+      - 'data/morning_latest.json'
       - '.github/workflows/regenerate-page.yml'
   workflow_dispatch:
 
@@ -20,31 +22,26 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-
       - name: Validate latest data
         run: |
           python3 - <<'PY'
           import json
           with open('data/seven_factor_latest.json', encoding='utf-8') as f:
-              data = json.load(f)
-          candidates = data.get('candidates', [])
-          print(f"latest data OK: {len(candidates)} candidates")
-          if not candidates:
-              raise SystemExit('latest candidate pool is empty; abort page regeneration')
+              data=json.load(f)
+          n=len(data.get('candidates', []))
+          print(f'latest data OK: {n} candidates')
+          if n==0: raise SystemExit('candidate pool empty; abort page regeneration')
           PY
-
-      - name: Generate phase 2 decision dashboard
-        run: python3 scripts/generate_decision_dashboard_v2.py
-
+      - name: Generate phase 3 dashboard
+        run: python3 scripts/generate_decision_dashboard_v3.py
       - name: Commit generated page only
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
           git add docs/index.html
-          git diff --cached --quiet || git commit -m "auto: regenerate phase 2 decision dashboard"
+          git diff --cached --quiet || git commit -m 'auto: regenerate phase 3 decision dashboard'
           git push
