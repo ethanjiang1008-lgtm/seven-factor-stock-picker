@@ -72,7 +72,6 @@ def main():
         tags = "".join(f'<span class="candidate-watch-tag">{esc(t)}</span>' for t in (r.get("next_day_watch") or []))
         rows.append(
             '<tr '
-            f'data-search="{esc(f"{r.get(chr(34), chr(34))}" if False else "")}" '
             f'data-name="{esc(r.get("name"))}" '
             f'data-code="{esc(r.get("code"))}" '
             f'data-sector="{esc(r.get("sector") or "-")}" '
@@ -144,10 +143,7 @@ def main():
     css = '''<style>
 .candidate-head{display:flex;justify-content:space-between;align-items:end;gap:12px;flex-wrap:wrap}.candidate-title{font-size:16px;font-weight:800;color:#fff}.candidate-filters{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.candidate-filters input,.candidate-filters select,.candidate-reset{background:#0f141b;border:1px solid #273140;color:#e8eef7;padding:8px 10px;border-radius:8px;font-size:12px}.candidate-filters input{min-width:220px;flex:1}.candidate-reset{cursor:pointer}.candidate-reset:hover{background:#1b2430}.candidate-table-wrap{overflow:auto;max-height:75vh;margin-top:12px;border:1px solid #293140;border-radius:10px}.candidate-table{width:100%;min-width:1450px;border-collapse:collapse;font-size:12px}.candidate-table th{position:sticky;top:0;z-index:2;background:#1a202b;color:#8590a3;padding:8px 6px;text-align:center;white-space:nowrap}.candidate-table td{padding:7px 6px;border-bottom:1px solid #222b36;text-align:center;white-space:nowrap;vertical-align:middle}.candidate-table td:first-child{text-align:left}.candidate-table tr:hover{background:#181e27}.candidate-code{font-family:monospace;color:#7fb1ff}.candidate-name{font-weight:700;color:#fff}.candidate-score{text-align:left!important;min-width:150px}.candidate-score>b{font-size:14px}.candidate-score-bar{width:60px;height:5px;background:#333;border-radius:3px;display:inline-block;margin:0 6px;vertical-align:middle}.candidate-score-bar i{display:block;height:100%;border-radius:3px}.candidate-score small{color:#697586;font-size:10px}.candidate-badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:10px;color:#fff}.candidate-tier{display:inline-block;padding:1px 6px;border-radius:3px;font-size:10px;border:1px solid;white-space:nowrap}.grade-a{color:#ff6575;font-weight:700}.grade-b{color:#ffb15f;font-weight:700}.grade-c{color:#7fb1ff;font-weight:700}.grade-d{color:#8792a4}.candidate-resonance{color:#f6c453;letter-spacing:1px}.candidate-watch{white-space:normal!important;text-align:left!important;max-width:240px}.candidate-watch-tag{display:inline-block;background:#1d2430;border:1px solid #2a3443;border-radius:4px;padding:1px 6px;font-size:10px;margin:1px;color:#b7c5d8}
 </style>'''
-    if 'candidate-filters' not in page:
-        page = page.replace('</head>', css + '</head>', 1)
-    else:
-        page = page.replace('</head>', css + '</head>', 1)
+    page = page.replace('</head>', css + '</head>', 1)
 
     js = '''<script>
 function filterCandidates(){
@@ -182,10 +178,7 @@ function resetCandidateFilters(){
   filterCandidates();
 }
 </script>'''
-    if 'function filterCandidates()' not in page:
-        page = page.replace('</body>', js + '</body>', 1)
-    else:
-        page = page.replace('</body>', js + '</body>', 1)
+    page = page.replace('</body>', js + '</body>', 1)
 
     with open(OUT, 'w', encoding="utf-8") as f:
         f.write(page)
