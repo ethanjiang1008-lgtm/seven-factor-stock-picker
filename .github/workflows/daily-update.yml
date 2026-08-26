@@ -13,22 +13,17 @@ jobs:
   scan-and-publish:
     runs-on: ubuntu-latest
     timeout-minutes: 25
-
     steps:
       - name: Checkout 仓库
         uses: actions/checkout@v4
-
       - name: 设置 Python 3.11
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-
       - name: 运行七因子扫描器
         run: python3 scripts/seven_factor_scanner.py
-
-      - name: 生成第二阶段决策页面（仅使用本轮已有数据）
-        run: python3 scripts/generate_decision_dashboard_v2.py
-
+      - name: 生成第三阶段决策页面
+        run: python3 scripts/generate_dashboard_v3.py
       - name: 归档扫描结果 JSON
         uses: actions/upload-artifact@v4
         with:
@@ -36,11 +31,10 @@ jobs:
           path: |
             data/seven_factor_*.json
           retention-days: 30
-
-      - name: 提交数据与网页到仓库（触发 GitHub Pages 自动发布）
+      - name: 提交数据与网页
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/seven_factor_*.json data/concept_nodes_cache.json docs/index.html
-          git diff --cached --quiet || git commit -m "auto: 扫描数据与第二阶段页面 $(date +%Y-%m-%d)"
+          git diff --cached --quiet || git commit -m "auto: 扫描数据与第三阶段页面 $(date +%Y-%m-%d)"
           git push
