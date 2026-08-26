@@ -4,17 +4,10 @@ on:
   push:
     branches: [main]
     paths:
-      - 'scripts/generate_dashboard_v3.py'
-      - 'scripts/generate_dashboard_v3_fixed.py'
-      - 'scripts/generate_dashboard_full.py'
-      - 'scripts/generate_dashboard_live.py'
-      - 'scripts/generate_dashboard_rich_static.py'
-      - 'scripts/patch_dashboard_paths.py'
-      - 'scripts/force_full_candidate_section.py'
+      - 'scripts/generate_dashboard_rich_static_v2.py'
       - 'data/seven_factor_latest.json'
       - 'data/evening_latest.json'
       - 'data/morning_latest.json'
-      - 'data/seven_factor_*.json'
       - '.github/workflows/regenerate-page.yml'
   workflow_dispatch:
 
@@ -43,23 +36,25 @@ jobs:
           if not n:
               raise SystemExit('latest candidate pool is empty; abort page regeneration')
           PY
-      - name: Generate rich static dashboard
-        run: python3 scripts/generate_dashboard_rich_static.py
+      - name: Generate syntax-safe rich dashboard
+        run: python3 scripts/generate_dashboard_rich_static_v2.py
       - name: Verify rich full candidate pool
         run: |
           python3 - <<'PY'
           from pathlib import Path
           p=Path('docs/index.html').read_text(encoding='utf-8')
-          for x in ['④ 完整候选池','调整分 / 七因子','连板概率','历史涨停','三共振']:
-              assert x in p, f'missing expected marker: {x}'
-          assert 'toggleFull' not in p, 'lazy toggle must not exist'
-          assert 'class="lazy"' not in p, 'lazy candidate pool must not exist'
+          required=['④ 完整候选池','调整分 / 七因子','连板概率','历史涨停','三共振']
+          for marker in required:
+              assert marker in p, f'missing expected marker: {marker}'
+          assert 'toggleFull' not in p
+          assert 'class="lazy"' not in p
           print('dashboard verified: rich candidate pool is static and always visible')
           PY
+a
       - name: Commit generated page only
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add docs/index.html
-          git diff --cached --quiet || git commit -m "auto: publish rich candidate dashboard"
+          git diff --cached --quiet || git commit -m "auto: publish rich candidate dashboard v2"
           git push
