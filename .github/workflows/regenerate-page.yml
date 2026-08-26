@@ -4,8 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'scripts/generate_page.py'
-      - 'scripts/generate_page_safe.py'
+      - 'scripts/generate_decision_dashboard_v2.py'
       - 'data/seven_factor_latest.json'
       - 'data/seven_factor_*.json'
       - '.github/workflows/regenerate-page.yml'
@@ -39,13 +38,13 @@ jobs:
               raise SystemExit('latest candidate pool is empty; abort page regeneration')
           PY
 
-      - name: Generate page from existing latest data
-        run: python3 scripts/generate_page_safe.py
+      - name: Generate phase 2 decision dashboard
+        run: python3 scripts/generate_decision_dashboard_v2.py
 
       - name: Commit generated page only
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add docs/index.html
-          git diff --cached --quiet || git commit -m "auto: regenerate decision dashboard"
+          git diff --cached --quiet || git commit -m "auto: regenerate phase 2 decision dashboard"
           git push
