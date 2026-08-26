@@ -6,6 +6,7 @@ on:
     paths:
       - 'scripts/generate_dashboard_v3.py'
       - 'scripts/generate_dashboard_v3_fixed.py'
+      - 'scripts/patch_dashboard_paths.py'
       - 'data/seven_factor_latest.json'
       - 'data/evening_latest.json'
       - 'data/morning_latest.json'
@@ -40,6 +41,8 @@ jobs:
           PY
       - name: Generate dashboard
         run: python3 scripts/generate_dashboard_v3_fixed.py
+      - name: Normalize dashboard data paths
+        run: python3 scripts/patch_dashboard_paths.py
       - name: Commit generated page only
         run: |
           git config user.name "github-actions[bot]"
