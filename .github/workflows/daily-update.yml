@@ -1,6 +1,8 @@
 name: 七因子选股系统 - 每工作日自动扫描与发布
 
 on:
+  push:
+    branches: [main]
   schedule:
     # 北京时间 15:35 = UTC 07:35，周一至周五
     - cron: '35 7 * * 1-5'
