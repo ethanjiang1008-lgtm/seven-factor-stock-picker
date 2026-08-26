@@ -1,4 +1,4 @@
-name: 七因子选股系统 - 页面重建
+name: 七因子系统 - 页面重建
 
 on:
   push:
@@ -6,6 +6,7 @@ on:
     paths:
       - 'scripts/generate_dashboard_v3.py'
       - 'scripts/generate_dashboard_v3_fixed.py'
+      - 'scripts/generate_dashboard_full.py'
       - 'scripts/patch_dashboard_paths.py'
       - 'data/seven_factor_latest.json'
       - 'data/evening_latest.json'
@@ -39,14 +40,12 @@ jobs:
           if not n:
               raise SystemExit('latest candidate pool is empty; abort page regeneration')
           PY
-      - name: Generate dashboard
-        run: python3 scripts/generate_dashboard_v3_fixed.py
-      - name: Normalize dashboard data paths
-        run: python3 scripts/patch_dashboard_paths.py
+      - name: Generate dashboard with full candidate pool
+        run: python3 scripts/generate_dashboard_full.py
       - name: Commit generated page only
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add docs/index.html
-          git diff --cached --quiet || git commit -m "auto: regenerate decision dashboard"
+          git diff --cached --quiet || git commit -m "auto: regenerate full candidate dashboard"
           git push
