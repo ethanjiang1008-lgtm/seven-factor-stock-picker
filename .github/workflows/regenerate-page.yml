@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'scripts/generate_page.py'
+      - 'scripts/generate_page_safe.py'
       - 'data/seven_factor_latest.json'
       - 'data/seven_factor_*.json'
       - '.github/workflows/regenerate-page.yml'
@@ -26,8 +27,19 @@ jobs:
         with:
           python-version: '3.11'
 
+      - name: Validate latest data
+        run: python3 - <<'PY'
+          import json
+          with open('data/seven_factor_latest.json', encoding='utf-8') as f:
+              data = json.load(f)
+          candidates = data.get('candidates', [])
+          print(f"latest data OK: {len(candidates)} candidates")
+          if not candidates:
+              raise SystemExit('latest candidate pool is empty; abort page regeneration')
+          PY
+
       - name: Generate page from existing latest data
-        run: python3 scripts/generate_page.py
+        run: python3 scripts/generate_page_safe.py
 
       - name: Commit generated page only
         run: |
