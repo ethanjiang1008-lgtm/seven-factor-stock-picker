@@ -2,7 +2,7 @@ name: 七因子系统 - 08:00 隔夜修正
 
 on:
   schedule:
-    - cron: '0 0 * * 2-6'  # 北京时间08:00，周二至周六
+    - cron: '0 0 * * 0-4'  # 北京时间周一至周五08:00
   workflow_dispatch:
 
 permissions:
