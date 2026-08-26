@@ -4,11 +4,11 @@ on:
   push:
     branches: [main]
     paths:
-      - 'scripts/generate_decision_dashboard_v2.py'
-      - 'scripts/generate_decision_dashboard_v3.py'
+      - 'scripts/generate_dashboard_v3.py'
       - 'data/seven_factor_latest.json'
       - 'data/evening_latest.json'
       - 'data/morning_latest.json'
+      - 'data/seven_factor_*.json'
       - '.github/workflows/regenerate-page.yml'
   workflow_dispatch:
 
@@ -31,17 +31,18 @@ jobs:
           python3 - <<'PY'
           import json
           with open('data/seven_factor_latest.json', encoding='utf-8') as f:
-              data=json.load(f)
-          n=len(data.get('candidates', []))
+              d=json.load(f)
+          n=len(d.get('candidates', []))
           print(f'latest data OK: {n} candidates')
-          if n==0: raise SystemExit('candidate pool empty; abort page regeneration')
+          if not n:
+              raise SystemExit('latest candidate pool is empty; abort page regeneration')
           PY
-      - name: Generate phase 3 dashboard
-        run: python3 scripts/generate_decision_dashboard_v3.py
+      - name: Generate dashboard
+        run: python3 scripts/generate_dashboard_v3.py
       - name: Commit generated page only
         run: |
-          git config user.name 'github-actions[bot]'
-          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
           git add docs/index.html
-          git diff --cached --quiet || git commit -m 'auto: regenerate phase 3 decision dashboard'
+          git diff --cached --quiet || git commit -m "auto: regenerate decision dashboard"
           git push
