@@ -4,7 +4,7 @@ on:
   schedule:
     # 北京时间 15:35 = UTC 07:35，周一至周五
     - cron: '35 7 * * 1-5'
-  workflow_dispatch:  # 支持手动触发
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -26,8 +26,8 @@ jobs:
       - name: 运行七因子扫描器
         run: python3 scripts/seven_factor_scanner.py
 
-      - name: 重新生成决策页面（仅使用本轮已有数据）
-        run: python3 scripts/generate_page_safe.py
+      - name: 生成第二阶段决策页面（仅使用本轮已有数据）
+        run: python3 scripts/generate_decision_dashboard_v2.py
 
       - name: 归档扫描结果 JSON
         uses: actions/upload-artifact@v4
@@ -42,5 +42,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/seven_factor_*.json data/concept_nodes_cache.json docs/index.html
-          git diff --cached --quiet || git commit -m "auto: 扫描数据与网页 $(date +%Y-%m-%d)"
+          git diff --cached --quiet || git commit -m "auto: 扫描数据与第二阶段页面 $(date +%Y-%m-%d)"
           git push
