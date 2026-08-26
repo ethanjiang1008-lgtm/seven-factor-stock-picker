@@ -50,7 +50,6 @@ jobs:
           assert 'class="lazy"' not in p
           print('dashboard verified: rich candidate pool is static and always visible')
           PY
-a
       - name: Commit generated page only
         run: |
           git config user.name "github-actions[bot]"
