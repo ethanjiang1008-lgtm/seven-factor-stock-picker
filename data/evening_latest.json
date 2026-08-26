@@ -1,0 +1,366 @@
+{
+  "generated_at": "2026-08-26T22:27:35.987070+08:00",
+  "source_scan_date": "2026-08-26",
+  "focus_candidates": [
+    {
+      "code": "601388",
+      "name": "怡球资源",
+      "score": 82.5,
+      "pool": "重点观察",
+      "tier": 1,
+      "sector": "有色金属"
+    },
+    {
+      "code": "603759",
+      "name": "海天股份",
+      "score": 82,
+      "pool": "重点观察",
+      "tier": 1,
+      "sector": "并购重组"
+    },
+    {
+      "code": "002215",
+      "name": "诺 普 信",
+      "score": 79.5,
+      "pool": "重点观察",
+      "tier": 1,
+      "sector": "低市盈率"
+    },
+    {
+      "code": "600506",
+      "name": "统一股份",
+      "score": 78.0,
+      "pool": "重点观察",
+      "tier": 1,
+      "sector": "并购重组"
+    },
+    {
+      "code": "601020",
+      "name": "华钰矿业",
+      "score": 71.5,
+      "pool": "重点观察",
+      "tier": 1,
+      "sector": "有色铜"
+    },
+    {
+      "code": "603165",
+      "name": "荣晟环保",
+      "score": 71.0,
+      "pool": "重点观察",
+      "tier": 1,
+      "sector": "高派息"
+    },
+    {
+      "code": "603955",
+      "name": "大千生态",
+      "score": 70.5,
+      "pool": "重点观察",
+      "tier": 1,
+      "sector": "建筑装饰"
+    },
+    {
+      "code": "603886",
+      "name": "元祖股份",
+      "score": 69.5,
+      "pool": "重点观察",
+      "tier": 1,
+      "sector": "高派息"
+    },
+    {
+      "code": "002427",
+      "name": "尤夫股份",
+      "score": 69.5,
+      "pool": "重点观察",
+      "tier": 1,
+      "sector": "陕西国资"
+    },
+    {
+      "code": "001257",
+      "name": "盛龙股份",
+      "score": 69.5,
+      "pool": "重点观察",
+      "tier": 1,
+      "sector": "有色铜"
+    }
+  ],
+  "top_sectors": [
+    {
+      "rank": 1,
+      "name": "医药生物",
+      "avg_change": 3.46,
+      "limit_up_count": 4,
+      "strong_count": 7,
+      "up_count": 35,
+      "total_count": 35
+    },
+    {
+      "rank": 2,
+      "name": "电子",
+      "avg_change": 3.37,
+      "limit_up_count": 3,
+      "strong_count": 4,
+      "up_count": 28,
+      "total_count": 28
+    },
+    {
+      "rank": 3,
+      "name": "电力设备",
+      "avg_change": 3.22,
+      "limit_up_count": 5,
+      "strong_count": 6,
+      "up_count": 41,
+      "total_count": 41
+    },
+    {
+      "rank": 4,
+      "name": "机械设备",
+      "avg_change": 3.13,
+      "limit_up_count": 1,
+      "strong_count": 7,
+      "up_count": 38,
+      "total_count": 38
+    },
+    {
+      "rank": 5,
+      "name": "基础化工",
+      "avg_change": 2.91,
+      "limit_up_count": 2,
+      "strong_count": 5,
+      "up_count": 65,
+      "total_count": 65
+    },
+    {
+      "rank": 6,
+      "name": "非银金融",
+      "avg_change": 2.66,
+      "limit_up_count": 2,
+      "strong_count": 7,
+      "up_count": 74,
+      "total_count": 76
+    },
+    {
+      "rank": 7,
+      "name": "有色金属",
+      "avg_change": 2.42,
+      "limit_up_count": 4,
+      "strong_count": 11,
+      "up_count": 85,
+      "total_count": 85
+    },
+    {
+      "rank": 8,
+      "name": "计算机",
+      "avg_change": 1.97,
+      "limit_up_count": 2,
+      "strong_count": 3,
+      "up_count": 35,
+      "total_count": 35
+    }
+  ],
+  "headlines": [
+    {
+      "title": "今日湘股 | 贵金属板块大涨，湖南白银涨停_热点 - 湖南红网",
+      "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBka2ZCcGJhMndXZUdDYXF1S3ZYNFFPd0E5ZXhRYnN0QmZXV2FfSW9RbUpvSEJGQ2c5Q2pnS2tyYlNnTUJIbFQ0bnlTQXlfQ05XeEtha3hYM3N6SXR2cUx2ZlNJUVpsLXBS?oc=5",
+      "pubDate": "Mon, 24 Aug 2026 08:06:50 GMT"
+    },
+    {
+      "title": "A股收评：科创50指数震荡走低跌0.87%，创新药、贵金属板块涨幅居前 - 同花顺财经",
+      "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFBDUWZCMFd3clBNVThydVBWU1BmYzE1UmZWVzRYY3BVb3BPN3VEeVRmQnNHTEpMN1duSWdCQVBXU3V6RFpSMGxEbjMxSlA4SzE5alZyS0ROOGJXbURYR1E?oc=5",
+      "pubDate": "Thu, 20 Aug 2026 07:05:33 GMT"
+    },
+    {
+      "title": "A股，新纪录！长鑫科技半日成交超1200亿元 - 京报网",
+      "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE8zdWsyV1dJazV4QUJOR3hkd3RjQjdLVGVadjZCeTBzMWJfN2h5Y1gtOG9xLWxIZ2lwVmtwd2tQN2FjWFRGRkRXdU9ORm1YTlJSbU9DVU9WU0ZhbG5kRlJaNEJxb25RajNvSGhFdE5QODZDQQ?oc=5",
+      "pubDate": "Mon, 27 Jul 2026 07:00:00 GMT"
+    },
+    {
+      "title": "港股收盘 | 三大指数表现不一 传统板块逆袭科技热点成新主线 - 财联社",
+      "link": "https://news.google.com/rss/articles/CBMiSEFVX3lxTFA4cDktcGVYdkdudTN1RFRCNmEtVnZJSlg2ZHFLSmlMbEVSbWlFTEZwUmJQbTFkVC1mbnhmVzV6Z1hOWXdXSEZFTA?oc=5",
+      "pubDate": "Mon, 26 Jan 2026 08:00:00 GMT"
+    },
+    {
+      "title": "港股收盘 | 三大指数本周集体走弱 中报窗口期热点分化 港美股资讯 - hstong.com",
+      "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1oa0liMVZhbU1PQVBOR3oyVE5YSGxpTmpXUHhSeGphOVp0cVlKOEgxdmpnc1RSNXhGNWdZUzF2Z1Z3Q0FaT2JtOGZnVHFHbzZIMEJsd3EyN1h4aFFQWjcxQ1FR?oc=5",
+      "pubDate": "Fri, 14 Aug 2026 07:00:00 GMT"
+    },
+    {
+      "title": "ETF收盘解读 | A股震荡分化、防御板块走强 - QQ News",
+      "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE0tb3IzbjU2Q0hFcm5UTkpBQWxKQW5WV0Y2VHE4Rm5BU3k5ZUZTQXRNeVNhNExnT0pPMGtGR3F5ZktMdkh2SFYzN2hJbDY2RUNKV3FMbTR3?oc=5",
+      "pubDate": "Tue, 18 Aug 2026 11:04:00 GMT"
+    },
+    {
+      "title": "今日湘股丨3/4湘股飘红 湖南天雁、*ST威领、华天酒店涨停_热点 - 湖南红网",
+      "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5XdlFMM1BuUF94MUNZazFZVThvcHFPbmlLUUtLbjRmV0xDTWlPR3VaS18zcFhsZ1EzU2lmQXRGQ0NuQTNIQnViMF9hQzNPQjB3eGprR055V2h6Ylh3TElOZjU0NjdQWWNq?oc=5",
+      "pubDate": "Mon, 10 Aug 2026 07:00:00 GMT"
+    },
+    {
+      "title": "A股收评：沪指探底回升涨1.36% 油气开采及服务、元件、医药商业板块涨幅居前 - 同花顺",
+      "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBYWUlxV3VsYThxR0lfQzctV1dGZDVBeTJ5RGNOcmMydFBHOGE5bnFFR0tVbEFRSjY5d1k1Z2QxTFlBVzBQT2o0Nko3aGdjX2NnUDg5dEFrVFh5OUlGWDhpYW5B?oc=5",
+      "pubDate": "Tue, 14 Jul 2026 07:02:23 GMT"
+    },
+    {
+      "title": "创新药板块全线爆发，政策升级与数据超预期成核心驱动力 - 新浪网",
+      "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE1TcXR6cF9WTDZTT2t0dEMtaFVubDZXSVo3ejhjeURPcmE4d2t4QXdBZERnblpER1p6UVdtTUpEYS1raVNRWUhHc3A5R28xcExRR2pDQ1J6bFZvU01Ta0VkdnFWUmplNHdHWDBxRTVKSmU2dw?oc=5",
+      "pubDate": "Mon, 24 Aug 2026 11:32:10 GMT"
+    },
+    {
+      "title": "【建议收藏】重磅！2026年武汉市激光加工设备产业链全景图谱（附产业政策、产业链现状图谱、产业资源空间布局、产业链发展规划） - 新浪财经",
+      "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9ybGg0Zk10cFRQV2c2VkJYWFYtYUVLeGNleUtsdnVpWVFjb2pXWjhTQXU2RG0wX0E1YzVNVlplQnVjS0dVZ1FzMHZkMlZIS0dLYmQ4YkRQLTZ4ZHR3VGUzbV9fb3ROTG5xWUxjbDlrczA3T2FlQTFoTw?oc=5",
+      "pubDate": "Tue, 25 Aug 2026 06:00:00 GMT"
+    },
+    {
+      "title": "十四届全国人大四次会议经济主题记者会 - 新华网",
+      "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1GZGJjRUpubW9BN2F1c1Zkc0FNNi1mR3F3UEg5aU02Z045V0dxTVVLUEtwblo5bXJJTXFUS1cxb2JLeXM5TDNxNkdvSDFOYVl0Q095em5WY0xFOEt1MWszRVJEWFQ3alk?oc=5",
+      "pubDate": "Fri, 06 Mar 2026 06:51:39 GMT"
+    },
+    {
+      "title": "《关于加快智能机器人产业发展的实施意见》政策解读新闻发布会 - 新浪财经",
+      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNUVU1Z01DT2hPRGNJTzc5Qmk2YjZuREEybm1yQVRkSWc3bUNuZXI3SjhET2pTMVlKNnhWWV9sZGhJY1JXcG5mVnY0MmZFbUNEWGNNenc0dmdKQjBBc2lsUDJuZ2RxRDJzdXQ0Ml9XSFFKckZhSHplTlpXWTJuWWZWZWdLUWVROXc?oc=5",
+      "pubDate": "Tue, 18 Aug 2026 04:50:00 GMT"
+    },
+    {
+      "title": "史伟云代表：完善药品集采政策，助力药品产业发展 - 科学网—新闻",
+      "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE50NTJhUWVpQl95RG8xLWd6SUdnQUVuOTFXVE9hamoxcW9QbEZ6amVHX2FtdWdCU2dFdTNoMjVWTmhCcDVRVGE5U0d0VTVJeTdZWm5pRkZ4dmt4dVdoT19EWlowODk?oc=5",
+      "pubDate": "Sun, 08 Mar 2026 08:00:00 GMT"
+    },
+    {
+      "title": "多地出台扶持政策 OPC成AI产业化落地新赛道 - chinanews.com.cn",
+      "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBWQ3NCMXF5aWFfSldJOHJ4ZE42aVZGdHk2V2V3aHZKY1E5N1ZYdlFCY3dfMjdjSDVHNzRVcWRHYndwb0tkWGhGeTVfUnhFU3QxX0l1aE9RVXBxajBFNWJJWXEyNnFkMEpZ?oc=5",
+      "pubDate": "Sun, 01 Mar 2026 08:00:00 GMT"
+    },
+    {
+      "title": "吴清主席在十四届全国人大四次会议经济主题记者会上答记者问 - csrc.gov.cn",
+      "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9BNTlzTXk4aU9ITW4zOWdpeEJiWmlQeEt4bUlPMzAyRWt1MGsxTFVsaW5vZ00yUDJaUE1VQUI1YjhDU3FwS3ZGTkxTOXczSVdpRnBQaTZRUWxuMkd3b0JTaFpjbTN0cFZ2Ums4?oc=5",
+      "pubDate": "Fri, 06 Mar 2026 08:00:00 GMT"
+    },
+    {
+      "title": "教科文组织新报告：到2028年，全球创作者收入或将锐减24% - Unesco",
+      "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNZDlJc2VwQXNKVVFMY1FNSzlFM0hBNW9uRHNKMlRGYkk5NURSdHBSWTVEUU5IbV9JOUlZSk5DZDBpcExOcHhKYnB2SjJzOGQwVVNDTkc0MEl3SVRmLXQ1VGs3RnR2Sk9ESkJpc2lxaUFwdGo2TnpXVk1xcFlVSVJDMFBvU09DZVVrWHpDOURXWThCa0tDeC1RdUZpUFFmeXFDYUdiWi1pQjBwWTBWcERXNg?oc=5",
+      "pubDate": "Wed, 18 Feb 2026 14:20:02 GMT"
+    },
+    {
+      "title": "盘后观察：绝地反击！科创50从盘初跌超2%到收盘翻红——缩量反弹能走多远？ - 新浪财经",
+      "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9qMGdRempEazkxc2RoSGRMajRWYWZfNWRIdWkweHdFMXQ1blZBNExHOWZlOGtYM3ZMVDRHNmcwM3pBbWx2WElqdkthTkhBVUhTbHlTUzRmeHo0ancwMEZSeE9xczRPSXFuY3F3a1l0YVlBbUxEV1E?oc=5",
+      "pubDate": "Tue, 25 Aug 2026 10:58:00 GMT"
+    },
+    {
+      "title": "三大交易所交易新规7月6日起施行，市场影响几何？ - 证券时报",
+      "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9qeUR0ZmdsN3ozQ1V5Zlk4TV9jcnBGdWxBVjhPUU1LRk9lOERsdjZUaG02cUo4NFg2eTJaelloS0tSU1NiVU9pVjVfYWctb0E1NGdSTVd5c3paZG9J?oc=5",
+      "pubDate": "Tue, 28 Apr 2026 07:00:00 GMT"
+    },
+    {
+      "title": "盘后2公司发回购公告-更新中 - 中财网",
+      "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE03U1JLdzgyc3NBT3lUT1pJRExIWEFoZmhMZWxMSGpPMlU3Y0RSR0tmdXVoVjhSal9Ud0JwT1Q1SWp3VFhxcTMzRkdDTWg5Nl9zTnpxTnFR?oc=5",
+      "pubDate": "Fri, 21 Aug 2026 09:31:17 GMT"
+    },
+    {
+      "title": "A股重大调整！7月6日正式施行 - 中国经济网",
+      "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFA0Z190RDZkZXhSTW9ZTFVCejY2WFBDR0k5YjIwQldCbEtYM0NBSlJ6Q0Q5Z0p4bU51RWlJd3BNbFRkdS1MRHRZcXZNb09ieGpfal85MWYtdHBBSE93RG80?oc=5",
+      "pubDate": "Thu, 02 Jul 2026 07:00:00 GMT"
+    },
+    {
+      "title": "盘后4股发布业绩预告-更新中 - 中财网",
+      "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE45Y1FxQ0FHYmo3aUltcmJGc2RQSENITXRyRHdMQVFHMUxoR2ZNWkoxV2xZY0hBVWxSVXZyT05hZHBLamNjODg5MkdpNHBoVU5xeEJSdkdn?oc=5",
+      "pubDate": "Fri, 21 Aug 2026 15:16:18 GMT"
+    },
+    {
+      "title": "盘后，利好来了！ - 新浪财经",
+      "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQR3hqejJPMnl3dzk4RzV3b29BeHJyaUxqUk5idUFicS01NXEwUHg4blFJbkRtamVhSGxHQUNVLXhXM2lkNFFNT3lLT2FLQzZVYXA4RloxWXdwLVdpa1VEQURTcGtCZFZSVjZGY1RwRkl1RUE2amlGM01ucGxqYXA5N1FwUQ?oc=5",
+      "pubDate": "Wed, 19 Aug 2026 08:19:00 GMT"
+    },
+    {
+      "title": "美光业绩炸裂，美股盘后大涨！韩国股市，触发熔断 - 新浪财经",
+      "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTFAtTmRLSG5wZXFST2dRZGV2bE1mbTJKbUhaajRuWkE0TFpReTdaMm5tUm9aREctRHh1ejA0dll2S1hCc2ZJblgwMG14RmFPZk9aM0VvRDB5Z0J3eENJNFFPaE9GVDBjS0pRUDA1NlNn?oc=5",
+      "pubDate": "Thu, 25 Jun 2026 07:00:00 GMT"
+    },
+    {
+      "title": "中国股市：股票横盘后拉升一两个涨停就下跌，难道主力不想赚钱？ - 搜狐网",
+      "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9kZDJPNHpkV3dfTzVySEFGQU5qMlNqSWE3cGJvdEdmUG9KblkxR0VONVBmZHd5b0lEM3M2WElQQlJXSEdmMU9mYXRHb0Z4SVpxX0llRw?oc=5",
+      "pubDate": "Fri, 13 Mar 2026 07:00:00 GMT"
+    },
+    {
+      "title": "美股盘前要点| 7月核心PCE同比+3.3%符合预期！英伟达财报盘后重磅来袭_市场分析 - 中金在线",
+      "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE14Sm1EUjMtdmRpY0JHc3hmNEhlV3VkZ0ZBajJScEw3YnRiRVI3b19RTkNrMVV4VUJJUDVyb0I5dUo1WGh1VUFsc3ZWOVNRTk9RQ2tyVW1xN2ZneU1xS1FrWEFYSk5LLUk1UHBwYXJNQQ?oc=5",
+      "pubDate": "Wed, 26 Aug 2026 13:00:11 GMT"
+    },
+    {
+      "title": "美股盘前| 财捷绩后重挫11%！27财年指引不及市场预期；AI应用软件股普跌，Zoom绩后跌近6% 港美股资讯 - hstong.com",
+      "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5Hbmtna1BDdVhwaUVYbHkwYm5IN21KcHZGQlNELUFDSThXT3Y0ckRQNUdDVjZFOVVYWHY0VWpveGxQNW9xR0U4NC1vVGNwTFE5Snk4c1ZVaFVRdS04dEczTENn?oc=5",
+      "pubDate": "Wed, 26 Aug 2026 08:09:00 GMT"
+    },
+    {
+      "title": "【美股盘前】英伟达财报明早公布，华尔街：Q3营收指引突破1050亿美元才算惊喜；美银：半导体股短期承压或创造买入机会；Anthropic拟向投资者披露超30万亿美元市场潜力，IPO估值目标约2万亿美元 - mrjjxw.com",
+      "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1KbHFIaU9YT0FyRHNMSVNCc19Jc2ZDQ0JEaFFnNWNZR1JzZnBQcVJyQ1RCaElWYVE1MWtWZVB1T0piNmZ5Q0JfMHk2MFFDSEQ1eTU1VnhCbmVGT1M2ZDJGN2EtSlh6Zw?oc=5",
+      "pubDate": "Wed, 26 Aug 2026 09:06:00 GMT"
+    },
+    {
+      "title": "美股“加钟”！日交易时间将延至23小时 - 新浪财经",
+      "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE5IbGtqSW1UUmlaeHNiTF9OQWhCSkdSOFRWaFdqUUIzcERoaE1XUjJTWW1aMU1BSnJYaTRrODhJODlNOE1WNGhMRDFZc1NtSE5LdGZIc19wQjZrbHdlejVCNkJBUjdlRHFtTGx0V3FuRDFIcGJPUkp2dQ?oc=5",
+      "pubDate": "Wed, 26 Aug 2026 09:38:35 GMT"
+    },
+    {
+      "title": "【美股盘前】英伟达财报今夜来袭！软件股普跌，财捷重挫近12% - FX168财经",
+      "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBaRFhldmR4aFRaSUtlcnFPTGlRTERSckJibllPRDhFblNKVDlnbTBMQ3ZPZGN6bWFkbFdzbkljSHUxMGtSU09KaC1sN3JUYnVwOWFr?oc=5",
+      "pubDate": "Wed, 26 Aug 2026 12:11:08 GMT"
+    },
+    {
+      "title": "美股盘前：大型科技股，多数下跌 - 新浪财经",
+      "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE5feXN4eXlqNUpJMUgwbFZCclMxV0RmTnhaZEVjQ3pod2ZoSTQ2T2JueXViRTc5ZDJyM1RrTm1ocnhham5LSG5kMXg3OVBEcnlQUjZRekcteWtheWhHOTJreGFKUkR3QmhSWFdhTHZQWExhNFcxU3lBMg?oc=5",
+      "pubDate": "Wed, 26 Aug 2026 10:30:00 GMT"
+    },
+    {
+      "title": "静待英伟达财报，美股三大股指小幅低开，纳指跌0.22%，油价三连跌，债市走强 - 华尔街见闻",
+      "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE8teHUwbFprWFZrTlBhc3V0OGc3SmZwcHpoa0hJOFpybGNoYXBKUnBNa2M3Z2NBN2ZZX3F5WXZzMmQtNmRBQkp2ZmtqdjlBWjB0b2pZ?oc=5",
+      "pubDate": "Wed, 26 Aug 2026 13:32:42 GMT"
+    },
+    {
+      "title": "马云增持！阿里巴巴美股盘前拉升 - 证券时报",
+      "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBsbjJWTTFnblVsUTJYQk11X3l6My1WT3U4UlRaWktSQ3NPN1hEOHdydFdpbHgyV3dKWEpKa1JhcVRNQXJSVHN6bUZJYUdDVG13eFhDd2tLazFoRFEy?oc=5",
+      "pubDate": "Tue, 25 Aug 2026 11:47:19 GMT"
+    },
+    {
+      "title": "特朗普想降息，沃什不吭声，债市却先动手了：今晚PCE前必须看懂的三角杀 - 新浪财经",
+      "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQeXRHZFFjeVVUU25ic05xYVpocWhLSG5JY28tbXFEc3k3bV82SjFwRHgzZFI1clJfSjlkMXYtWlJjWml1UklNcmJkM2xfQjFkdTl0ZVVmTVpmam9WSE5OT3VCYUl0ZzN6c3hmdV9QOEl6SGRTOTlfNEotN05FTUFsN1F6b1YwN1lQZ01vc2ItR1JTVm9aTjBzMmxlcHJNQWdGaFBLcU4xZHVfbE1wVmlSRlFxUDB5VWtQdU9WSkRwaTFrTEYyRWRFcUVubENRNTVE?oc=5",
+      "pubDate": "Wed, 26 Aug 2026 11:34:00 GMT"
+    },
+    {
+      "title": "一张图：2026年8月26日黄金原油外汇股指“枢纽点+多空持仓信号”一览_金市直播 - 黄金网",
+      "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFA0ZDlnVVJQc0dEUDc0V2dRZ0tZaEpsZGpYVnNwME9iRUpOamRBOUloSjlDbTE3cGJudVY2TGhNNVdnc1lvOEhRZkc2by14Q3JHM3BpMEdwR3JId1V4NTU2X1VHUWFBZ25V?oc=5",
+      "pubDate": "Wed, 26 Aug 2026 05:02:19 GMT"
+    },
+    {
+      "title": "黄金从4700美元附近高位回落，地缘风险与通胀预期“双轮驱动”，金价的下一站在哪？ - 汇通网 Fx678",
+      "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1sWktkY3NoeFBiNHFTeWhRcDVTcW9iSzUzOW1xVHo3RUdFbS14VXFMQ1A4c0hoVWhFeGltaWlfY3F5OGxYcVQ2MXFRWm5JRnZkWGw1Ykt5V0VPOVk?oc=5",
+      "pubDate": "Tue, 25 Aug 2026 07:26:00 GMT"
+    },
+    {
+      "title": "今夜，大涨！罕见一幕来了，美股、黄金、原油、美债利率，都在涨！ - 搜狐网",
+      "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5uSFNGNThCWW02Y2R5OFNxcVlQczRfMERKdXFTQVpZTnYwbFoyQzByOW9JcGcwaThXZF9CWUFSSDZFamlHTjRHbm5XNXpXd3hBTFE?oc=5",
+      "pubDate": "Fri, 21 Aug 2026 16:04:25 GMT"
+    },
+    {
+      "title": "印度进口俄罗斯原油创新高！国际油价下挫，黄金走高 - 证券时报",
+      "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE56Vy1WcHI0emt2UWtiZ043Nm1CZU9FT1lxcEo5bjI4SGFsSW9qWTBFV0F0b1VvbGRkRmtfaE1vaVNpcl9Ec3I4WFRMNWJlVnd6a29LZlRGdw?oc=5",
+      "pubDate": "Sun, 23 Aug 2026 13:25:00 GMT"
+    },
+    {
+      "title": "智昇黄金原油分析：美债危机临近 黄金成为新宠 - 财经号",
+      "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9NMXZLdTN5X2FFdy0td19Zd0dzT0M1aTMxTmcydXVNbUpIYjB4OEtvVVNLRjhzTFBfN2YycXR4VWN0djc3c0NVcVE5NHpTLWxwMnJjcTlZRkpjamthcmRoRG5xczkwTHBFS0hz?oc=5",
+      "pubDate": "Tue, 25 Aug 2026 03:17:55 GMT"
+    },
+    {
+      "title": "【财经纵览】：美债收益率全线回落，黄金挫逾百美元、WTI原油两连跌，标普500续创历史新高 - Mitrade",
+      "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBBbGV6RjN6MEdhUWNQMGJFYkthaGJ0YzlrU3UyZGZRajlGb2x6QmtHSU5kMzNTdlh5TWtReTRZcm1VdmxEdzdPeVhjVlBzaUlGcHNVOXZsNG82VkZadGZSdWo0eWM2MXd0eTNsOGRzaDQ4NW5WM056NA?oc=5",
+      "pubDate": "Thu, 13 Aug 2026 07:00:00 GMT"
+    },
+    {
+      "title": "受伊朗协议预期、美债收益率下行推动，金价走强 - 同花顺财经",
+      "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFBjTTJqOEJ1UlhVeFRaZkdSaW44b21MSWhnd3d1aE1ZNmhhNEF0cjlGVmRMcDZxckRJdEFXRXRoU1R6czBvVmp5dGdSMkY2WkJIMVB4bTZMdWFsTUpzeFE?oc=5",
+      "pubDate": "Tue, 04 Aug 2026 23:05:41 GMT"
+    }
+  ],
+  "notes": [
+    "20:00层只做明日预判，不修改七因子评分。",
+    "新闻为自动抓取候选素材，需要次日竞价再次验证。"
+  ]
+}
