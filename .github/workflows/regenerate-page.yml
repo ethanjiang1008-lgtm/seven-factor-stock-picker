@@ -28,7 +28,8 @@ jobs:
           python-version: '3.11'
 
       - name: Validate latest data
-        run: python3 - <<'PY'
+        run: |
+          python3 - <<'PY'
           import json
           with open('data/seven_factor_latest.json', encoding='utf-8') as f:
               data = json.load(f)
