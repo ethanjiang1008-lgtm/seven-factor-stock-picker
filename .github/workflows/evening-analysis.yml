@@ -33,6 +33,8 @@ jobs:
         run: python3 scripts/evening_analysis.py
       - name: Refresh dashboard with full candidate pool
         run: python3 scripts/generate_dashboard_full.py
+      - name: Force full candidate section
+        run: python3 scripts/force_full_candidate_section.py
       - name: Commit evening data and dashboard
         run: |
           git config user.name 'github-actions[bot]'
