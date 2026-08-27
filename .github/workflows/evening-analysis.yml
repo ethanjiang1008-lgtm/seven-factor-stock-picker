@@ -31,14 +31,12 @@ jobs:
           PY
       - name: Run evening analysis
         run: python3 scripts/evening_analysis.py
-      - name: Refresh dashboard with full candidate pool
-        run: python3 scripts/generate_dashboard_full.py
-      - name: Force full candidate section
-        run: python3 scripts/force_full_candidate_section.py
-      - name: Commit evening data and dashboard
+      - name: Generate standalone overnight analysis page
+        run: python3 scripts/generate_overnight_page.py
+      - name: Commit evening data and overnight page
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
-          git add data/evening_latest.json docs/index.html
-          git diff --cached --quiet || git commit -m "auto: evening analysis and dashboard $(date +%Y-%m-%d)"
+          git add data/evening_latest.json docs/overnight.html
+          git diff --cached --quiet || git commit -m "auto: evening analysis and overnight page $(date +%Y-%m-%d)"
           git push
