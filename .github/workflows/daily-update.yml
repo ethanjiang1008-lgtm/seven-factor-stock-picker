@@ -1,8 +1,6 @@
 name: 七因子选股系统 - 每工作日自动扫描与发布
 
 on:
-  push:
-    branches: [main]
   schedule:
     # 北京时间 15:35 = UTC 07:35，周一至周五
     - cron: '35 7 * * 1-5'
@@ -34,12 +32,11 @@ jobs:
           name: scan-results-${{ github.run_id }}
           path: |
             data/seven_factor_*.json
-            data/candidate_pool_history.json
           retention-days: 30
       - name: 提交数据与网页
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/seven_factor_*.json data/candidate_pool_history.json data/concept_nodes_cache.json docs/index.html
+          git add data/seven_factor_*.json data/concept_nodes_cache.json docs/index.html
           git diff --cached --quiet || git commit -m "auto: 扫描数据与第三阶段页面 $(date +%Y-%m-%d)"
           git push
