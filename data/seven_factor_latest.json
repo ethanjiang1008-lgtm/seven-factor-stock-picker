@@ -1,6 +1,6 @@
 {
   "scan_date": "2026-09-02",
-  "scan_time": "2026-09-02 15:39:10",
+  "scan_time": "2026-09-02 15:45:01",
   "system_version": "v1.4",
   "model": "连板潜力七因子模型 v1.4（全行业候选池 + 并发K线 + 完整涨跌停统计）",
   "weight_config": {
@@ -145645,5 +145645,5 @@
     "concept_scoring_count": 1120
   },
   "failed": [],
-  "elapsed_seconds": 283.0
+  "elapsed_seconds": 327.7
 }
