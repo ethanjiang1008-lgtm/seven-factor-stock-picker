@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'scripts/generate_dashboard_rich_static_v2.py'
+      - 'scripts/export_candidate_pool_excel.py'
       - 'data/seven_factor_latest.json'
       - 'data/evening_latest.json'
       - 'data/morning_latest.json'
@@ -29,17 +30,11 @@ jobs:
           import json
           import subprocess
           from pathlib import Path
-
           history_path = Path('data/candidate_pool_history.json')
           with history_path.open(encoding='utf-8') as f:
               current = json.load(f)
-
-          raw = subprocess.check_output(
-              ['git', 'show', '2912c71c7fe3e268c5afba02863bbc0299e9d1a6:data/candidate_pool_history.json'],
-              text=True,
-          )
+          raw = subprocess.check_output(['git', 'show', '2912c71c7fe3e268c5afba02863bbc0299e9d1a6:data/candidate_pool_history.json'], text=True)
           prior = json.loads(raw)
-
           repaired = 0
           for code, item in current.items():
               if not isinstance(item, dict):
@@ -47,23 +42,16 @@ jobs:
               entered = str(item.get('entered_at') or '')
               if not entered.startswith('2026-09-03'):
                   continue
-
               old = prior.get(code)
               if not isinstance(old, dict):
                   continue
               old_entered = str(old.get('entered_at') or '')
-              old_pool = old.get('current_pool')
-
-              # Present in the 2026-09-02 candidate pool: a 2026-09-03
-              # pool-tier change is not a new pool entry.
-              if old_pool is not None and old_entered and not old_entered.startswith('2026-09-03'):
+              if old.get('current_pool') is not None and old_entered and not old_entered.startswith('2026-09-03'):
                   item['entered_at'] = old_entered
                   repaired += 1
-
           with history_path.open('w', encoding='utf-8') as f:
               json.dump(current, f, ensure_ascii=False, indent=2)
               f.write('\n')
-
           print(f'repaired candidate entry dates: {repaired}')
           PY
       - name: Validate latest data
@@ -79,7 +67,9 @@ jobs:
           PY
       - name: Generate syntax-safe rich dashboard
         run: python3 scripts/generate_dashboard_rich_static_v2.py
-      - name: Verify rich full candidate pool
+      - name: Export daily candidate pool Excel
+        run: python3 scripts/export_candidate_pool_excel.py
+      - name: Verify rich full candidate pool and Excel
         run: |
           python3 - <<'PY'
           from pathlib import Path
@@ -89,12 +79,18 @@ jobs:
               assert marker in p, f'missing expected marker: {marker}'
           assert 'toggleFull' not in p
           assert 'class="lazy"' not in p
-          print('dashboard verified: rich candidate pool is static and always visible')
+          files=list(Path('data/candidate_pool_reviews').glob('候选池复盘_*.xlsx'))
+          if not files:
+              raise SystemExit('Excel review export missing')
+          latest=max(files, key=lambda p:p.stat().st_mtime)
+          if latest.stat().st_size < 5000:
+              raise SystemExit(f'Excel review export appears invalid: {latest}')
+          print(f'dashboard and Excel verified: {latest} ({latest.stat().st_size} bytes)')
           PY
-      - name: Commit generated page and repaired history
+      - name: Commit generated page, repaired history and Excel
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add docs/index.html data/candidate_pool_history.json
-          git diff --cached --quiet || git commit -m "auto: repair candidate entry history"
+          git add docs/index.html data/candidate_pool_history.json data/candidate_pool_reviews/*.xlsx
+          git diff --cached --quiet || git commit -m "auto: publish candidate review Excel"
           git push
