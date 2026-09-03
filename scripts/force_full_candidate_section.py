@@ -45,7 +45,12 @@ def save_history(history):
 
 
 def update_pool_history(candidates, scan_time):
-    """Keep the first timestamp for the current pool stint."""
+    """Keep the first timestamp of the current candidate-pool stint.
+
+    A change between 重点观察/预备池/观察池/淘汰 is a pool-status change,
+    not a new candidate-pool entry. Only reset entered_at after the stock was
+    absent from the candidate list in a previous scan.
+    """
     history = load_history()
     current_codes = set()
     for r in candidates:
@@ -55,9 +60,10 @@ def update_pool_history(candidates, scan_time):
         current_codes.add(code)
         pool = str(r.get("pool") or "-")
         prev = history.get(code) if isinstance(history.get(code), dict) else None
-        if not prev or prev.get("current_pool") != pool or not prev.get("entered_at"):
+        if not prev or not prev.get("entered_at") or prev.get("current_pool") is None:
             entered_at = scan_time
         else:
+            # Pool tier/status changes do not create a new candidate-pool entry.
             entered_at = prev["entered_at"]
         history[code] = {
             "name": r.get("name"),
@@ -217,24 +223,20 @@ function filterCandidates(){
     const v=parseFloat(tr.dataset.change||'0');
     const okChange=!change||(change==='5'&&v>=5)||(change==='2'&&v>=2)||(change==='0'&&v>=0)||(change==='-2'&&v<=-2)||(change==='-5'&&v<=-5);
     const show=okSearch&&okPool&&okTier&&okGrade&&okResonance&&okSector&&okChange;
-    tr.style.display=show?'':'none';
-    if(show) visible++;
+    tr.style.display=show?'':'none'; if(show) visible++;
   });
   document.getElementById('candidateCount').textContent=visible;
 }
 function resetCandidateFilters(){
-  ['candidateSearch','candidatePool','candidateTier','candidateGrade','candidateResonance','candidateSector','candidateChange'].forEach(id=>{
-    const el=document.getElementById(id); if(el) el.value='';
-  });
+  ['candidateSearch','candidatePool','candidateTier','candidateGrade','candidateResonance','candidateSector','candidateChange'].forEach(id=>document.getElementById(id).value='');
   filterCandidates();
 }
 </script>'''
     page = page.replace('</body>', js + '</body>', 1)
 
-    with open(OUT, 'w', encoding="utf-8") as f:
+    with open(OUT, "w", encoding="utf-8") as f:
         f.write(page)
-    print(f"[force_full_candidate_section] candidate table + filters + entry time for {len(ranked)} candidates")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
