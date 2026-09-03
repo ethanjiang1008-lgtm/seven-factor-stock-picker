@@ -35,7 +35,7 @@ jobs:
               current = json.load(f)
 
           raw = subprocess.check_output(
-              ['git', 'show', 'HEAD~2:data/candidate_pool_history.json'],
+              ['git', 'show', '2912c71c7fe3e268c5afba02863bbc0299e9d1a6:data/candidate_pool_history.json'],
               text=True,
           )
           prior = json.loads(raw)
@@ -54,8 +54,8 @@ jobs:
               old_entered = str(old.get('entered_at') or '')
               old_pool = old.get('current_pool')
 
-              # The stock was present in the previous scan and therefore was
-              # not newly entering the candidate pool on 2026-09-03.
+              # Present in the 2026-09-02 candidate pool: a 2026-09-03
+              # pool-tier change is not a new pool entry.
               if old_pool is not None and old_entered and not old_entered.startswith('2026-09-03'):
                   item['entered_at'] = old_entered
                   repaired += 1
