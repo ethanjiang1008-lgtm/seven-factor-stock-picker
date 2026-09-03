@@ -21,10 +21,51 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Setup Python
-        uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          fetch-depth: 0
+      - name: Repair persisted candidate entry dates
+        run: |
+          python3 - <<'PY'
+          import json
+          import subprocess
+          from pathlib import Path
+
+          history_path = Path('data/candidate_pool_history.json')
+          with history_path.open(encoding='utf-8') as f:
+              current = json.load(f)
+
+          raw = subprocess.check_output(
+              ['git', 'show', 'HEAD~2:data/candidate_pool_history.json'],
+              text=True,
+          )
+          prior = json.loads(raw)
+
+          repaired = 0
+          for code, item in current.items():
+              if not isinstance(item, dict):
+                  continue
+              entered = str(item.get('entered_at') or '')
+              if not entered.startswith('2026-09-03'):
+                  continue
+
+              old = prior.get(code)
+              if not isinstance(old, dict):
+                  continue
+              old_entered = str(old.get('entered_at') or '')
+              old_pool = old.get('current_pool')
+
+              # The stock was present in the previous scan and therefore was
+              # not newly entering the candidate pool on 2026-09-03.
+              if old_pool is not None and old_entered and not old_entered.startswith('2026-09-03'):
+                  item['entered_at'] = old_entered
+                  repaired += 1
+
+          with history_path.open('w', encoding='utf-8') as f:
+              json.dump(current, f, ensure_ascii=False, indent=2)
+              f.write('\n')
+
+          print(f'repaired candidate entry dates: {repaired}')
+          PY
       - name: Validate latest data
         run: |
           python3 - <<'PY'
@@ -50,10 +91,10 @@ jobs:
           assert 'class="lazy"' not in p
           print('dashboard verified: rich candidate pool is static and always visible')
           PY
-      - name: Commit generated page only
+      - name: Commit generated page and repaired history
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add docs/index.html
-          git diff --cached --quiet || git commit -m "auto: publish rich candidate dashboard v2"
+          git add docs/index.html data/candidate_pool_history.json
+          git diff --cached --quiet || git commit -m "auto: repair candidate entry history"
           git push
