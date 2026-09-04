@@ -22,6 +22,8 @@ jobs:
           python-version: '3.11'
       - name: 运行七因子扫描器
         run: python3 scripts/seven_factor_scanner.py
+      - name: 进一步筛选S级核心候选
+        run: python3 scripts/refine_s_tier.py
       - name: 生成第三阶段决策页面（完整候选池）
         run: python3 scripts/generate_dashboard_full.py
       - name: 强制保持完整候选池展开
