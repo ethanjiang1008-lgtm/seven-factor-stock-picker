@@ -77,7 +77,6 @@ def main():
 
     # 人工尾盘时间有限：S级最多保留8只；不足8只则全部保留。
     s_rows = s_rows[:8]
-    s_codes = {row.get("code") for row in s_rows}
 
     for row in candidates:
         # 将S视为A的更高一级，不改变原池归属。
@@ -93,6 +92,9 @@ def main():
             "严格二次筛选：重点观察+A；调整分≥78；股性≥18；资金预热≥14；"
             "K线筹码≥10；题材+板块≥12；流动性≥8；三共振；P1-P3；板块评分前10"
         )
+        watch = row.get("next_day_watch") or []
+        if not watch or watch[0] != "★S级核心候选":
+            row["next_day_watch"] = ["★S级核心候选"] + [x for x in watch if x != "★S级核心候选"]
 
     data["s_tier"] = {
         "name": "S级核心候选",
