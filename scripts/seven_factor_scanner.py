@@ -217,8 +217,7 @@ def fetch_concept_board_nodes():
     concept_nodes = {}
 
     def _find_pairs(node):
-        if isinstance(node, list) and len(node) >= 3:
-            name = node[0] if isinstance(node[0], str) else None
+        if isinstance(node, list) and len(node) >= 3:            name = node[0] if isinstance(node[0], str) else None
             node_id = node[2] if isinstance(node[2], str) else None
             if name and node_id and (node_id.startswith("chgn_") or node_id.startswith("gn_")):
                 concept_nodes[node_id] = name
@@ -437,8 +436,7 @@ def analyze_history(klines):
         if pc > 0 and (klines[i]["close"] - pc) / pc * 100 >= 9.8:
             consec += 1
             max_consec = max(max_consec, consec)
-            lu_count += 1
-            has = True
+            lu_count += 1            has = True
             last_lu_idx = i
             lu_indices.append(i)
         else:
@@ -657,8 +655,7 @@ def score_theme_catalyst(sector_data, sector_rank):
 # 核心子项：120日内涨停次数 + 历史最大连板高度（≥15分，占因子60%+）
 # ============================================================
 
-def score_stock_recognition(stock, sector_stocks, hist):
-    # === 历史股性子项（15分） ===
+def score_stock_recognition(stock, sector_stocks, hist):    # === 历史股性子项（15分） ===
     lu_count = hist.get("limit_up_count", 0)
     max_consec = hist.get("max_consecutive", 0)
     
@@ -877,8 +874,7 @@ def get_pool(adjusted_total, resonance):
     """v1.2: 入池基于调整后分数（含近期涨停调整）"""
     if adjusted_total >= 65 and resonance["all_three"]:
         return "重点观察"
-    elif adjusted_total >= 60:
-        return "预备池"
+    elif adjusted_total >= 60:        return "预备池"
     elif adjusted_total >= 50:
         return "观察池"
     else:
@@ -1097,8 +1093,7 @@ def main():
     for i, stock in enumerate(candidates):
         code = stock["code"]
         name = stock["name"]
-        pct = (i+1) / len(candidates) * 100
-        print(f"\r  [{pct:5.1f}%] ({i+1}/{len(candidates)}) {code} {name}      ", end="", flush=True)
+        pct = (i+1) / len(candidates) * 100        print(f"\r  [{pct:5.1f}%] ({i+1}/{len(candidates)}) {code} {name}      ", end="", flush=True)
         
         try:
             klines = klines_map.get(code)
@@ -1166,7 +1161,9 @@ def main():
                 "all_concepts": concept_names,  # v1.3: 所有概念标签（top 5）
                 "sector_rank": scoring_sr,
                 "price": stock["price"],
+                "prev_close": stock.get("prev_close", 0),
                 "change_pct": stock["change_pct"],
+                "change_vs_prev_close": round(((stock["price"] - stock.get("prev_close", 0)) / stock["prev_close"] * 100), 2) if stock.get("prev_close", 0) > 0 else None,
                 "turnover_rate": round(stock.get("turnover_rate", 0), 2),
                 "circ_mcap_yi": round(stock.get("circ_mcap", 0) / 10000, 1),
                 "amount_yi": round(stock.get("amount", 0) / 1e8, 2),
