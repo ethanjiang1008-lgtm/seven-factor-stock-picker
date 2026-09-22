@@ -137,7 +137,7 @@ def pool_order(pool):
 
 def pct_cell_value(value):
     if value is None:
-        return "-"
+        return ("-", 2, None)
     return (value / 100.0, 5, "number")
 
 
