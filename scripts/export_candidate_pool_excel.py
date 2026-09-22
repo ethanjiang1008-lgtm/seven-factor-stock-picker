@@ -218,20 +218,25 @@ def main():
     )
 
     headers = [
-        '排名','入池时间','代码','名称','行业','价格','涨跌幅','换手率',
+        '排名','入池时间','代码','名称','行业','价格','上个交易日收盘价','较上日收盘涨跌幅','涨跌幅','换手率',
         '流通市值(亿)','调整分','原始分','P级','P级标签','候选池','评级',
         '三共振','连板概率','历史涨停次数','最高连板','距上次涨停(日)',
         '次日重点1','次日重点2'
     ]
     rows = [[style_value(h, 1) for h in headers]]
     for i, (r, entered, rec, hist, res, scores, watch) in enumerate(enriched, 1):
+        current_price = num(r.get('price'), 0)
+        prev_close = num(r.get('prev_close'), 0)
+        change_vs_prev_close = ((current_price - prev_close) / prev_close * 100) if prev_close > 0 else None
         rows.append([
             num_cell(i, 3),
             style_value(entered, 2),
             style_value(str(r.get('code') or ''), 2),
             style_value(r.get('name'), 2),
             style_value(r.get('sector') or r.get('sw_industry'), 2),
-            num_cell(num(r.get('price')), 4),
+            num_cell(current_price, 4),
+            num_cell(prev_close, 4) if prev_close > 0 else style_value('-', 2),
+            pct_cell(change_vs_prev_close) if change_vs_prev_close is not None else style_value('-', 2),
             pct_cell(r.get('change_pct')),
             pct_cell(r.get('turnover_rate')),
             num_cell(num(r.get('circ_mcap_yi')), 4),
@@ -303,8 +308,8 @@ def main():
     build_xlsx(output, [
         (
             '候选池', rows,
-            [7, 21, 10, 14, 14, 10, 10, 10, 13, 10, 10, 8, 14, 12, 8, 9, 11, 12, 10, 16, 24, 24],
-            f'V{len(rows)}'
+            [7, 21, 10, 14, 14, 10, 14, 15, 10, 10, 13, 10, 10, 8, 14, 12, 8, 9, 11, 12, 10, 16, 24, 24],
+            f'X{len(rows)}'
         ),
         ('市场概览', overview, [22, 18, 14, 14], None),
     ])
