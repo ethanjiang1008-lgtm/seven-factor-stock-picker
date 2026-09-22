@@ -31,7 +31,7 @@ SSL_CTX = ssl.create_default_context()
 SSL_CTX.check_hostname = False
 SSL_CTX.verify_mode = ssl.CERT_NONE
 
-DATE_RE = re.compile(r"seven_factor_(\\d{4}-\\d{2}-\\d{2})\\.json$")
+DATE_RE = re.compile(r"seven_factor_(\d{4}-\d{2}-\d{2})\.json$")
 
 
 def load_json(path):
@@ -320,14 +320,13 @@ def build_validation_workbook(path, prediction_date, verification_date, rows_dat
 
 def main():
     now = datetime.now(timezone(timedelta(hours=8)))
-    scan_date = now.strftime("%Y-%m-%d")
-    verification_date = scan_date
-
     latest_path = os.path.join(DATA_DIR, "seven_factor_latest.json")
     if not os.path.exists(latest_path):
         raise SystemExit("seven_factor_latest.json not found; skip verification")
 
     today = load_json(latest_path)
+    scan_date = str(today.get("scan_date") or now.strftime("%Y-%m-%d"))
+    verification_date = scan_date
     current_candidates = today.get("candidates") or []
     if not current_candidates:
         raise SystemExit("today candidate pool is empty; refusing to create verification")
