@@ -1166,9 +1166,7 @@ def main():
                 "all_concepts": concept_names,  # v1.3: 所有概念标签（top 5）
                 "sector_rank": scoring_sr,
                 "price": stock["price"],
-                "prev_close": stock.get("prev_close", 0),
                 "change_pct": stock["change_pct"],
-                "change_vs_prev_close": round(((stock["price"] - stock.get("prev_close", 0)) / stock["prev_close"] * 100), 2) if stock.get("prev_close", 0) > 0 else None,
                 "turnover_rate": round(stock.get("turnover_rate", 0), 2),
                 "circ_mcap_yi": round(stock.get("circ_mcap", 0) / 10000, 1),
                 "amount_yi": round(stock.get("amount", 0) / 1e8, 2),
