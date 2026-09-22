@@ -217,7 +217,8 @@ def fetch_concept_board_nodes():
     concept_nodes = {}
 
     def _find_pairs(node):
-        if isinstance(node, list) and len(node) >= 3:            name = node[0] if isinstance(node[0], str) else None
+        if isinstance(node, list) and len(node) >= 3:
+            name = node[0] if isinstance(node[0], str) else None
             node_id = node[2] if isinstance(node[2], str) else None
             if name and node_id and (node_id.startswith("chgn_") or node_id.startswith("gn_")):
                 concept_nodes[node_id] = name
@@ -436,7 +437,8 @@ def analyze_history(klines):
         if pc > 0 and (klines[i]["close"] - pc) / pc * 100 >= 9.8:
             consec += 1
             max_consec = max(max_consec, consec)
-            lu_count += 1            has = True
+            lu_count += 1
+            has = True
             last_lu_idx = i
             lu_indices.append(i)
         else:
@@ -655,7 +657,8 @@ def score_theme_catalyst(sector_data, sector_rank):
 # 核心子项：120日内涨停次数 + 历史最大连板高度（≥15分，占因子60%+）
 # ============================================================
 
-def score_stock_recognition(stock, sector_stocks, hist):    # === 历史股性子项（15分） ===
+def score_stock_recognition(stock, sector_stocks, hist):
+    # === 历史股性子项（15分） ===
     lu_count = hist.get("limit_up_count", 0)
     max_consec = hist.get("max_consecutive", 0)
     
@@ -874,7 +877,8 @@ def get_pool(adjusted_total, resonance):
     """v1.2: 入池基于调整后分数（含近期涨停调整）"""
     if adjusted_total >= 65 and resonance["all_three"]:
         return "重点观察"
-    elif adjusted_total >= 60:        return "预备池"
+    elif adjusted_total >= 60:
+        return "预备池"
     elif adjusted_total >= 50:
         return "观察池"
     else:
@@ -1093,7 +1097,8 @@ def main():
     for i, stock in enumerate(candidates):
         code = stock["code"]
         name = stock["name"]
-        pct = (i+1) / len(candidates) * 100        print(f"\r  [{pct:5.1f}%] ({i+1}/{len(candidates)}) {code} {name}      ", end="", flush=True)
+        pct = (i+1) / len(candidates) * 100
+        print(f"\r  [{pct:5.1f}%] ({i+1}/{len(candidates)}) {code} {name}      ", end="", flush=True)
         
         try:
             klines = klines_map.get(code)
