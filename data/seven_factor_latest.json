@@ -1,6 +1,6 @@
 {
   "scan_date": "2026-09-23",
-  "scan_time": "2026-09-23 18:06:59",
+  "scan_time": "2026-09-23 20:58:49",
   "system_version": "v1.4",
   "model": "连板潜力七因子模型 v1.4（全行业候选池 + 并发K线 + 完整涨跌停统计）",
   "weight_config": {
@@ -19477,7 +19477,7 @@
       "sector": "宠物经济",
       "sw_industry": "农林牧渔",
       "concept": "宠物经济",
-      "concept_rank": 195,
+      "concept_rank": 194,
       "all_concepts": [
         "宠物经济",
         "植物蛋白",
@@ -19485,7 +19485,7 @@
         "人造肉概念",
         "预制菜"
       ],
-      "sector_rank": 195,
+      "sector_rank": 194,
       "price": 27.27,
       "change_pct": -1.052,
       "turnover_rate": 4.23,
@@ -25745,7 +25745,7 @@
       "sector": "中科院系",
       "sw_industry": "传媒",
       "concept": "中科院系",
-      "concept_rank": 193,
+      "concept_rank": 192,
       "all_concepts": [
         "中科院系",
         "中特估",
@@ -25753,7 +25753,7 @@
         "国资云",
         "AI语料库"
       ],
-      "sector_rank": 193,
+      "sector_rank": 192,
       "price": 21.36,
       "change_pct": -1.385,
       "turnover_rate": 1.13,
@@ -28346,7 +28346,7 @@
       "sector": "创新药",
       "sw_industry": "基础化工",
       "concept": "创新药",
-      "concept_rank": 189,
+      "concept_rank": 188,
       "all_concepts": [
         "创新药",
         "MSCI中国",
@@ -28354,7 +28354,7 @@
         "电解液",
         "电子化学品"
       ],
-      "sector_rank": 189,
+      "sector_rank": 188,
       "price": 14.74,
       "change_pct": 2.007,
       "turnover_rate": 1.27,
@@ -32116,7 +32116,7 @@
       "sector": "细胞治疗",
       "sw_industry": "综合",
       "concept": "细胞治疗",
-      "concept_rank": 188,
+      "concept_rank": 187,
       "all_concepts": [
         "细胞治疗",
         "创新药",
@@ -32124,7 +32124,7 @@
         "养老产业",
         "基因测序"
       ],
-      "sector_rank": 188,
+      "sector_rank": 187,
       "price": 5.85,
       "change_pct": -1.015,
       "turnover_rate": 0.96,
@@ -35611,12 +35611,12 @@
       "sector": "宠物经济",
       "sw_industry": "家用电器",
       "concept": "宠物经济",
-      "concept_rank": 195,
+      "concept_rank": 194,
       "all_concepts": [
         "宠物经济",
         "中俄贸易概念"
       ],
-      "sector_rank": 195,
+      "sector_rank": 194,
       "price": 11.68,
       "change_pct": -0.933,
       "turnover_rate": 0.76,
@@ -43984,14 +43984,14 @@
       "sector": "百度概念",
       "sw_industry": "非银金融",
       "concept": "百度概念",
-      "concept_rank": 584,
+      "concept_rank": 585,
       "all_concepts": [
         "百度概念",
         "雄安新区",
         "京津冀",
         "期货概念"
       ],
-      "sector_rank": 584,
+      "sector_rank": 585,
       "price": 6.46,
       "change_pct": -0.155,
       "turnover_rate": 0.63,
@@ -47195,12 +47195,12 @@
       "sector": "绿色电力",
       "sw_industry": "公用事业",
       "concept": "绿色电力",
-      "concept_rank": 198,
+      "concept_rank": 197,
       "all_concepts": [
         "绿色电力",
         "近端次新"
       ],
-      "sector_rank": 198,
+      "sector_rank": 197,
       "price": 11.81,
       "change_pct": -1.172,
       "turnover_rate": 2.76,
@@ -54073,7 +54073,7 @@
       "sector": "福建自贸区",
       "sw_industry": "传媒",
       "concept": "福建自贸区",
-      "concept_rank": 199,
+      "concept_rank": 198,
       "all_concepts": [
         "福建自贸区",
         "在线教育",
@@ -54081,7 +54081,7 @@
         "网络游戏",
         "手游"
       ],
-      "sector_rank": 199,
+      "sector_rank": 198,
       "price": 344.58,
       "change_pct": -1.661,
       "turnover_rate": 1.43,
@@ -56628,7 +56628,7 @@
       "sector": "福建自贸区",
       "sw_industry": "商贸零售",
       "concept": "福建自贸区",
-      "concept_rank": 199,
+      "concept_rank": 198,
       "all_concepts": [
         "福建自贸区",
         "职业教育",
@@ -56636,7 +56636,7 @@
         "预制菜",
         "食品安全"
       ],
-      "sector_rank": 199,
+      "sector_rank": 198,
       "price": 3.01,
       "change_pct": -1.634,
       "turnover_rate": 0.88,
@@ -58293,7 +58293,7 @@
       "sector": "环氧丙烷",
       "sw_industry": "石油石化",
       "concept": "环氧丙烷",
-      "concept_rank": 335,
+      "concept_rank": 336,
       "all_concepts": [
         "环氧丙烷",
         "可降解",
@@ -58301,7 +58301,7 @@
         "PM2.5",
         "节能环保"
       ],
-      "sector_rank": 335,
+      "sector_rank": 336,
       "price": 5.37,
       "change_pct": 0.0,
       "turnover_rate": 0.48,
@@ -60081,7 +60081,7 @@
       "sector": "绿色电力",
       "sw_industry": "公用事业",
       "concept": "绿色电力",
-      "concept_rank": 198,
+      "concept_rank": 197,
       "all_concepts": [
         "绿色电力",
         "风电",
@@ -60089,7 +60089,7 @@
         "股期概念",
         "特高压"
       ],
-      "sector_rank": 198,
+      "sector_rank": 197,
       "price": 7.13,
       "change_pct": -1.11,
       "turnover_rate": 0.65,
@@ -60722,12 +60722,12 @@
       "sector": "福建自贸区",
       "sw_industry": "轻工制造",
       "concept": "福建自贸区",
-      "concept_rank": 199,
+      "concept_rank": 198,
       "all_concepts": [
         "福建自贸区",
         "抖音小店"
       ],
-      "sector_rank": 199,
+      "sector_rank": 198,
       "price": 6.12,
       "change_pct": -0.81,
       "turnover_rate": 0.86,
@@ -60973,7 +60973,7 @@
       "sector": "电池箔",
       "sw_industry": "有色金属",
       "concept": "电池箔",
-      "concept_rank": 196,
+      "concept_rank": 195,
       "all_concepts": [
         "电池箔",
         "麒麟电池",
@@ -60981,7 +60981,7 @@
         "有色铝",
         "钠电池"
       ],
-      "sector_rank": 196,
+      "sector_rank": 195,
       "price": 18.36,
       "change_pct": -0.542,
       "turnover_rate": 1.12,
@@ -61101,7 +61101,7 @@
       "sector": "单晶硅",
       "sw_industry": "公用事业",
       "concept": "单晶硅",
-      "concept_rank": 192,
+      "concept_rank": 191,
       "all_concepts": [
         "单晶硅",
         "绿色电力",
@@ -61109,7 +61109,7 @@
         "碳化硅",
         "IGBT概念"
       ],
-      "sector_rank": 192,
+      "sector_rank": 191,
       "price": 2.94,
       "change_pct": -1.01,
       "turnover_rate": 1.1,
@@ -61612,7 +61612,7 @@
       "sector": "绿色电力",
       "sw_industry": "环保",
       "concept": "绿色电力",
-      "concept_rank": 198,
+      "concept_rank": 197,
       "all_concepts": [
         "绿色电力",
         "快充概念",
@@ -61620,7 +61620,7 @@
         "垃圾分类",
         "垃圾发电"
       ],
-      "sector_rank": 198,
+      "sector_rank": 197,
       "price": 12.66,
       "change_pct": -1.171,
       "turnover_rate": 0.8,
@@ -63143,13 +63143,13 @@
       "sector": "绿色电力",
       "sw_industry": "公用事业",
       "concept": "绿色电力",
-      "concept_rank": 198,
+      "concept_rank": 197,
       "all_concepts": [
         "绿色电力",
         "水电概念",
         "CDM概念"
       ],
-      "sector_rank": 198,
+      "sector_rank": 197,
       "price": 19.03,
       "change_pct": -0.782,
       "turnover_rate": 1.0,
@@ -65049,7 +65049,7 @@
       "sector": "宠物经济",
       "sw_industry": "农林牧渔",
       "concept": "宠物经济",
-      "concept_rank": 195,
+      "concept_rank": 194,
       "all_concepts": [
         "宠物经济",
         "甲型流感",
@@ -65057,7 +65057,7 @@
         "禽流感药物",
         "生物疫苗"
       ],
-      "sector_rank": 195,
+      "sector_rank": 194,
       "price": 6.68,
       "change_pct": -0.89,
       "turnover_rate": 0.47,
@@ -65177,7 +65177,7 @@
       "sector": "绿色电力",
       "sw_industry": "公用事业",
       "concept": "绿色电力",
-      "concept_rank": 198,
+      "concept_rank": 197,
       "all_concepts": [
         "绿色电力",
         "换电概念",
@@ -65185,7 +65185,7 @@
         "浙江国资",
         "生物质能"
       ],
-      "sector_rank": 198,
+      "sector_rank": 197,
       "price": 12.3,
       "change_pct": -1.205,
       "turnover_rate": 0.25,
@@ -90992,14 +90992,14 @@
       "sector": "福建自贸区",
       "sw_industry": "交通运输",
       "concept": "福建自贸区",
-      "concept_rank": 199,
+      "concept_rank": 198,
       "all_concepts": [
         "福建自贸区",
         "民用航空",
         "福建国资",
         "海峡西岸"
       ],
-      "sector_rank": 199,
+      "sector_rank": 198,
       "price": 15.05,
       "change_pct": -0.791,
       "turnover_rate": 0.3,
@@ -94999,14 +94999,14 @@
       "sector": "百度概念",
       "sw_industry": "非银金融",
       "concept": "百度概念",
-      "concept_rank": 584,
+      "concept_rank": 585,
       "all_concepts": [
         "百度概念",
         "参股基金",
         "期货概念",
         "未股改"
       ],
-      "sector_rank": 584,
+      "sector_rank": 585,
       "price": 3.66,
       "change_pct": -0.813,
       "turnover_rate": 0.41,
@@ -97009,12 +97009,12 @@
       "sector": "债转股",
       "sw_industry": "钢铁",
       "concept": "债转股",
-      "concept_rank": 590,
+      "concept_rank": 591,
       "all_concepts": [
         "债转股",
         "低碳经济"
       ],
-      "sector_rank": 590,
+      "sector_rank": 591,
       "price": 1.77,
       "change_pct": 0.0,
       "turnover_rate": 1.89,
@@ -98264,8 +98264,8 @@
       "concept_rank": 137,
       "all_concepts": [
         "合成生物",
-        "抗流感",
         "宠物经济",
+        "抗流感",
         "甲型流感",
         "疫苗"
       ],
@@ -101392,7 +101392,7 @@
       "sector": "宠物经济",
       "sw_industry": "食品饮料",
       "concept": "宠物经济",
-      "concept_rank": 195,
+      "concept_rank": 194,
       "all_concepts": [
         "宠物经济",
         "冷链物流",
@@ -101400,7 +101400,7 @@
         "预制菜",
         "猪肉概念"
       ],
-      "sector_rank": 195,
+      "sector_rank": 194,
       "price": 4.08,
       "change_pct": -1.211,
       "turnover_rate": 1.33,
@@ -106262,11 +106262,11 @@
       "sector": "福建自贸区",
       "sw_industry": "银行",
       "concept": "福建自贸区",
-      "concept_rank": 199,
+      "concept_rank": 198,
       "all_concepts": [
         "福建自贸区"
       ],
-      "sector_rank": 199,
+      "sector_rank": 198,
       "price": 6.93,
       "change_pct": -1.422,
       "turnover_rate": 0.68,
@@ -107138,12 +107138,12 @@
       "sector": "绿色电力",
       "sw_industry": "公用事业",
       "concept": "绿色电力",
-      "concept_rank": 198,
+      "concept_rank": 197,
       "all_concepts": [
         "绿色电力",
         "山西国资"
       ],
-      "sector_rank": 198,
+      "sector_rank": 197,
       "price": 6.13,
       "change_pct": -0.648,
       "turnover_rate": 0.63,
@@ -107387,7 +107387,7 @@
       "sector": "百度概念",
       "sw_industry": "交通运输",
       "concept": "百度概念",
-      "concept_rank": 584,
+      "concept_rank": 585,
       "all_concepts": [
         "百度概念",
         "固废处理",
@@ -107395,7 +107395,7 @@
         "风电",
         "电池回收"
       ],
-      "sector_rank": 584,
+      "sector_rank": 585,
       "price": 8.04,
       "change_pct": -0.741,
       "turnover_rate": 0.14,
@@ -108138,7 +108138,7 @@
       "sector": "宠物经济",
       "sw_industry": "农林牧渔",
       "concept": "宠物经济",
-      "concept_rank": 195,
+      "concept_rank": 194,
       "all_concepts": [
         "宠物经济",
         "新疆振兴",
@@ -108146,7 +108146,7 @@
         "转基因",
         "预制菜"
       ],
-      "sector_rank": 195,
+      "sector_rank": 194,
       "price": 7.74,
       "change_pct": -1.401,
       "turnover_rate": 0.89,
@@ -109388,7 +109388,7 @@
       "sector": "宠物经济",
       "sw_industry": "农林牧渔",
       "concept": "宠物经济",
-      "concept_rank": 195,
+      "concept_rank": 194,
       "all_concepts": [
         "宠物经济",
         "疫苗",
@@ -109396,7 +109396,7 @@
         "动物疫苗",
         "知识产权"
       ],
-      "sector_rank": 195,
+      "sector_rank": 194,
       "price": 10.22,
       "change_pct": -0.969,
       "turnover_rate": 0.48,
@@ -109514,7 +109514,7 @@
       "sector": "字节跳动概念",
       "sw_industry": "商贸零售",
       "concept": "字节跳动概念",
-      "concept_rank": 572,
+      "concept_rank": 573,
       "all_concepts": [
         "字节跳动概念",
         "陕甘宁",
@@ -109522,7 +109522,7 @@
         "短剧概念",
         "快手概念"
       ],
-      "sector_rank": 572,
+      "sector_rank": 573,
       "price": 4.19,
       "change_pct": -1.874,
       "turnover_rate": 1.86,
@@ -110636,7 +110636,7 @@
       "sector": "百度概念",
       "sw_industry": "公用事业",
       "concept": "百度概念",
-      "concept_rank": 584,
+      "concept_rank": 585,
       "all_concepts": [
         "百度概念",
         "绿色电力",
@@ -110644,7 +110644,7 @@
         "天然气",
         "光伏胶膜"
       ],
-      "sector_rank": 584,
+      "sector_rank": 585,
       "price": 6.23,
       "change_pct": -0.796,
       "turnover_rate": 0.37,
@@ -116886,7 +116886,7 @@
       "sector": "绿色电力",
       "sw_industry": "公用事业",
       "concept": "绿色电力",
-      "concept_rank": 198,
+      "concept_rank": 197,
       "all_concepts": [
         "绿色电力",
         "风电",
@@ -116894,7 +116894,7 @@
         "虚拟电厂",
         "页岩气"
       ],
-      "sector_rank": 198,
+      "sector_rank": 197,
       "price": 4.36,
       "change_pct": -1.134,
       "turnover_rate": 0.34,
@@ -117388,14 +117388,14 @@
       "sector": "绿色电力",
       "sw_industry": "交通运输",
       "concept": "绿色电力",
-      "concept_rank": 198,
+      "concept_rank": 197,
       "all_concepts": [
         "绿色电力",
         "聚氨酯",
         "低碳经济",
         "山西国资"
       ],
-      "sector_rank": 198,
+      "sector_rank": 197,
       "price": 4.64,
       "change_pct": -0.642,
       "turnover_rate": 0.21,
@@ -120269,7 +120269,7 @@
       "sector": "绿色电力",
       "sw_industry": "公用事业",
       "concept": "绿色电力",
-      "concept_rank": 198,
+      "concept_rank": 197,
       "all_concepts": [
         "绿色电力",
         "福建自贸区",
@@ -120277,7 +120277,7 @@
         "核电核能",
         "能源互联"
       ],
-      "sector_rank": 198,
+      "sector_rank": 197,
       "price": 10.67,
       "change_pct": -0.559,
       "turnover_rate": 0.35,
@@ -120395,13 +120395,13 @@
       "sector": "长安汽车概念",
       "sw_industry": "有色金属",
       "concept": "长安汽车概念",
-      "concept_rank": 191,
+      "concept_rank": 190,
       "all_concepts": [
         "长安汽车概念",
         "一体化压铸",
         "有色铝"
       ],
-      "sector_rank": 191,
+      "sector_rank": 190,
       "price": 5.94,
       "change_pct": -0.669,
       "turnover_rate": 0.93,
@@ -121639,7 +121639,7 @@
       "sector": "绿色电力",
       "sw_industry": "公用事业",
       "concept": "绿色电力",
-      "concept_rank": 198,
+      "concept_rank": 197,
       "all_concepts": [
         "绿色电力",
         "虚拟电厂",
@@ -121647,7 +121647,7 @@
         "债转股",
         "AMC（化债概念）"
       ],
-      "sector_rank": 198,
+      "sector_rank": 197,
       "price": 5.6,
       "change_pct": -0.885,
       "turnover_rate": 0.56,
@@ -121765,7 +121765,7 @@
       "sector": "绿色电力",
       "sw_industry": "交通运输",
       "concept": "绿色电力",
-      "concept_rank": 198,
+      "concept_rank": 197,
       "all_concepts": [
         "绿色电力",
         "旅游酒店",
@@ -121773,7 +121773,7 @@
         "统一大市场",
         "石墨烯"
       ],
-      "sector_rank": 198,
+      "sector_rank": 197,
       "price": 2.84,
       "change_pct": -1.045,
       "turnover_rate": 0.88,
@@ -122384,7 +122384,7 @@
       "sector": "绿色电力",
       "sw_industry": "公用事业",
       "concept": "绿色电力",
-      "concept_rank": 198,
+      "concept_rank": 197,
       "all_concepts": [
         "绿色电力",
         "风电",
@@ -122392,7 +122392,7 @@
         "雄安新区",
         "期货概念"
       ],
-      "sector_rank": 198,
+      "sector_rank": 197,
       "price": 5.03,
       "change_pct": -0.984,
       "turnover_rate": 0.17,
@@ -126459,8 +126459,8 @@
         "高派息",
         "生物医药",
         "合成生物",
-        "抗流感",
-        "宠物经济"
+        "宠物经济",
+        "抗流感"
       ],
       "sector_rank": 40,
       "price": 18.83,
@@ -140349,7 +140349,7 @@
     "s_tier_count": 8
   },
   "failed": [],
-  "elapsed_seconds": 225.1,
+  "elapsed_seconds": 332.1,
   "s_tier": {
     "name": "S级核心候选",
     "count": 8,
