@@ -1,6 +1,6 @@
 {
   "scan_date": "2026-09-24",
-  "scan_time": "2026-09-24 17:39:25",
+  "scan_time": "2026-09-24 20:52:12",
   "system_version": "v1.4",
   "model": "连板潜力七因子模型 v1.4（全行业候选池 + 并发K线 + 完整涨跌停统计）",
   "weight_config": {
@@ -368,10 +368,10 @@
     {
       "rank": 9,
       "name": "微盘股",
-      "avg_change": 3.2,
+      "avg_change": 3.15,
       "limit_up_count": 5,
       "strong_count": 8,
-      "total_count": 49
+      "total_count": 50
     },
     {
       "rank": 10,
@@ -22047,9 +22047,9 @@
       "all_concepts": [
         "国资改革",
         "华为概念",
+        "微盘股",
         "一带一路",
-        "跨境电商",
-        "比亚迪概念"
+        "跨境电商"
       ],
       "sector_rank": 6,
       "price": 9.35,
@@ -26085,7 +26085,7 @@
       "sector": "影视传媒",
       "sw_industry": "传媒",
       "concept": "影视传媒",
-      "concept_rank": 238,
+      "concept_rank": 239,
       "all_concepts": [
         "影视传媒",
         "影视动漫",
@@ -26093,7 +26093,7 @@
         "手游",
         "短剧概念"
       ],
-      "sector_rank": 238,
+      "sector_rank": 239,
       "price": 4.12,
       "change_pct": -0.962,
       "turnover_rate": 5.23,
@@ -56372,7 +56372,7 @@
       "sector": "污水处理",
       "sw_industry": "公用事业",
       "concept": "污水处理",
-      "concept_rank": 297,
+      "concept_rank": 296,
       "all_concepts": [
         "污水处理",
         "燃料电池",
@@ -56380,7 +56380,7 @@
         "水电概念",
         "湖南国资"
       ],
-      "sector_rank": 297,
+      "sector_rank": 296,
       "price": 9.79,
       "change_pct": -0.102,
       "turnover_rate": 1.68,
@@ -61877,7 +61877,7 @@
       "sector": "污水处理",
       "sw_industry": "公用事业",
       "concept": "污水处理",
-      "concept_rank": 297,
+      "concept_rank": 296,
       "all_concepts": [
         "污水处理",
         "天然气",
@@ -61885,7 +61885,7 @@
         "绿色电力",
         "新疆振兴"
       ],
-      "sector_rank": 297,
+      "sector_rank": 296,
       "price": 3.86,
       "change_pct": -0.515,
       "turnover_rate": 1.21,
@@ -74919,7 +74919,7 @@
       "sector": "污水处理",
       "sw_industry": "农林牧渔",
       "concept": "污水处理",
-      "concept_rank": 297,
+      "concept_rank": 296,
       "all_concepts": [
         "污水处理",
         "合成生物",
@@ -74927,7 +74927,7 @@
         "污水处理",
         "生物安全"
       ],
-      "sector_rank": 297,
+      "sector_rank": 296,
       "price": 5.15,
       "change_pct": -0.387,
       "turnover_rate": 0.63,
@@ -77850,13 +77850,13 @@
       "sector": "污水处理",
       "sw_industry": "轻工制造",
       "concept": "污水处理",
-      "concept_rank": 297,
+      "concept_rank": 296,
       "all_concepts": [
         "污水处理",
         "传感器",
         "长三角一体化"
       ],
-      "sector_rank": 297,
+      "sector_rank": 296,
       "price": 13.44,
       "change_pct": -0.444,
       "turnover_rate": 0.71,
@@ -79126,7 +79126,7 @@
       "sector": "污水处理",
       "sw_industry": "环保",
       "concept": "污水处理",
-      "concept_rank": 297,
+      "concept_rank": 296,
       "all_concepts": [
         "污水处理",
         "天然气",
@@ -79134,7 +79134,7 @@
         "固废处理",
         "垃圾分类"
       ],
-      "sector_rank": 297,
+      "sector_rank": 296,
       "price": 10.81,
       "change_pct": -0.369,
       "turnover_rate": 0.65,
@@ -81674,13 +81674,13 @@
       "sector": "污水处理",
       "sw_industry": "轻工制造",
       "concept": "污水处理",
-      "concept_rank": 297,
+      "concept_rank": 296,
       "all_concepts": [
         "污水处理",
         "黄河三角",
         "可降解"
       ],
-      "sector_rank": 297,
+      "sector_rank": 296,
       "price": 6.28,
       "change_pct": 0.159,
       "turnover_rate": 0.91,
@@ -83845,7 +83845,7 @@
       "sector": "污水处理",
       "sw_industry": "房地产",
       "concept": "污水处理",
-      "concept_rank": 297,
+      "concept_rank": 296,
       "all_concepts": [
         "污水处理",
         "浙江国资",
@@ -83853,7 +83853,7 @@
         "水泥",
         "舟山自贸区"
       ],
-      "sector_rank": 297,
+      "sector_rank": 296,
       "price": 4.96,
       "change_pct": -1.782,
       "turnover_rate": 0.54,
@@ -96095,12 +96095,12 @@
       "sector": "污水处理",
       "sw_industry": "基础化工",
       "concept": "污水处理",
-      "concept_rank": 297,
+      "concept_rank": 296,
       "all_concepts": [
         "污水处理",
         "污水处理"
       ],
-      "sector_rank": 297,
+      "sector_rank": 296,
       "price": 3.54,
       "change_pct": 0.568,
       "turnover_rate": 1.12,
@@ -105335,12 +105335,12 @@
       "sector": "影视传媒",
       "sw_industry": "传媒",
       "concept": "影视传媒",
-      "concept_rank": 238,
+      "concept_rank": 239,
       "all_concepts": [
         "影视传媒",
         "影视动漫"
       ],
-      "sector_rank": 238,
+      "sector_rank": 239,
       "price": 8.78,
       "change_pct": -1.79,
       "turnover_rate": 1.61,
@@ -110113,14 +110113,14 @@
       "sector": "医药电商",
       "sw_industry": "美容护理",
       "concept": "医药电商",
-      "concept_rank": 241,
+      "concept_rank": 237,
       "all_concepts": [
         "医药电商",
         "抗流感",
         "广西国资",
         "化妆品"
       ],
-      "sector_rank": 241,
+      "sector_rank": 237,
       "price": 5.36,
       "change_pct": -0.372,
       "turnover_rate": 1.09,
@@ -123290,14 +123290,14 @@
       "sector": "医药电商",
       "sw_industry": "医药生物",
       "concept": "医药电商",
-      "concept_rank": 241,
+      "concept_rank": 237,
       "all_concepts": [
         "医药电商",
         "价值成长",
         "家庭医生概念",
         "零售药店"
       ],
-      "sector_rank": 241,
+      "sector_rank": 237,
       "price": 22.08,
       "change_pct": -0.045,
       "turnover_rate": 0.43,
@@ -127808,7 +127808,7 @@
       "sector": "污水处理",
       "sw_industry": "交通运输",
       "concept": "污水处理",
-      "concept_rank": 297,
+      "concept_rank": 296,
       "all_concepts": [
         "污水处理",
         "固废处理",
@@ -127816,7 +127816,7 @@
         "垃圾分类",
         "土壤修复"
       ],
-      "sector_rank": 297,
+      "sector_rank": 296,
       "price": 3.55,
       "change_pct": -0.281,
       "turnover_rate": 0.53,
@@ -127934,7 +127934,7 @@
       "sector": "污水处理",
       "sw_industry": "纺织服饰",
       "concept": "污水处理",
-      "concept_rank": 297,
+      "concept_rank": 296,
       "all_concepts": [
         "污水处理",
         "养老金概念",
@@ -127942,7 +127942,7 @@
         "页岩气",
         "黄金股"
       ],
-      "sector_rank": 297,
+      "sector_rank": 296,
       "price": 6.31,
       "change_pct": -0.316,
       "turnover_rate": 0.31,
@@ -129565,7 +129565,7 @@
       "sector": "污水处理",
       "sw_industry": "环保",
       "concept": "污水处理",
-      "concept_rank": 297,
+      "concept_rank": 296,
       "all_concepts": [
         "污水处理",
         "低市盈率",
@@ -129573,7 +129573,7 @@
         "长期破净",
         "垃圾分类"
       ],
-      "sector_rank": 297,
+      "sector_rank": 296,
       "price": 7.16,
       "change_pct": -0.556,
       "turnover_rate": 0.25,
@@ -131949,7 +131949,7 @@
       "sector": "污水处理",
       "sw_industry": "环保",
       "concept": "污水处理",
-      "concept_rank": 297,
+      "concept_rank": 296,
       "all_concepts": [
         "污水处理",
         "海绵城市",
@@ -131957,7 +131957,7 @@
         "成渝特区",
         "债转股"
       ],
-      "sector_rank": 297,
+      "sector_rank": 296,
       "price": 3.98,
       "change_pct": -0.251,
       "turnover_rate": 0.11,
@@ -134958,7 +134958,7 @@
       "sector": "污水处理",
       "sw_industry": "建筑装饰",
       "concept": "污水处理",
-      "concept_rank": 297,
+      "concept_rank": 296,
       "all_concepts": [
         "污水处理",
         "雄安新区",
@@ -134966,7 +134966,7 @@
         "固态电池",
         "垃圾分类"
       ],
-      "sector_rank": 297,
+      "sector_rank": 296,
       "price": 7.11,
       "change_pct": -0.559,
       "turnover_rate": 0.37,
@@ -138469,12 +138469,12 @@
       "sector": "安徽国资",
       "sw_industry": "社会服务",
       "concept": "安徽国资",
-      "concept_rank": 667,
+      "concept_rank": 668,
       "all_concepts": [
         "安徽国资",
         "在线旅游"
       ],
-      "sector_rank": 667,
+      "sector_rank": 668,
       "price": 32.3,
       "change_pct": -1.524,
       "turnover_rate": 0.96,
@@ -149510,12 +149510,12 @@
       "sector": "历史新高",
       "sw_industry": "食品饮料",
       "concept": "历史新高",
-      "concept_rank": 239,
+      "concept_rank": 240,
       "all_concepts": [
         "历史新高",
         "白酒"
       ],
-      "sector_rank": 239,
+      "sector_rank": 240,
       "price": 38.04,
       "change_pct": 3.51,
       "turnover_rate": 11.61,
@@ -162750,7 +162750,7 @@
     "s_tier_count": 8
   },
   "failed": [],
-  "elapsed_seconds": 253.4,
+  "elapsed_seconds": 370.5,
   "s_tier": {
     "name": "S级核心候选",
     "count": 8,
