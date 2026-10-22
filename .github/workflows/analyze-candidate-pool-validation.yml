@@ -1,0 +1,39 @@
+name: Analyze candidate-pool validation history
+
+on:
+  push:
+    branches:
+      - analysis/candidate-pool-validation-20261022
+    paths:
+      - ".github/workflows/analyze-candidate-pool-validation.yml"
+      - "scripts/analyze_candidate_pool_validation.py"
+
+permissions:
+  contents: write
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout analysis branch
+        uses: actions/checkout@v4
+        with:
+          ref: analysis/candidate-pool-validation-20261022
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install workbook reader
+        run: python -m pip install --disable-pip-version-check openpyxl
+      - name: Analyze archived validation and review workbooks
+        run: python scripts/analyze_candidate_pool_validation.py
+      - name: Commit analysis report to isolated branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add analysis/validation_analysis.json analysis/validation_analysis.md analysis/validation_rows.csv
+          if ! git diff --cached --quiet; then
+            git commit -m "analysis: summarize historical candidate validation"
+            git push origin analysis/candidate-pool-validation-20261022
+          fi
