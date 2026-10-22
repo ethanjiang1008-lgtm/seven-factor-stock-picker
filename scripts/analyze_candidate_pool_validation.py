@@ -274,11 +274,16 @@ def top_n_report(rows, sort_field, method, ns=(1, 2, 3, 5, 10, 20)):
         all_win_days = []
         for date, vals in sorted(by_day.items()):
             eligible = [r for r in vals if num(r.get(sort_field)) is not None]
-            eligible.sort(
-                key=lambda r: (num(r.get(sort_field), 1e9) if sort_field == "original_rank" else num(r.get(sort_field), -1e9),
-                               -num(r.get("original_rank"), 1e9)),
-                reverse=(sort_field != "original_rank"),
-            )
+            if method == "P级优先":
+                eligible.sort(key=lambda r: (
+                    r.get("p_tier") if r.get("p_tier") is not None else 99,
+                    -num(r.get("adjusted_score"), -1e9),
+                    num(r.get("original_rank"), 1e9),
+                ))
+            elif sort_field == "original_rank":
+                eligible.sort(key=lambda r: num(r.get("original_rank"), 1e9))
+            else:
+                eligible.sort(key=lambda r: (num(r.get(sort_field), -1e9), -num(r.get("original_rank"), 1e9)), reverse=True)
             selected = eligible[:n]
             returns = [num(r.get("actual_return_pct")) for r in selected if num(r.get("actual_return_pct")) is not None]
             if returns:
@@ -327,8 +332,8 @@ def add_bins(row):
 
 def compact_row(r):
     keys = [
-        "prediction_date", "verification_date", "original_rank", "code", "name",
-        "pool", "grade", "p_tier_label", "adjusted_score", "raw_score",
+        "prediction_date", "verification_date", "evaluation_eligible", "original_rank", "code", "name",
+        "pred_close", "verify_close", "pool", "grade", "p_tier_label", "adjusted_score", "raw_score",
         "actual_return_pct", "pred_day_pct", "turnover_pct", "market_cap_yi",
         "resonance", "lianban_probability_pct", "history_limit_up_count",
         "history_max_consecutive", "days_since_last_lu",
@@ -408,9 +413,44 @@ def main():
             "factor_json_joined_rows": sum(1 for vr in val_rows if txt(vr.get("代码")).zfill(6) in factor_map),
         })
 
-    valid_rows = [r for r in rows if num(r.get("actual_return_pct")) is not None]
-    if not valid_rows:
+    all_valid_rows = [r for r in rows if num(r.get("actual_return_pct")) is not None]
+    if not all_valid_rows:
         raise SystemExit("No valid validation returns parsed.")
+
+    all_dates = sorted({r["prediction_date"] for r in all_valid_rows})
+    daily_quality = []
+    excluded_dates = set()
+    for date in all_dates:
+        rs_all = [r for r in all_valid_rows if r["prediction_date"] == date]
+        xs = [num(r.get("actual_return_pct")) for r in rs_all if num(r.get("actual_return_pct")) is not None]
+        zero_n = sum(abs(x) < 1e-9 for x in xs)
+        unchanged_n = sum(
+            num(r.get("pred_close")) is not None and num(r.get("verify_close")) is not None
+            and abs(num(r.get("pred_close")) - num(r.get("verify_close"))) < 1e-8
+            for r in rs_all
+        )
+        zero_rate = zero_n / len(xs) * 100 if xs else 0
+        unchanged_rate = unchanged_n / len(rs_all) * 100 if rs_all else 0
+        likely_stale = bool(xs) and zero_rate >= 98 and max(abs(x) for x in xs) < 1e-8
+        if likely_stale:
+            excluded_dates.add(date)
+        daily_quality.append({
+            "prediction_date": date,
+            "verification_date": min(r["verification_date"] for r in rs_all),
+            "n": len(xs),
+            "zero_return_rows": zero_n,
+            "zero_return_rate_pct": round(zero_rate, 2),
+            "unchanged_close_rows": unchanged_n,
+            "unchanged_close_rate_pct": round(unchanged_rate, 2),
+            "mean_abs_return_pct": round(statistics.mean(abs(x) for x in xs), 6) if xs else None,
+            "excluded_from_signal_analysis": likely_stale,
+            "reason": "次日所有样本涨跌幅均为0，疑似休市/行情未更新" if likely_stale else "",
+        })
+    valid_rows = [r for r in all_valid_rows if r["prediction_date"] not in excluded_dates]
+    for r in all_valid_rows:
+        r["evaluation_eligible"] = r["prediction_date"] not in excluded_dates
+    if not valid_rows:
+        raise SystemExit("No usable validation dates remain after excluding stale/closed-market snapshots.")
     dates = sorted({r["prediction_date"] for r in valid_rows})
 
     daily = []
@@ -470,8 +510,9 @@ def main():
     sentiment_rows = group_report(valid_rows, lambda r: r.get("market_sentiment_label") or "缺失", min_n=5)
 
     rank_compare = []
-    rank_compare.extend(top_n_report(valid_rows, "original_rank", "原系统排序"))
+    rank_compare.extend(top_n_report(valid_rows, "original_rank", "验证表排序（候选池→分数）"))
     rank_compare.extend(top_n_report(valid_rows, "adjusted_score", "只按调整分"))
+    rank_compare.extend(top_n_report(valid_rows, "adjusted_score", "P级优先"))
     if sum(1 for r in valid_rows if num(r.get("raw_score")) is not None) > 100:
         rank_compare.extend(top_n_report(valid_rows, "raw_score", "只按原始分"))
 
@@ -496,16 +537,23 @@ def main():
         component_results.append(row)
 
     method_by_day = {}
-    for method, field in [("原系统排序", "original_rank"), ("只按调整分", "adjusted_score"), ("只按原始分", "raw_score")]:
+    for method, field in [("验证表排序（候选池→分数）", "original_rank"), ("只按调整分", "adjusted_score"), ("P级优先", "adjusted_score"), ("只按原始分", "raw_score")]:
         per_day = defaultdict(list)
         for r in valid_rows:
             if num(r.get(field)) is not None:
                 per_day[r["prediction_date"]].append(r)
         best = []
         for date, vals in per_day.items():
-            vals.sort(key=lambda r: (num(r.get(field), -1e9), -num(r.get("original_rank"), 1e9)), reverse=(field != "original_rank"))
-            if field == "original_rank":
+            if method == "P级优先":
+                vals.sort(key=lambda r: (
+                    r.get("p_tier") if r.get("p_tier") is not None else 99,
+                    -num(r.get("adjusted_score"), -1e9),
+                    num(r.get("original_rank"), 1e9),
+                ))
+            elif field == "original_rank":
                 vals.sort(key=lambda r: num(r.get(field), 1e9))
+            else:
+                vals.sort(key=lambda r: (num(r.get(field), -1e9), -num(r.get("original_rank"), 1e9)), reverse=True)
             if vals:
                 best.append({"date": date, "code": vals[0]["code"], "name": vals[0]["name"], "actual_return_pct": vals[0]["actual_return_pct"]})
         method_by_day[method] = {
@@ -519,15 +567,20 @@ def main():
         "generated_from_branch": "analysis/candidate-pool-validation-20261022",
         "data_period": {"prediction_dates": [dates[0], dates[-1]], "verification_dates": [min(r["verification_date"] for r in valid_rows), max(r["verification_date"] for r in valid_rows)]},
         "coverage": {
-            "validation_workbooks": len(workbook_meta), "prediction_days": len(dates),
-            "raw_candidate_rows": len(rows), "valid_return_rows": len(valid_rows),
-            "unique_stocks": len({r["code"] for r in valid_rows}),
+            "validation_workbooks": len(workbook_meta), "prediction_days_all": len(all_dates),
+            "prediction_days_used": len(dates), "quality_excluded_dates": sorted(excluded_dates),
+            "raw_candidate_rows": len(rows), "valid_return_rows_all": len(all_valid_rows),
+            "valid_return_rows_used": len(valid_rows),
+            "unique_stocks_all": len({r["code"] for r in all_valid_rows}),
+            "unique_stocks_used": len({r["code"] for r in valid_rows}),
             "review_join_rows": sum(x["review_joined_rows"] for x in workbook_meta),
             "factor_json_joined_rows": sum(x["factor_json_joined_rows"] for x in workbook_meta),
             "factor_json_prediction_dates": sorted(factor_json_dates),
             "files": workbook_meta,
         },
+        "overall_raw_including_suspect_dates": base_metrics(all_valid_rows),
         "overall": base_metrics(valid_rows),
+        "daily_data_quality": daily_quality,
         "daily_baseline": daily,
         "p_tier": tier_rows,
         "grade": grade_rows,
@@ -545,6 +598,7 @@ def main():
         "top1_method_summary": method_by_day,
         "factor_component_analysis": component_results,
         "predefined_filters_top2_per_day": rule_results,
+        "excluded_prediction_dates": sorted(excluded_dates),
         "interpretation_cautions": [
             "样本为按预测日期重复出现的股票-日期记录，不能把同一股票跨日记录视为完全独立。",
             "分组胜率是描述性结果；规则是在同一批历史样本中比较，存在多重尝试/过拟合风险，需留出最近日期做样本外验证。",
@@ -558,15 +612,23 @@ def main():
         fields = list(compact_row(valid_rows[0]).keys())
         writer = csv.DictWriter(f, fieldnames=fields, extrasaction="ignore")
         writer.writeheader()
-        for row in valid_rows:
+        for row in all_valid_rows:
             writer.writerow(compact_row(row))
 
     md = []
     md.append("# 七因子候选池历史次日验证分析")
     md.append("")
     md.append(f"- 预测日期覆盖：{dates[0]} 至 {dates[-1]}，共 {len(dates)} 个预测日")
-    md.append(f"- 验证工作簿：{len(workbook_meta)} 个；有效股票-日期记录：{len(valid_rows):,}；涉及股票：{len({r['code'] for r in valid_rows}):,}")
-    md.append(f"- 全体上涨率：{report['overall'].get('win_rate_pct')}%；平均次日涨跌幅：{report['overall'].get('avg_return_pct')}%；中位数：{report['overall'].get('median_return_pct')}%。")
+    md.append(f"- 验证工作簿：{len(workbook_meta)} 个；原始有效记录：{len(all_valid_rows):,}；剔除疑似休市/行情未更新日期 {len(excluded_dates)} 个后，有效记录：{len(valid_rows):,}。")
+    md.append(f"- 剔除后上涨率：{report['overall'].get('win_rate_pct')}%；平均次日涨跌幅：{report['overall'].get('avg_return_pct')}%；中位数：{report['overall'].get('median_return_pct')}%。")
+    md.append(f"- 未剔除异常日期时的上涨率/平均涨跌幅：{report['overall_raw_including_suspect_dates'].get('win_rate_pct')}% / {report['overall_raw_including_suspect_dates'].get('avg_return_pct')}%。")
+    md.append("")
+    md.append("## 数据质量检查")
+    md.append("")
+    md.append("| 预测日 | 验证日 | 样本数 | 次日涨跌幅为0的占比 | 收盘价未变占比 | 是否剔除 |")
+    md.append("|---|---|---:|---:|---:|---|")
+    for x in daily_quality:
+        md.append(f"| {x['prediction_date']} | {x['verification_date']} | {x['n']} | {x['zero_return_rate_pct']}% | {x['unchanged_close_rate_pct']}% | {'是' if x['excluded_from_signal_analysis'] else '否'} |")
     md.append("")
     def table(title, items, cols):
         md.append(f"## {title}")
@@ -600,7 +662,7 @@ def main():
         md.append("")
     md.append("## 逐日全池基准")
     md.append("")
-    md.append("| 预测日 | 验证日 | 样本数 | 上涨率% | 平均涨跌幅% | P10% | 涨停率% | 跌停率% | 市场情绪 | 涨停数 | 跌停数 |")
+    md.append("undefined")
     md.append("|---|---|---:|---:|---:|---:|---:|---:|---|---:|---:|")
     for x in daily:
         md.append(f"| {x.get('prediction_date')} | {min([r['verification_date'] for r in valid_rows if r['prediction_date']==x['prediction_date']])} | {x.get('n')} | {x.get('win_rate_pct')} | {x.get('avg_return_pct')} | {x.get('p10_return_pct')} | {x.get('limit_up_pct')} | {x.get('limit_down_pct')} | {x.get('market_sentiment_label')} | {x.get('market_limit_up_count')} | {x.get('market_limit_down_count')} |")
@@ -615,7 +677,8 @@ def main():
         "raw_rows": len(rows), "valid_rows": len(valid_rows),
         "review_joined": report["coverage"]["review_join_rows"],
         "factor_json_rows": report["coverage"]["factor_json_joined_rows"],
-        "overall": report["overall"],
+        "overall_raw_including_suspect_dates": report["overall_raw_including_suspect_dates"],
+        "overall": report["overall"], "daily_data_quality": daily_quality,
         "tier": tier_rows, "grade": grade_rows,
         "p_tier_x_grade": tier_grade_rows,
         "topn": rank_compare,
