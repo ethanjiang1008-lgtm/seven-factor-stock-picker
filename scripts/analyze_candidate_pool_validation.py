@@ -274,7 +274,11 @@ def top_n_report(rows, sort_field, method, ns=(1, 2, 3, 5, 10, 20)):
         all_win_days = []
         for date, vals in sorted(by_day.items()):
             eligible = [r for r in vals if num(r.get(sort_field)) is not None]
-            eligible.sort(key=lambda r: (num(r.get(sort_field), -1e9), -num(r.get("original_rank"), 1e9)), reverse=True)
+            eligible.sort(
+                key=lambda r: (num(r.get(sort_field), 1e9) if sort_field == "original_rank" else num(r.get(sort_field), -1e9),
+                               -num(r.get("original_rank"), 1e9)),
+                reverse=(sort_field != "original_rank"),
+            )
             selected = eligible[:n]
             returns = [num(r.get("actual_return_pct")) for r in selected if num(r.get("actual_return_pct")) is not None]
             if returns:
